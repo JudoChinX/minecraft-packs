@@ -1,0 +1,17 @@
+Minecraft Packs
+Copyright (c) 2026 JudoChinX
+
+Scope of the licence
+--------------------
+The MIT License in LICENSE covers the source code and documentation in this
+repository. It does not cover the pack art: the textures and pack icons the
+build produces, and the preview image(s) in docs/ (docs/enchanter-preview.png),
+are derived from Mojang's Minecraft assets. Their use is governed by Mojang's
+Minecraft Usage Guidelines (https://www.minecraft.net/en-us/usage-guidelines)
+and the Minecraft EULA, not by the MIT License.
+
+This repository contains no Mojang files. The build downloads the official
+Minecraft client jar from Mojang at build time and derives the pack art from it.
+
+NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR
+MICROSOFT.
