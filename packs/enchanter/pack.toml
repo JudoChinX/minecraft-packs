@@ -1,0 +1,71 @@
+# The Enchanter: the vanilla Illusioner recoloured as a Minecraft Dungeons-style Enchanter.
+#
+# Every change is a hue-range rule applied to each colour in the vanilla texture's palette,
+# keeping that colour's lightness (its shading) and its alpha. Nothing is hand-painted, so
+# re-running the rules against a new vanilla texture reproduces the look.
+
+[pack]
+description = "The Enchanter — a Minecraft Dungeons-style Illusioner"
+# Minecraft 26.3 is resource pack format 97.1 (the client jar's version.json "pack_version").
+# Since 25w31a packs declare min_format/max_format; pack_format is only required for packs that
+# also claim formats below 65. An integer max_format covers every minor version of that major.
+min_format = 97
+max_format = 97
+
+[vanilla]
+# Changing the version means re-checking every sha256 below against a fresh preview.
+version = "26.3"
+client_sha1 = "e877b6a07acd633fb3bb475002175cec036e7b87"
+
+[preview]
+texture = "assets/minecraft/textures/entity/illager/illusioner.png"
+model = "illager"
+title = "Enchanter"
+
+[[textures]]
+path = "assets/minecraft/textures/entity/illager/illusioner.png"
+# 64 x 64, 8-bit palette (35 colours, index 0 transparent), 1,019 bytes.
+sha256 = "f43b9eecec0f7c846f673297c5ceff16b091359c589b8646abf82c5308bbfa75"
+
+# First matching rule wins. A colour matching no rule is left untouched, which is what keeps the
+# grey illager skin, the eyes and the dark shirt.
+
+[[textures.rules]]
+# The robe, hood and sleeves: saturated blue -> deep violet-purple.
+name = "robe"
+hue = [190, 240]
+saturation = [0.40, 1.00]
+lightness = [0.00, 1.00]
+target_hue = 282
+target_saturation = 0.58
+lightness_offset = -0.05
+
+[[textures.rules]]
+# Pale blue speckles (hood edge, robe, sleeves) -> gold trim.
+name = "trim"
+hue = [190, 240]
+saturation = [0.10, 0.40]
+lightness = [0.45, 1.00]
+target_hue = 45
+target_saturation = 0.85
+lightness_offset = 0.06
+
+[[textures.rules]]
+# Teal speckles -> darker amber gold.
+name = "amber"
+hue = [150, 190]
+saturation = [0.30, 1.00]
+lightness = [0.00, 1.00]
+target_hue = 38
+target_saturation = 0.80
+lightness_offset = 0.12
+
+[[textures.rules]]
+# Blue-violet speckles would vanish on a purple robe -> pale gold.
+name = "pale"
+hue = [240, 275]
+saturation = [0.20, 1.00]
+lightness = [0.00, 1.00]
+target_hue = 52
+target_saturation = 0.75
+lightness_offset = 0.24
