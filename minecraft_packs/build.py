@@ -57,6 +57,18 @@ def _static_files(pack: PackConfig) -> dict[str, bytes]:
     }
 
 
+def _check_data_files(name: str, files: dict[str, bytes]) -> None:
+    """Refuse a data pack file outside ``data/`` (``pack.png`` aside), or JSON that does not parse."""
+    for path, data in sorted(files.items()):
+        if path != ICON_NAME and not path.startswith('data/'):
+            raise PackError(f'{name}: a data pack keeps its files under files/data/, not {path}.')
+        if path.endswith('.json'):
+            try:
+                json.loads(data)
+            except (UnicodeDecodeError, json.JSONDecodeError) as error:
+                raise PackError(f'{name}: files/{path} is not valid JSON: {error}') from error
+
+
 def build_pack(
     pack: PackConfig,
     version: str,
@@ -120,6 +132,8 @@ def pack_entries(
     clashes = sorted(set(static) & set(entries))
     if clashes:
         raise PackError(f'{pack.name}: files/ would overwrite generated file(s): {", ".join(clashes)}.')
+    if pack.kind == 'data':
+        _check_data_files(pack.name, static)
     entries.update(static)
     if ICON_NAME not in entries:
         raise PackError(f'{pack.name}: no {ICON_NAME}; add a [preview] to generate one, or files/{ICON_NAME}.')

@@ -1,6 +1,7 @@
 """Tests for build.py: assembling pack entries, building zips and rendering previews."""
 
 import json
+import re
 from pathlib import Path
 
 import pytest
@@ -124,3 +125,33 @@ def test_vanilla_textures_verifies_local_jar(tmp_path: Path) -> None:
 
     with pytest.raises(PackError, match='does not match the pinned'):
         vanilla_textures(pack, tmp_path, jar_path)
+
+
+def test_pack_entries_data_pack(tmp_path: Path) -> None:
+    """Test a data pack is its files/ under data/ plus pack.png, and its JSON must parse."""
+    builder = PackBuilder().with_value('pack', 'kind', 'data').with_file('pack.png', fixture_bytes())
+    pack = load_pack(
+        builder.with_file('data/test/dimension/x.json', b'{"type": "minecraft:overworld"}').build(tmp_path)
+    )
+
+    entries, counts = pack_entries(pack, vanilla_textures(pack, tmp_path))
+
+    assert sorted(entries) == ['data/test/dimension/x.json', 'pack.mcmeta', 'pack.png']
+    assert not counts
+
+
+@pytest.mark.parametrize(
+    ('name', 'data', 'message'),
+    [
+        ('assets/test/models/mob.json', b'{}', 'keeps its files under files/data/, not assets/test/models/mob.json'),
+        ('data/test/dimension/x.json', b'{"type": ', 'files/data/test/dimension/x.json is not valid JSON'),
+    ],
+    ids=['outside_data', 'invalid_json'],
+)
+def test_pack_entries_data_pack_refusals(tmp_path: Path, name: str, data: bytes, message: str) -> None:
+    """Test a data pack refuses a file outside data/ and JSON that does not parse."""
+    builder = PackBuilder().with_value('pack', 'kind', 'data').with_file('pack.png', fixture_bytes())
+    pack = load_pack(builder.with_file(name, data).build(tmp_path))
+
+    with pytest.raises(PackError, match=re.escape(message)):
+        pack_entries(pack, {})

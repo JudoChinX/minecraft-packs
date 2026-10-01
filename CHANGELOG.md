@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Data packs: `kind = "data"` in a pack's `[pack]` table builds a data pack from `files/` alone. Every file must sit under `files/data/` (`pack.png` aside), every `.json` must parse, and `[vanilla]`, `[[textures]]` and `[preview]` are refused. `kind` defaults to `"resource"`, so existing packs build unchanged, with the same SHA-1.
+
 ## [0.1.0] - 2026-09-28
 
 Initial release: the build system and its first pack.
