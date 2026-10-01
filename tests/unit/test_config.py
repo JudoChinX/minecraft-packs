@@ -22,6 +22,14 @@ _load_pack_error_cases = {
         'builder': PackBuilder().recolouring(_JAR).with_value('pack', 'min_format', True),
         'message': "'min_format' must be an integer",
     },
+    'data_pack_with_textures': {
+        'builder': PackBuilder().recolouring(_JAR).with_value('pack', 'kind', 'data'),
+        'message': 'a data pack takes no [vanilla], [[textures]] or [preview]',
+    },
+    'kind_unknown': {
+        'builder': PackBuilder().with_value('pack', 'kind', 'behaviour'),
+        'message': "kind must be one of resource, data, not 'behaviour'",
+    },
     'description_not_string': {
         'builder': PackBuilder().recolouring(_JAR).with_value('pack', 'description', 7),
         'message': "'description' must be a string",

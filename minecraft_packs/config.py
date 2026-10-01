@@ -30,7 +30,8 @@ _KIND_NAMES: dict[type, str] = {
     str: 'a string',
 }
 _NAME_PATTERN = re.compile(r'^[a-z0-9][a-z0-9_-]*$')
-_PACK_KEYS = frozenset({'description', 'max_format', 'min_format'})
+_PACK_KEYS = frozenset({'description', 'kind', 'max_format', 'min_format'})
+PACK_KINDS = ('resource', 'data')
 _PREVIEW_KEYS = frozenset({'model', 'texture', 'title'})
 _RANGE_LENGTH = 2
 _RULE_KEYS = frozenset({
@@ -75,6 +76,7 @@ class PackConfig:
     description: str
     directory: Path
     expected_sha1: str | None
+    kind: str
     max_format: int
     min_format: int
     name: str
@@ -157,6 +159,9 @@ def _parse_pack(document: dict[str, Any], directory: Path) -> PackConfig:
     max_format = _field(pack, 'max_format', int, f'{where} [pack]')
     if min_format > max_format:
         raise PackError(f'{where} [pack]: min_format {min_format} is above max_format {max_format}.')
+    kind = _field(pack, 'kind', str, f'{where} [pack]') if 'kind' in pack else 'resource'
+    if kind not in PACK_KINDS:
+        raise PackError(f'{where} [pack]: kind must be one of {", ".join(PACK_KINDS)}, not {kind!r}.')
     textures = tuple(
         _parse_texture(table, f'{where} [[textures]] #{index + 1}')
         for index, table in enumerate(_tables(document, 'textures', where))
@@ -165,6 +170,7 @@ def _parse_pack(document: dict[str, Any], directory: Path) -> PackConfig:
         description=_field(pack, 'description', str, f'{where} [pack]'),
         directory=directory,
         expected_sha1=_expected_sha1(directory),
+        kind=kind,
         max_format=max_format,
         min_format=min_format,
         name=_pack_name(directory, where),
@@ -260,6 +266,8 @@ def _validate_references(config: PackConfig, where: str) -> None:
         raise PackError(f'{where}: a texture path is listed more than once.')
     if paths and config.vanilla is None:
         raise PackError(f'{where}: recoloured textures need a [vanilla] release to take them from.')
+    if config.kind == 'data' and (paths or config.vanilla is not None or config.preview is not None):
+        raise PackError(f'{where}: a data pack takes no [vanilla], [[textures]] or [preview]; its content is files/.')
     if config.preview is not None and config.preview.texture not in paths:
         raise PackError(f'{where} [preview]: texture {config.preview.texture!r} is not one of the [[textures]].')
 

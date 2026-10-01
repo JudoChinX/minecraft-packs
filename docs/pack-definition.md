@@ -18,6 +18,7 @@ Written to the zip's `pack.mcmeta`.
 | `description` | string | The text shown in the client's resource pack list. |
 | `min_format` | integer | The lowest resource pack format the pack supports. |
 | `max_format` | integer | The highest; must be at least `min_format`. |
+| `kind` | string | Optional. `"resource"` (the default) or `"data"`. See *Data packs* below. |
 
 Since Minecraft 25w31a, packs declare `min_format`/`max_format` instead of `pack_format`; a pack only
 needs `pack_format` as well if it also claims formats below 65. An integer `max_format` covers every
@@ -90,6 +91,23 @@ Never put Mojang's original assets here. Anything derived from them belongs in a
 build time.
 
 Every pack needs a `pack.png`: either a `[preview]` to generate it, or `files/pack.png`.
+
+## Data packs
+
+A pack with `kind = "data"` is a data pack: worldgen, dimensions, loot tables and the like, which a
+server loads from its world's `datapacks/` folder rather than sending to clients. Its content is
+`files/` alone:
+
+- every file sits under `files/data/` (plus `files/pack.png`, which is still required);
+- every `.json` file must parse, so a stray comma fails the build rather than the server's start;
+- `[vanilla]`, `[[textures]]` and `[preview]` are refused, since there is nothing to recolour.
+
+`min_format`/`max_format` are then **data** pack formats, which differ from resource pack formats: a
+release's is its server or client jar's `version.json` `pack_version.data_major` (26.3 is 121.0).
+
+A data pack refers to vanilla worldgen by id (`minecraft:overworld/continents`, `minecraft:trees_savanna`)
+and copies none of it, apart from small numeric settings that a new registry entry has to restate;
+any such copy is named, with its source, in the pack's README.
 
 ## `expected.sha1` (recommended)
 
