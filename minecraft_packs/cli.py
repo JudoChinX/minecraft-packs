@@ -47,7 +47,8 @@ def _build(args: argparse.Namespace) -> int:
         for texture, counts in result.counts.items():
             logger.info(f'{pack.name}: {texture}: recoloured {counts}')
         print(f'{result.zip_path} ({result.size} bytes)')
-        print(f'RESOURCE_PACK_SHA1={result.sha1}')
+        # A resource pack's line is the server setting it pins; a data pack has no such setting.
+        print(f'{"RESOURCE_PACK_SHA1" if pack.kind == "resource" else "DATA_PACK_SHA1"}={result.sha1}')
         if args.update_expected:
             logger.info(f'{pack.name}: recorded {record_expected_sha1(pack, result.sha1)}')
         elif result.sha1 != pack.expected_sha1:

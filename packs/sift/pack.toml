@@ -1,0 +1,11 @@
+# The Sift: a Minecraft Dungeons II-style dimension, as a data pack for a Paper server.
+#
+# Everything is under files/data/sift/. The build only checks it (paths, JSON) and zips it.
+
+[pack]
+kind = "data"
+description = "The Sift — a Dungeons II-style dimension"
+# Minecraft 26.3 is data pack format 121.0 (the server jar's version.json "pack_version"
+# "data_major"/"data_minor"); resource packs are 97.1. Formats declared as min/max since 25w31a.
+min_format = 121
+max_format = 121
