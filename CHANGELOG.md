@@ -7,9 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-10-01
+
+Data packs, and the first one.
+
 ### Added
 
-- Data packs: `kind = "data"` in a pack's `[pack]` table builds a data pack from `files/` alone. Every file must sit under `files/data/` (`pack.png` aside), every `.json` must parse, and `[vanilla]`, `[[textures]]` and `[preview]` are refused. `kind` defaults to `"resource"`, so existing packs build unchanged, with the same SHA-1.
+- Data packs: `kind = "data"` in a pack's `[pack]` table builds a data pack from `files/` alone. Every file must sit under `files/data/` (`pack.png` aside), every `.json` must parse, and `[vanilla]`, `[[textures]]` and `[preview]` are refused. `kind` defaults to `"resource"`, so existing packs build unchanged, with the same SHA-1. `build` labels a data pack's SHA-1 `DATA_PACK_SHA1=`.
+- `sift` data pack for Minecraft Java 26.3 (data pack format 121): one dimension, `sift:the_sift`, in the style of the Sift from *Minecraft Dungeons II* — Singer's Meadow (teal grass, rust-red clearings, blue-leaved acacia and oak, pink-violet sky) and the Carapace (sculk, orange terracotta, deepslate, ochre sky), on vanilla terrain shapes. No client install.
 
 ## [0.1.0] - 2026-09-28
 

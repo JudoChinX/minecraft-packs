@@ -10,6 +10,7 @@ This document reflects the current direction of Minecraft Packs. No dates are at
 
 ## Completed
 
+- **Data packs:** `kind = "data"`, and the `sift` dimension pack.
 - **`enchanter` pack:** the Illusioner recoloured as a Minecraft Dungeons-style Enchanter.
 - **Reproducible builds:** deterministic zips, checked in CI by building twice.
 - **Release assets:** each pack's zip and `.sha1` attached to its GitHub Release.

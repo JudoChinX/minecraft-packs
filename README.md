@@ -25,6 +25,7 @@
 | Pack | What it does | Minecraft | Download |
 |---|---|---|---|
 | [`enchanter`](packs/enchanter/) | Recolours the Illusioner into a purple-robed, gold-trimmed Enchanter in the style of Minecraft Dungeons. | Java 26.3 (pack format 97) | [Latest release](https://github.com/JudoChinX/minecraft-packs/releases/latest) |
+| [`sift`](packs/sift/) | **Data pack.** Adds a dimension in the style of the Sift from Minecraft Dungeons II: Singer's Meadow and the Carapace, on vanilla terrain shapes. No client install. | Java 26.3 (data pack format 121) | [Latest release](https://github.com/JudoChinX/minecraft-packs/releases/latest) |
 
 ### `enchanter`
 
@@ -80,6 +81,16 @@ require-resource-pack=true
 - **Pin a version, never `latest`.** The SHA-1 identifies one exact zip; point the URL and the SHA-1 at the same release and update both together.
 - **Enforcement disconnects players who decline.** `RESOURCE_PACK_ENFORCE` / `require-resource-pack` makes the pack mandatory; set it to `FALSE` / `false` to offer the pack without requiring it.
 - **A server sends one pack.** To combine several packs, merge them into one zip first, or use a plugin that serves several.
+
+### Installing a data pack
+
+A data pack such as `sift` is not sent to clients. It goes in the server's primary world's `datapacks/` folder, followed by a full restart (`/reload` does not reload worldgen). With `itzg/minecraft-server`:
+
+```yaml
+      DATAPACKS: "https://github.com/JudoChinX/minecraft-packs/releases/download/v0.2.0/sift-0.2.0.zip"
+```
+
+A worldgen data pack is one-way: once its dimension has generated, removing the pack breaks that world. See [`packs/sift/README.md`](packs/sift/README.md).
 
 ## Building Locally
 
