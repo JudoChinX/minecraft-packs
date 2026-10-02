@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-10-01
+
+The mobs pack.
+
+### Added
+
+- `mobs` pack for Minecraft Java 26.3 (resource pack format 97): every custom mob look in the one pack a server can send. It repeats the `enchanter` pack's four rules unchanged (a test keeps the two in step) and adds four mobs as BetterModel 3.5.0 display models — the Blob, the Sifter, the Harmonizer and the Twisted Harmonizer — and three items: Jello, the Harmonizer Tentacle and the Cooked Harmonizer Tentacle.
+
 ## [0.2.0] - 2026-10-01
 
 Data packs, and the first one.
