@@ -25,7 +25,7 @@
 | Pack | What it does | Minecraft | Download |
 |---|---|---|---|
 | [`enchanter`](packs/enchanter/) | Recolours the Illusioner into a purple-robed, gold-trimmed Enchanter in the style of Minecraft Dungeons. | Java 26.3 (pack format 97) | [Latest release](https://github.com/JudoChinX/minecraft-packs/releases/latest) |
-| [`mobs`](packs/mobs/) | Every custom mob look in one pack: the `enchanter` recolour plus the Sift mobs (Blob, Sifter, Harmonizer, Twisted Harmonizer), the eight soul-corrupted mobs, the Sculk Sniffer, the Jellyfish, the Tropical Fish Slime and the Tuff Golem as BetterModel display models, and their items. | Java 26.3 (pack format 97) | [Latest release](https://github.com/JudoChinX/minecraft-packs/releases/latest) |
+| [`mobs`](packs/mobs/) | Every custom mob look in one pack: the `enchanter` recolour plus the Sift mobs (Blob, Sifter, Harmonizer, Twisted Harmonizer), the eight soul-corrupted mobs, the Sculk Sniffer, the Jellyfish, the Tropical Fish Slime, the Tuff Golem, the Bear and the Piston Golem as BetterModel display models, and their items. | Java 26.3 (pack format 97) | [Latest release](https://github.com/JudoChinX/minecraft-packs/releases/latest) |
 | [`sift`](packs/sift/) | **Data pack.** Adds a dimension in the style of the Sift from Minecraft Dungeons II: Singer's Meadow and the Carapace, on vanilla terrain shapes. No client install. | Java 26.3 (data pack format 121) | [Latest release](https://github.com/JudoChinX/minecraft-packs/releases/latest) |
 
 ### `enchanter`

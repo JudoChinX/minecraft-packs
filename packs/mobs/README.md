@@ -13,6 +13,7 @@ Every custom mob look on the server this repository serves, as one resource pack
   (Soul Zombie, Soul Husk, Soul Drowned, Soul Skeleton, Soul Stray, Soul Creeper, Soul Spider and Soul Zombie
   Villager — glowing, translucent light-blue models), the Sculk Sniffer, the Jellyfish, the Tropical Fish Slime and
   the Tuff Golem.
+- **Daxton's third batch**, from the same pipeline: the Bear and the Piston Golem.
 - **Four items** under `assets/mobs/`: Jello, the Harmonizer Tentacle, the Cooked Harmonizer Tentacle and the Tropical
   Slime, for items carrying an `item_model` of `mobs:jello`, `mobs:harmonizer_tentacle`,
   `mobs:cooked_harmonizer_tentacle` or `mobs:tropical_slime`.
