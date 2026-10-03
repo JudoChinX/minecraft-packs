@@ -9,7 +9,7 @@
 # and the Tropical Slime.
 
 [pack]
-description = "Mobs — the Enchanter, the Sift mobs and the second batch"
+description = "Mobs — the Enchanter and Daxton's mobs"
 # Minecraft 26.3 is resource pack format 97.1 (the client jar's version.json "pack_version").
 # Since 25w31a packs declare min_format/max_format; pack_format is only required for packs that
 # also claim formats below 65. An integer max_format covers every minor version of that major.
