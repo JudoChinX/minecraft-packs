@@ -15,8 +15,25 @@ from tests.helpers import REPO_ROOT
 _MOBS = load_pack(REPO_ROOT / 'packs' / 'mobs')
 _ENCHANTER = load_pack(REPO_ROOT / 'packs' / 'enchanter')
 _ASSETS = _MOBS.files_dir / 'assets'
-_ITEMS = ('jello', 'harmonizer_tentacle', 'cooked_harmonizer_tentacle')
-_MODELS = ('blob', 'sifter', 'harmonizer', 'twisted_harmonizer')
+_ITEMS = ('jello', 'harmonizer_tentacle', 'cooked_harmonizer_tentacle', 'tropical_slime')
+_MODELS = (
+    'blob',
+    'sifter',
+    'harmonizer',
+    'twisted_harmonizer',
+    'soul_zombie',
+    'soul_husk',
+    'soul_drowned',
+    'soul_skeleton',
+    'soul_stray',
+    'soul_creeper',
+    'soul_spider',
+    'soul_zombie_villager',
+    'sculk_sniffer',
+    'jellyfish',
+    'tropical_fish_slime',
+    'tuff_golem',
+)
 _REFERENCE = re.compile(r'^(bettermodel|mobs):([a-z0-9_/]+)$')
 
 
@@ -35,11 +52,14 @@ def test_enchanter_rules_are_the_enchanter_packs() -> None:
 
 @pytest.mark.parametrize('item', _ITEMS)
 def test_item_definition_resolves(item: str) -> None:
-    """Test each item definition names a model whose texture exists."""
+    """Test each item definition names a model drawn with the item's own texture, which exists.
+
+    Most items are flat (`layer0`); the Tropical Slime is a cube whose faces use `texture`.
+    """
     definition = json.loads((_ASSETS / 'mobs' / 'items' / f'{item}.json').read_text())
     assert definition['model']['model'] == f'mobs:item/{item}'
     model = json.loads((_ASSETS / 'mobs' / 'models' / 'item' / f'{item}.json').read_text())
-    assert model['textures']['layer0'] == f'mobs:item/{item}'
+    assert f'mobs:item/{item}' in model['textures'].values()
     assert (_ASSETS / 'mobs' / 'textures' / 'item' / f'{item}.png').read_bytes().startswith(b'\x89PNG')
 
 

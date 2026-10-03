@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-10-03
+
+Daxton's second batch of mobs.
+
+### Added
+
+- `mobs` pack: twelve more mobs as BetterModel 3.5.0 display models — the eight soul-corrupted mobs (Soul Zombie, Soul Husk, Soul Drowned, Soul Skeleton, Soul Stray, Soul Creeper, Soul Spider and Soul Zombie Villager), the Sculk Sniffer, the Jellyfish, the Tropical Fish Slime and the Tuff Golem — and one item, the Tropical Slime (`mobs:tropical_slime`). The Enchanter, the four Sift mobs and the three existing items are unchanged.
+
 ## [0.3.0] - 2026-10-01
 
 The mobs pack.
