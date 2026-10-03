@@ -33,6 +33,8 @@ _MODELS = (
     'jellyfish',
     'tropical_fish_slime',
     'tuff_golem',
+    'bear',
+    'piston_golem',
 )
 _REFERENCE = re.compile(r'^(bettermodel|mobs):([a-z0-9_/]+)$')
 

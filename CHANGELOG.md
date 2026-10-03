@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-10-03
+
+Daxton's third batch of mobs.
+
+### Added
+
+- `mobs` pack: two more mobs as BetterModel 3.5.0 display models — the Bear and the Piston Golem. Every existing model and item is unchanged.
+
 ## [0.4.0] - 2026-10-03
 
 Daxton's second batch of mobs.
