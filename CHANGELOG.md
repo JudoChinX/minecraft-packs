@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-10-04
+
+Daxton's fourth batch of mobs.
+
+### Added
+
+- `mobs` pack: two more mobs as BetterModel 3.5.0 display models — the Summoner, and the Enchanter as a 3D model in the style of Minecraft Dungeons, with the enchanting book it carries. Every existing model and item is unchanged.
+
+### Changed
+
+- `mobs` pack: the pack icon is now a front view of the Enchanter model's head and hat, drawn from the pack's own art.
+
+### Removed
+
+- `mobs` pack: the Illusioner recolour (`assets/minecraft/textures/entity/illager/illusioner.png`, the four rules, the `[preview]` and the `[vanilla]` source), replaced by the Enchanter model. The pack is now its files alone and its build downloads nothing. The separate `enchanter` pack is unchanged and keeps the recolour.
+
 ## [0.5.0] - 2026-10-03
 
 Daxton's third batch of mobs.
