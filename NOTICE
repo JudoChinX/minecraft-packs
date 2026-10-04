@@ -13,5 +13,12 @@ and the Minecraft EULA, not by the MIT License.
 This repository contains no Mojang files. The build downloads the official
 Minecraft client jar from Mojang at build time and derives the pack art from it.
 
+The mobs pack takes nothing from the client jar. Its art is this project's own:
+the three illager-face textures (packs/mobs/files/assets/bettermodel/textures/
+item/*_illager_face.png) are original stand-ins, not copies of Mojang's. Its
+items atlas (packs/mobs/files/assets/minecraft/atlases/items.json) contains no
+pixels: it only references the vanilla texture minecraft:entity/illager/pillager
+by name, which the player's own client reads from its own assets at runtime.
+
 NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR
 MICROSOFT.

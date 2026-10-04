@@ -1,7 +1,7 @@
 """Tests pinning the shipped mobs pack.
 
 The pack is its files alone, with no vanilla source to download, and every mob's models and items resolve to files that
-exist.
+exist. Its one file under ``assets/minecraft/`` is the items atlas, which only names the client's own illager texture.
 """
 
 import json
@@ -15,7 +15,7 @@ from tests.helpers import REPO_ROOT
 
 _MOBS = load_pack(REPO_ROOT / 'packs' / 'mobs')
 _ASSETS = _MOBS.files_dir / 'assets'
-_ITEMS = ('jello', 'harmonizer_tentacle', 'cooked_harmonizer_tentacle', 'tropical_slime')
+_ITEMS = ('jello', 'harmonizer_tentacle', 'cooked_harmonizer_tentacle', 'tropical_slime', 'orb_of_dominance')
 _MODELS = (
     'blob',
     'sifter',
@@ -37,8 +37,11 @@ _MODELS = (
     'piston_golem',
     'enchanter',
     'summoner',
+    'arch_illager',
 )
 _REFERENCE = re.compile(r'^(bettermodel|mobs):([a-z0-9_/]+)$')
+_ATLAS = _ASSETS / 'minecraft' / 'atlases' / 'items.json'
+_ILLAGER_TEXTURE = re.compile(r'^minecraft:entity/illager/[a-z0-9_]+$')
 
 
 def test_mobs_is_a_resource_pack_for_26_3() -> None:
@@ -48,11 +51,39 @@ def test_mobs_is_a_resource_pack_for_26_3() -> None:
 
 
 def test_mobs_recolours_nothing() -> None:
-    """Test the pack takes nothing from the client jar: no Illusioner recolour, so the build downloads nothing for it."""
+    """Test the pack takes nothing from the client jar: no Illusioner recolour, so the build downloads nothing for it.
+
+    The one file it may hold under ``assets/minecraft/`` is the items atlas: a JSON naming vanilla textures, no pixels.
+    """
     assert _MOBS.vanilla is None
     assert not _MOBS.textures
     assert _MOBS.preview is None
-    assert not (_ASSETS / 'minecraft').exists()
+    shipped = sorted(
+        path.relative_to(_ASSETS).as_posix() for path in (_ASSETS / 'minecraft').rglob('*') if path.is_file()
+    )
+    assert shipped == ['minecraft/atlases/items.json']
+
+
+def test_atlas_only_maps_illager_textures_onto_the_packs_own_sprites() -> None:
+    """Test the items atlas only puts the client's own illager textures under sprite names in the pack's namespaces.
+
+    Each source is a ``minecraft:single`` from ``minecraft:entity/illager/*`` onto a ``bettermodel:`` or ``mobs:``
+    sprite whose original stand-in PNG the pack ships, so a client that ignores the atlas still has a texture to show.
+    """
+    atlas = json.loads(_ATLAS.read_text())
+    assert list(atlas) == ['sources']
+    assert atlas['sources']
+    sprites = []
+    for source in atlas['sources']:
+        assert set(source) == {'type', 'resource', 'sprite'}
+        assert source['type'] == 'minecraft:single'
+        assert _ILLAGER_TEXTURE.match(source['resource'])
+        match = _REFERENCE.match(source['sprite'])
+        assert match
+        namespace, rest = match.groups()
+        assert (_ASSETS / namespace / 'textures' / f'{rest}.png').is_file()
+        sprites.append(source['sprite'])
+    assert len(set(sprites)) == len(sprites)
 
 
 def test_icon_is_a_square_png() -> None:
