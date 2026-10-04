@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.7.0] - 2026-10-04
+
+Daxton's fifth batch of mobs.
+
+### Added
+
+- `mobs` pack: the Arch-Illager boss as a BetterModel 3.5.0 display model, in original art — a small illager in a dark grey hooded robe with purple trim and a gold crown, carrying a staff topped by the glowing Orb of Dominance — and one item, the Orb of Dominance (`mobs:orb_of_dominance`), a single full-bright cube.
+- `mobs` pack: the items atlas, `assets/minecraft/atlases/items.json`, which maps the client's own `minecraft:entity/illager/pillager` texture onto three face sprites, `bettermodel:item/{arch_illager,enchanter,summoner}_illager_face`. It only names the vanilla texture; no Mojang pixels ship. Each sprite also ships as an original stand-in PNG, which a client shows if it ignores the atlas.
+
+### Changed
+
+- `mobs` pack: the Summoner and the Enchanter now wear the vanilla illager face. Their head and nose take the face texture at the vanilla illager's UVs, and their drawn eyes and brow are gone. Only `enchanter_h_head_1.json` and `summoner_h_head_1.json` change; every other existing model, texture and item is unchanged, and so is the pack icon.
+
 ## [0.6.0] - 2026-10-04
 
 Daxton's fourth batch of mobs.
