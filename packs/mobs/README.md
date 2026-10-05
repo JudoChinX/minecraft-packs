@@ -18,13 +18,18 @@ Every custom mob look on the server this repository serves, as one resource pack
 - **Daxton's fifth batch**, from the same pipeline: the Arch-Illager, the final boss of Minecraft Dungeons, as original
   art — a small illager in a dark grey hooded robe with purple trim and a gold crown, carrying a staff topped by the
   glowing Orb of Dominance — and the illager face (below) on the Summoner and the Enchanter. Their bodies, robes, hats
-  and capes are unchanged.
+  and capes are unchanged. The seventh batch redesigned the Arch-Illager.
 - **Daxton's sixth batch**, from the same pipeline: the Hopping Pig, a model with the vanilla pig's shape and
   proportions that wears the client's own pig texture (below). Its hops and backflips are played by the server.
-- **Five items** under `assets/mobs/`: Jello, the Harmonizer Tentacle, the Cooked Harmonizer Tentacle, the Tropical
-  Slime and the Orb of Dominance, for items carrying an `item_model` of `mobs:jello`, `mobs:harmonizer_tentacle`,
-  `mobs:cooked_harmonizer_tentacle`, `mobs:tropical_slime` or `mobs:orb_of_dominance`. The Orb of Dominance, the
-  Arch-Illager's trophy, is one cube that glows at full brightness (`light_emission` 15).
+- **Daxton's seventh batch**, from the same pipeline: the Arch-Illager redesigned. It keeps the illager face (below)
+  and gains a pillager's build in dark slate, a black poncho with gold stripes, a gold pauldron on each shoulder, a
+  crossbow in each hand, a pouch at its hip and a netherite sword on its back; the hood, crown, robe, staff and orb are
+  gone. Which weapons show at a time is the server's. The batch also adds the Ancient Callings, the book it drops.
+- **Six items** under `assets/mobs/`: Jello, the Harmonizer Tentacle, the Cooked Harmonizer Tentacle, the Tropical
+  Slime, the Orb of Dominance and the Ancient Callings, for items carrying an `item_model` of `mobs:jello`,
+  `mobs:harmonizer_tentacle`, `mobs:cooked_harmonizer_tentacle`, `mobs:tropical_slime`, `mobs:orb_of_dominance` or
+  `mobs:ancient_callings`. The Orb of Dominance, the Arch-Illager's trophy, is one cube that glows at full brightness
+  (`light_emission` 15). The Ancient Callings is a black, gold and sculk-teal book, original art.
 
 Since 0.6.0 the Enchanter is the 3D model, and the pack no longer recolours the Illusioner: it holds no
 `assets/minecraft/` texture, and its build downloads nothing from Mojang. Its one file under `assets/minecraft/` is the

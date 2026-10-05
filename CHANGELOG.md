@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.9.0] - 2026-10-05
+
+Daxton's seventh batch of mobs.
+
+### Added
+
+- `mobs` pack: one item, the Ancient Callings (`mobs:ancient_callings`), the book the Arch-Illager drops, drawn as an original black, gold and sculk-teal book.
+
+### Changed
+
+- `mobs` pack: the Arch-Illager is redesigned. It keeps the vanilla illager face and now has a pillager's build in dark slate, a black poncho with gold stripes, a gold pauldron on each shoulder, a crossbow in each hand, a pouch at its hip and a netherite sword on its back. Its six body models and its texture change, ten models for the crossbows, the pouch and the sword (held and sheathed) are added, and the four staff and orb models are removed. Every other existing model, texture and item is unchanged, and so is the pack icon.
+
 ## [0.8.0] - 2026-10-05
 
 Daxton's sixth batch of mobs.
