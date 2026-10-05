@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.8.0] - 2026-10-05
+
+Daxton's sixth batch of mobs.
+
+### Added
+
+- `mobs` pack: the Hopping Pig as a BetterModel 3.5.0 display model with the vanilla pig's shape and proportions, and an original stand-in texture in the pig layout, `bettermodel:item/hopping_pig_vanilla_pig`.
+
+### Changed
+
+- `mobs` pack: the items atlas, `assets/minecraft/atlases/items.json`, gains a fourth source, which maps the client's own `minecraft:entity/pig/pig_temperate` texture onto the Hopping Pig's sprite. It only names the vanilla texture; no Mojang pixels ship. Every other existing model, texture and item is unchanged, and so is the pack icon.
+
 ## [0.7.0] - 2026-10-04
 
 Daxton's fifth batch of mobs.

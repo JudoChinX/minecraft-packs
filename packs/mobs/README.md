@@ -19,6 +19,8 @@ Every custom mob look on the server this repository serves, as one resource pack
   art — a small illager in a dark grey hooded robe with purple trim and a gold crown, carrying a staff topped by the
   glowing Orb of Dominance — and the illager face (below) on the Summoner and the Enchanter. Their bodies, robes, hats
   and capes are unchanged.
+- **Daxton's sixth batch**, from the same pipeline: the Hopping Pig, a model with the vanilla pig's shape and
+  proportions that wears the client's own pig texture (below). Its hops and backflips are played by the server.
 - **Five items** under `assets/mobs/`: Jello, the Harmonizer Tentacle, the Cooked Harmonizer Tentacle, the Tropical
   Slime and the Orb of Dominance, for items carrying an `item_model` of `mobs:jello`, `mobs:harmonizer_tentacle`,
   `mobs:cooked_harmonizer_tentacle`, `mobs:tropical_slime` or `mobs:orb_of_dominance`. The Orb of Dominance, the
@@ -43,9 +45,17 @@ pack last, and a later source replaces an earlier one with the same sprite name.
 face over the stand-in. A client that ignores the atlas file, or BetterModel's own `build.zip` served without it,
 shows the stand-in face, not the missing texture.
 
+## The Hopping Pig's texture
+
+The Hopping Pig uses the same route for its whole body. Its cubes sit on `bettermodel:item/hopping_pig_vanilla_pig`,
+at the vanilla pig's UVs, and the pack ships that texture as an original stand-in,
+`assets/bettermodel/textures/item/hopping_pig_vanilla_pig.png`: a pink pig drawn procedurally by this project's model
+script. A fourth source in the items atlas puts the client's own `minecraft:entity/pig/pig_temperate` texture under that
+sprite name, so the client draws its own temperate pig. Without the atlas file it shows the stand-in pig.
+
 ## Licensing
 
-Every file under `files/` is original art; nothing is taken from Mojang's assets. The three illager-face PNGs are
-original stand-ins, not copies of Mojang's texture. The items atlas only *references* the client's own
-`minecraft:entity/illager/pillager` texture by name, and the client reads it from its own assets at runtime; no Mojang
-pixels are shipped in the repository or the zip. The zip's expected SHA-1 is in [`expected.sha1`](expected.sha1).
+Every file under `files/` is original art; nothing is taken from Mojang's assets. The three illager-face PNGs and the
+Hopping Pig's texture are original stand-ins, not copies of Mojang's textures. The items atlas only *references* the
+client's own `minecraft:entity/illager/pillager` and `minecraft:entity/pig/pig_temperate` textures by name, and the
+client reads them from its own assets at runtime; no Mojang pixels are shipped in the repository or the zip. The zip's expected SHA-1 is in [`expected.sha1`](expected.sha1).

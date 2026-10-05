@@ -1,7 +1,8 @@
 """Tests pinning the shipped mobs pack.
 
 The pack is its files alone, with no vanilla source to download, and every mob's models and items resolve to files that
-exist. Its one file under ``assets/minecraft/`` is the items atlas, which only names the client's own illager texture.
+exist. Its one file under ``assets/minecraft/`` is the items atlas, which only names the client's own illager and pig
+textures.
 """
 
 import json
@@ -38,10 +39,11 @@ _MODELS = (
     'enchanter',
     'summoner',
     'arch_illager',
+    'hopping_pig',
 )
 _REFERENCE = re.compile(r'^(bettermodel|mobs):([a-z0-9_/]+)$')
 _ATLAS = _ASSETS / 'minecraft' / 'atlases' / 'items.json'
-_ILLAGER_TEXTURE = re.compile(r'^minecraft:entity/illager/[a-z0-9_]+$')
+_VANILLA_TEXTURE = re.compile(r'^minecraft:entity/(illager|pig)/[a-z0-9_]+$')
 
 
 def test_mobs_is_a_resource_pack_for_26_3() -> None:
@@ -64,11 +66,12 @@ def test_mobs_recolours_nothing() -> None:
     assert shipped == ['minecraft/atlases/items.json']
 
 
-def test_atlas_only_maps_illager_textures_onto_the_packs_own_sprites() -> None:
-    """Test the items atlas only puts the client's own illager textures under sprite names in the pack's namespaces.
+def test_atlas_only_maps_illager_and_pig_textures_onto_the_packs_own_sprites() -> None:
+    """Test the items atlas only puts the client's own illager and pig textures under the pack's own sprite names.
 
-    Each source is a ``minecraft:single`` from ``minecraft:entity/illager/*`` onto a ``bettermodel:`` or ``mobs:``
-    sprite whose original stand-in PNG the pack ships, so a client that ignores the atlas still has a texture to show.
+    Each source is a ``minecraft:single`` from ``minecraft:entity/illager/*`` or ``minecraft:entity/pig/*`` onto a
+    ``bettermodel:`` or ``mobs:`` sprite whose original stand-in PNG the pack ships, so a client that ignores the atlas
+    still has a texture to show.
     """
     atlas = json.loads(_ATLAS.read_text())
     assert list(atlas) == ['sources']
@@ -77,7 +80,7 @@ def test_atlas_only_maps_illager_textures_onto_the_packs_own_sprites() -> None:
     for source in atlas['sources']:
         assert set(source) == {'type', 'resource', 'sprite'}
         assert source['type'] == 'minecraft:single'
-        assert _ILLAGER_TEXTURE.match(source['resource'])
+        assert _VANILLA_TEXTURE.fullmatch(source['resource'])
         match = _REFERENCE.match(source['sprite'])
         assert match
         namespace, rest = match.groups()
