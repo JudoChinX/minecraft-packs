@@ -39,6 +39,7 @@ _MODELS = (
     'enchanter',
     'summoner',
     'arch_illager',
+    'hopping_pig',
 )
 _REFERENCE = re.compile(r'^(bettermodel|mobs):([a-z0-9_/]+)$')
 _ATLAS = _ASSETS / 'minecraft' / 'atlases' / 'items.json'

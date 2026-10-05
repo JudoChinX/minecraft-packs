@@ -12,6 +12,11 @@
     },
     {
       "type": "minecraft:single",
+      "resource": "minecraft:entity/pig/pig_temperate",
+      "sprite": "bettermodel:item/hopping_pig_vanilla_pig"
+    },
+    {
+      "type": "minecraft:single",
       "resource": "minecraft:entity/illager/pillager",
       "sprite": "bettermodel:item/summoner_illager_face"
     }
