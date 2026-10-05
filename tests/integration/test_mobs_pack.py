@@ -16,7 +16,14 @@ from tests.helpers import REPO_ROOT
 
 _MOBS = load_pack(REPO_ROOT / 'packs' / 'mobs')
 _ASSETS = _MOBS.files_dir / 'assets'
-_ITEMS = ('jello', 'harmonizer_tentacle', 'cooked_harmonizer_tentacle', 'tropical_slime', 'orb_of_dominance')
+_ITEMS = (
+    'jello',
+    'harmonizer_tentacle',
+    'cooked_harmonizer_tentacle',
+    'tropical_slime',
+    'orb_of_dominance',
+    'ancient_callings',
+)
 _MODELS = (
     'blob',
     'sifter',
