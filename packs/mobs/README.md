@@ -28,6 +28,8 @@ Every custom mob look on the server this repository serves, as one resource pack
 - **Daxton's eighth batch**, from the same pipeline: the five pirates (Scar and Hook, Left Eyepatch, Right Eyepatch,
   Hook and Pouch, and the Pirate Archer) and the Pirate Captain, each wearing the illager face (below), with the
   Cutlass, the Peg Leg and the Moldy Oak Planks.
+- **Daxton's ninth batch**, from the same pipeline: the Geomancer, the Infernoillager and the Simphtomer, each wearing
+  the illager face (below).
 - **Nine items** under `assets/mobs/`: Jello, the Harmonizer Tentacle, the Cooked Harmonizer Tentacle, the Tropical
   Slime, the Orb of Dominance, the Ancient Callings, the Cutlass, the Peg Leg and the Moldy Oak Planks, for items
   carrying an `item_model` of `mobs:jello`, `mobs:harmonizer_tentacle`, `mobs:cooked_harmonizer_tentacle`,
@@ -45,7 +47,8 @@ texture.
 
 ## The illager faces
 
-The Summoner, the Enchanter, the Arch-Illager, the five pirates and the Pirate Captain wear the vanilla illager face, the one the pillager, the vindicator
+The Summoner, the Enchanter, the Arch-Illager, the five pirates, the Pirate Captain, the Geomancer, the Infernoillager
+and the Simphtomer wear the vanilla illager face, the one the pillager, the vindicator
 and the evoker share, without the pack carrying it. Their head and nose use a second texture,
 `bettermodel:item/<model>_illager_face`, laid out like the vanilla illager texture. The pack ships that texture as an
 original stand-in, `assets/bettermodel/textures/item/<model>_illager_face.png`: a grey-green illager-style face drawn
