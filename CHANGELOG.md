@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.10.0] - 2026-10-06
+
+The mobs pack's eighth batch: Daxton's five pirates, the Pirate Captain, the cutlass, the peg leg and moldy oak planks.
+
+### Added
+
+- `mobs` pack: six more mobs as BetterModel 3.5.0 display models — the five pirates (Scar and Hook, Left Eyepatch, Right Eyepatch, Hook and Pouch, and the Pirate Archer) and the Pirate Captain, and original stand-in textures for the atlas to replace, `bettermodel:item/pirate_1_illager_face`, `bettermodel:item/pirate_2_illager_face`, `bettermodel:item/pirate_3_illager_face`, `bettermodel:item/pirate_4_illager_face`, `bettermodel:item/pirate_5_illager_face` and `bettermodel:item/pirate_captain_illager_face`; and three items, the Cutlass (`mobs:cutlass`), the Moldy Oak Planks (`mobs:moldy_oak_planks`) and the Peg Leg (`mobs:peg_leg`).
+- `mobs` pack: `assets/minecraft/blockstates/mushroom_stem.json`, vanilla's multipart for the mushroom stem with the all-faces-off state drawn as the Moldy Oak Planks (`mobs:block/moldy_oak_planks`); every other state names vanilla's own `mushroom_stem` and `mushroom_block_inside` models, unchanged.
+
+### Changed
+
+- `mobs` pack: the items atlas, `assets/minecraft/atlases/items.json`, adds `minecraft:entity/illager/pillager` for the five pirates (Scar and Hook, Left Eyepatch, Right Eyepatch, Hook and Pouch, and the Pirate Archer) and the Pirate Captain. It only names the vanilla textures; no Mojang pixels ship. Every other existing model, texture and item is unchanged, and so is the pack icon.
+
 ## [0.9.0] - 2026-10-05
 
 Daxton's seventh batch of mobs.
