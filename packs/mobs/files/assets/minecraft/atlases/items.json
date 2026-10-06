@@ -12,8 +12,18 @@
     },
     {
       "type": "minecraft:single",
+      "resource": "minecraft:entity/illager/pillager",
+      "sprite": "bettermodel:item/geomancer_illager_face"
+    },
+    {
+      "type": "minecraft:single",
       "resource": "minecraft:entity/pig/pig_temperate",
       "sprite": "bettermodel:item/hopping_pig_vanilla_pig"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "minecraft:entity/illager/pillager",
+      "sprite": "bettermodel:item/infernoillager_illager_face"
     },
     {
       "type": "minecraft:single",
@@ -44,6 +54,11 @@
       "type": "minecraft:single",
       "resource": "minecraft:entity/illager/pillager",
       "sprite": "bettermodel:item/pirate_captain_illager_face"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "minecraft:entity/illager/pillager",
+      "sprite": "bettermodel:item/simphtomer_illager_face"
     },
     {
       "type": "minecraft:single",

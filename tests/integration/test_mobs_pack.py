@@ -56,6 +56,9 @@ _MODELS = (
     'pirate_4',
     'pirate_5',
     'pirate_captain',
+    'geomancer',
+    'infernoillager',
+    'simphtomer',
 )
 _BLOCKS = ('moldy_oak_planks',)
 _BORROWED = {'moldy_oak_planks': 'mushroom_stem'}

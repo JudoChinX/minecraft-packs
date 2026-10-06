@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.11.0] - 2026-10-06
+
+The mobs pack's ninth batch: Daxton's Simphtomer, Geomancer and Infernoillager.
+
+### Added
+
+- `mobs` pack: three more mobs as BetterModel 3.5.0 display models — the Geomancer, the Infernoillager and the Simphtomer, and original stand-in textures for the atlas to replace, `bettermodel:item/geomancer_illager_face`, `bettermodel:item/infernoillager_illager_face` and `bettermodel:item/simphtomer_illager_face`.
+
+### Changed
+
+- `mobs` pack: the items atlas, `assets/minecraft/atlases/items.json`, adds `minecraft:entity/illager/pillager` for the Geomancer, the Infernoillager and the Simphtomer. It only names the vanilla textures; no Mojang pixels ship. Every other existing model, texture and item is unchanged, and so is the pack icon.
+
 ## [0.10.0] - 2026-10-06
 
 The mobs pack's eighth batch: Daxton's five pirates, the Pirate Captain, the cutlass, the peg leg and moldy oak planks.
