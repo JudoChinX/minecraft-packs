@@ -64,7 +64,11 @@ _MODELS = (
     'crocofang',
 )
 _BLOCKS = ('moldy_oak_planks', 'fertilized_sand', 'palm_log', 'palm_planks', 'palm_slab')
-_BORROWED = {'moldy_oak_planks': 'mushroom_stem', 'palm_log': 'brown_mushroom_block', 'fertilized_sand': 'red_mushroom_block'}
+_BORROWED = {
+    'moldy_oak_planks': 'mushroom_stem',
+    'palm_log': 'brown_mushroom_block',
+    'fertilized_sand': 'red_mushroom_block',
+}
 # The borrowed slab (mobs 11): the slab's id, its full block's id and the vanilla slab borrowed whole, every state ours.
 _SLABS = {'palm_slab': ('palm_planks', 'petrified_oak_slab')}
 _FULL_OF = {full: slab for slab, (full, _) in _SLABS.items()}
@@ -199,13 +203,19 @@ def test_borrowed_blockstate_draws_the_block_only_in_its_state(block: str) -> No
 
 @pytest.mark.parametrize('slab', sorted(_SLABS))
 def test_borrowed_slab_draws_every_state_as_ours(slab: str) -> None:
-    """Test the borrowed slab's blockstate draws its three states on the pack's own models: the slab, its top half, and
-    the full block for the double."""
+    """Test the borrowed slab's blockstate draws its three states on the pack's own models.
+
+    They are the slab, its top half, and the full block for the double.
+    """
     full, base = _SLABS[slab]
     blockstate = json.loads((_ASSETS / 'minecraft' / 'blockstates' / f'{base}.json').read_text())
-    assert blockstate == {'variants': {'type=bottom': {'model': f'mobs:block/{slab}'},
-                                       'type=double': {'model': f'mobs:block/{full}'},
-                                       'type=top': {'model': f'mobs:block/{slab}_top'}}}
+    assert blockstate == {
+        'variants': {
+            'type=bottom': {'model': f'mobs:block/{slab}'},
+            'type=double': {'model': f'mobs:block/{full}'},
+            'type=top': {'model': f'mobs:block/{slab}_top'},
+        }
+    }
     top = json.loads((_ASSETS / 'mobs' / 'models' / 'block' / f'{slab}_top.json').read_text())
     assert top['parent'] == 'minecraft:block/slab_top'
 
