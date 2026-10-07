@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "mobs:block/palm_slab"
+    },
+    "type=double": {
+      "model": "mobs:block/palm_planks"
+    },
+    "type=top": {
+      "model": "mobs:block/palm_slab_top"
+    }
+  }
+}

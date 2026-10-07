@@ -11,7 +11,9 @@
 # Planks (a block model, assets/mobs/models/block/); the items atlas (assets/minecraft/atlases/items.json), which gives the illagers' and the
 # pirates' heads the client's own pillager texture and the Hopping Pig the client's own pig texture by name, so the pack
 # ships no Mojang pixels; the mushroom stem's blockstate (assets/minecraft/blockstates/mushroom_stem.json), vanilla's
-# multipart naming vanilla's own models, with its all-faces-off state drawn as the Moldy Oak Planks; and pack.png, a
+# multipart naming vanilla's own models, with its all-faces-off state drawn as the Moldy Oak Planks; since 0.13.0 the
+# brown and red mushroom blocks' blockstates the same way for the Palm Log and Fertilized Sand, and the petrified oak
+# slab's, every state drawn as the Palm Slab or (its double) the Palm Planks; and pack.png, a
 # front view of the Enchanter model's head and hat drawn from that model and its texture. The Illusioner recolour that
 # drew the Enchanter until 0.5.0 is gone; it lives on, unchanged, in the separate enchanter pack.
 

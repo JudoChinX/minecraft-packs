@@ -32,6 +32,8 @@ Every custom mob look on the server this repository serves, as one resource pack
   the illager face (below).
 - **Daxton's tenth batch**, from the same pipeline: the Crocofang (original art, no atlas route), the Crocofang Tooth
   and the Throwing Knife.
+- **Daxton's eleventh batch**, from the same pipeline: four blocks for his Oasis, the Palm Log (ringed bark and ends, a
+  `cube_column`), Fertilized Sand, the Palm Planks and the Palm Slab (below).
 - **Eleven items** under `assets/mobs/`: Jello, the Harmonizer Tentacle, the Cooked Harmonizer Tentacle, the Tropical
   Slime, the Orb of Dominance, the Ancient Callings, the Cutlass, the Peg Leg, the Crocofang Tooth, the Throwing Knife
   and the Moldy Oak Planks, for items carrying an `item_model` of `mobs:jello`, `mobs:harmonizer_tentacle`,
@@ -43,7 +45,8 @@ Every custom mob look on the server this repository serves, as one resource pack
 
 Since 0.6.0 the Enchanter is the 3D model, and the pack no longer recolours the Illusioner: it holds no
 `assets/minecraft/` texture, and its build downloads nothing from Mojang. Its files under `assets/minecraft/` are the
-items atlas below and, since 0.10.0, the mushroom stem's blockstate (below), both JSON files. The recolour lives on, unchanged, in the separate [`enchanter`](../enchanter/) pack. The
+items atlas below and, since 0.10.0, the mushroom stem's blockstate (since 0.13.0 also the brown and red mushroom
+blocks' and the petrified oak slab's; below), all JSON files. The recolour lives on, unchanged, in the separate [`enchanter`](../enchanter/) pack. The
 pack's icon, `files/pack.png`, is a front view of the Enchanter model's head and hat, drawn from that model and its
 texture.
 
@@ -77,10 +80,18 @@ vanilla's own `minecraft:block/mushroom_stem` and `minecraft:block/mushroom_bloc
 that draws `mobs:block/moldy_oak_planks` when every face is `false`. Every other state looks exactly as in vanilla.
 Without the pack, the planks show the mushroom-inside texture on every face.
 
+Since 0.13.0 the Palm Log and Fertilized Sand take the same all-faces-`false` state of the brown and the red mushroom
+block (`brown_mushroom_block.json`, `red_mushroom_block.json`: vanilla's multipart for each, naming only that block's
+own model and `minecraft:block/mushroom_block_inside`, plus our block's part). The Palm Planks and the Palm Slab take
+the petrified oak slab whole, a block survival play never sees: `petrified_oak_slab.json` draws its bottom and top
+halves as `mobs:block/palm_slab` and `mobs:block/palm_slab_top` (vanilla's `slab` and `slab_top` on the palm planks'
+texture) and its double as `mobs:block/palm_planks`.
+
 ## Licensing
 
 Every file under `files/` is original art; nothing is taken from Mojang's assets. The illager-face PNGs and the
 Hopping Pig's texture are original stand-ins, not copies of Mojang's textures. The items atlas only *references* the
 client's own `minecraft:entity/illager/pillager` and `minecraft:entity/pig/pig_temperate` textures by name, and the
-mushroom stem's blockstate only *names* the client's own `minecraft:block/mushroom_stem` and
-`minecraft:block/mushroom_block_inside` models; the client reads them from its own assets at runtime; no Mojang pixels are shipped in the repository or the zip. The zip's expected SHA-1 is in [`expected.sha1`](expected.sha1).
+blockstates only *name* the client's own block models (`minecraft:block/mushroom_stem`,
+`minecraft:block/brown_mushroom_block`, `minecraft:block/red_mushroom_block`, `minecraft:block/mushroom_block_inside`)
+or the pack's own; the client reads them from its own assets at runtime; no Mojang pixels are shipped in the repository or the zip. The zip's expected SHA-1 is in [`expected.sha1`](expected.sha1).
