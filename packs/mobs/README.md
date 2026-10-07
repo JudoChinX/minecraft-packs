@@ -30,13 +30,15 @@ Every custom mob look on the server this repository serves, as one resource pack
   Cutlass, the Peg Leg and the Moldy Oak Planks.
 - **Daxton's ninth batch**, from the same pipeline: the Geomancer, the Infernoillager and the Simphtomer, each wearing
   the illager face (below).
-- **Nine items** under `assets/mobs/`: Jello, the Harmonizer Tentacle, the Cooked Harmonizer Tentacle, the Tropical
-  Slime, the Orb of Dominance, the Ancient Callings, the Cutlass, the Peg Leg and the Moldy Oak Planks, for items
-  carrying an `item_model` of `mobs:jello`, `mobs:harmonizer_tentacle`, `mobs:cooked_harmonizer_tentacle`,
-  `mobs:tropical_slime`, `mobs:orb_of_dominance`, `mobs:ancient_callings`, `mobs:cutlass`, `mobs:peg_leg` or
-  `mobs:moldy_oak_planks`. The Orb of Dominance, the Arch-Illager's trophy, is one cube that glows at full brightness
-  (`light_emission` 15). The Ancient Callings is a black, gold and sculk-teal book, original art. The Cutlass is a
-  handheld sword model. The Moldy Oak Planks is a block model (`mobs:block/moldy_oak_planks`, a `cube_all`), and the
+- **Daxton's tenth batch**, from the same pipeline: the Crocofang (original art, no atlas route), the Crocofang Tooth
+  and the Throwing Knife.
+- **Eleven items** under `assets/mobs/`: Jello, the Harmonizer Tentacle, the Cooked Harmonizer Tentacle, the Tropical
+  Slime, the Orb of Dominance, the Ancient Callings, the Cutlass, the Peg Leg, the Crocofang Tooth, the Throwing Knife
+  and the Moldy Oak Planks, for items carrying an `item_model` of `mobs:jello`, `mobs:harmonizer_tentacle`,
+  `mobs:cooked_harmonizer_tentacle`, `mobs:tropical_slime`, `mobs:orb_of_dominance`, `mobs:ancient_callings`,
+  `mobs:cutlass`, `mobs:peg_leg`, `mobs:crocofang_tooth`, `mobs:throwing_knife` or `mobs:moldy_oak_planks`. The Orb of Dominance, the Arch-Illager's trophy, is one cube that glows at full brightness
+  (`light_emission` 15). The Ancient Callings is a black, gold and sculk-teal book, original art. The Cutlass and the
+  Throwing Knife are handheld models. The Moldy Oak Planks is a block model (`mobs:block/moldy_oak_planks`, a `cube_all`), and the
   placed block is drawn through `assets/minecraft/blockstates/mushroom_stem.json` (below).
 
 Since 0.6.0 the Enchanter is the 3D model, and the pack no longer recolours the Illusioner: it holds no

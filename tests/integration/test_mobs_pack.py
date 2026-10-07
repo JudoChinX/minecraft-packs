@@ -26,6 +26,8 @@ _ITEMS = (
     'ancient_callings',
     'cutlass',
     'peg_leg',
+    'crocofang_tooth',
+    'throwing_knife',
 )
 _MODELS = (
     'blob',
@@ -59,6 +61,7 @@ _MODELS = (
     'geomancer',
     'infernoillager',
     'simphtomer',
+    'crocofang',
 )
 _BLOCKS = ('moldy_oak_planks',)
 _BORROWED = {'moldy_oak_planks': 'mushroom_stem'}

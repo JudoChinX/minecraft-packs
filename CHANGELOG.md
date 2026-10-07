@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.12.0] - 2026-10-06
+
+The mobs pack's tenth batch: Daxton's Crocofang, the Crocofang Tooth and the throwing knife.
+
+### Added
+
+- `mobs` pack: the Crocofang as a BetterModel 3.5.0 display model; and two items, the Crocofang Tooth (`mobs:crocofang_tooth`) and the Throwing Knife (`mobs:throwing_knife`, a handheld item model). The Damage and Poison Aspect enchantments of the same batch ship inside the server plugin, not in this pack. Every other existing model, texture and item is unchanged, and so is the pack icon.
+
 ## [0.11.0] - 2026-10-06
 
 The mobs pack's ninth batch: Daxton's Simphtomer, Geomancer and Infernoillager.
