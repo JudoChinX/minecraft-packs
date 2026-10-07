@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.13.0] - 2026-10-07
+
+The mobs pack's eleventh batch: Daxton's Oasis blocks, the Palm Log, the Palm Planks, the Palm Slab and Fertilized Sand.
+
+### Added
+
+- `mobs` pack: four blocks, the Fertilized Sand (`mobs:fertilized_sand`), the Palm Log (`mobs:palm_log`, ringed bark and ends on a `cube_column`), the Palm Planks (`mobs:palm_planks`) and the Palm Slab (`mobs:palm_slab`), with their textures, block models and items.
+- `mobs` pack: `assets/minecraft/blockstates/brown_mushroom_block.json` and `red_mushroom_block.json`, vanilla's multipart for each with its all-faces-off state drawn as the Palm Log and the Fertilized Sand.
+- `mobs` pack: `assets/minecraft/blockstates/petrified_oak_slab.json`, every state drawn as the Palm Slab (its halves) or the Palm Planks (its double). Every other existing model, texture and item is unchanged, and so is the pack icon.
+
 ## [0.12.0] - 2026-10-06
 
 The mobs pack's tenth batch: Daxton's Crocofang, the Crocofang Tooth and the throwing knife.

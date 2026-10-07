@@ -63,9 +63,13 @@ _MODELS = (
     'simphtomer',
     'crocofang',
 )
-_BLOCKS = ('moldy_oak_planks',)
-_BORROWED = {'moldy_oak_planks': 'mushroom_stem'}
-_STEM_MODELS = {'minecraft:block/mushroom_stem', 'minecraft:block/mushroom_block_inside'}
+_BLOCKS = ('moldy_oak_planks', 'fertilized_sand', 'palm_log', 'palm_planks', 'palm_slab')
+_BORROWED = {'moldy_oak_planks': 'mushroom_stem', 'palm_log': 'brown_mushroom_block', 'fertilized_sand': 'red_mushroom_block'}
+# The borrowed slab (mobs 11): the slab's id, its full block's id and the vanilla slab borrowed whole, every state ours.
+_SLABS = {'palm_slab': ('palm_planks', 'petrified_oak_slab')}
+_FULL_OF = {full: slab for slab, (full, _) in _SLABS.items()}
+# A borrowed block drawn as a column: its end texture (mobs 11's palm log, ringed ends).
+_COLUMNS = {'palm_log': 'palm_log_top'}
 _FACES = ('north', 'east', 'south', 'west', 'up', 'down')
 _REFERENCE = re.compile(r'^(bettermodel|mobs):([a-z0-9_/]+)$')
 _ATLAS = _ASSETS / 'minecraft' / 'atlases' / 'items.json'
@@ -91,6 +95,7 @@ def test_mobs_recolours_nothing() -> None:
         path.relative_to(_ASSETS).as_posix() for path in (_ASSETS / 'minecraft').rglob('*') if path.is_file()
     )
     allowed = ['minecraft/atlases/items.json'] + [f'minecraft/blockstates/{base}.json' for base in _BORROWED.values()]
+    allowed += [f'minecraft/blockstates/{base}.json' for _, base in _SLABS.values()]
     assert shipped == sorted(allowed)
 
 
@@ -139,13 +144,26 @@ def test_item_definition_resolves(item: str) -> None:
 
 @pytest.mark.parametrize('block', _BLOCKS)
 def test_block_item_resolves(block: str) -> None:
-    """Test each borrowed block's item names its block model, a ``cube_all`` on its own texture, which exists."""
+    """Test each borrowed block's item names its block model, which draws the block's own texture, which exists.
+
+    Most are a ``cube_all``; the palm log is a ``cube_column`` with ringed ends, and the palm slab vanilla's ``slab``
+    on the palm planks' texture.
+    """
     definition = json.loads((_ASSETS / 'mobs' / 'items' / f'{block}.json').read_text())
     assert definition['model']['model'] == f'mobs:block/{block}'
     model = json.loads((_ASSETS / 'mobs' / 'models' / 'block' / f'{block}.json').read_text())
-    assert model['parent'] == 'minecraft:block/cube_all'
-    assert model['textures'] == {'all': f'mobs:block/{block}'}
-    assert (_ASSETS / 'mobs' / 'textures' / 'block' / f'{block}.png').read_bytes().startswith(b'\x89PNG')
+    texture = block
+    if block in _COLUMNS:
+        assert model['parent'] == 'minecraft:block/cube_column'
+        assert model['textures'] == {'end': f'mobs:block/{_COLUMNS[block]}', 'side': f'mobs:block/{block}'}
+    elif block in _SLABS:
+        texture = _SLABS[block][0]
+        assert model['parent'] == 'minecraft:block/slab'
+        assert model['textures'] == dict.fromkeys(('bottom', 'side', 'top'), f'mobs:block/{texture}')
+    else:
+        assert model['parent'] == 'minecraft:block/cube_all'
+        assert model['textures'] == {'all': f'mobs:block/{block}'}
+    assert (_ASSETS / 'mobs' / 'textures' / 'block' / f'{texture}.png').read_bytes().startswith(b'\x89PNG')
 
 
 def _matches(when: dict, state: dict) -> bool:
@@ -155,16 +173,18 @@ def _matches(when: dict, state: dict) -> bool:
     return all(state[key] == value for key, value in when.items())
 
 
-@pytest.mark.parametrize('block', _BLOCKS)
+@pytest.mark.parametrize('block', sorted(_BORROWED))
 def test_borrowed_blockstate_draws_the_block_only_in_its_state(block: str) -> None:
-    """Test the stem's blockstate draws the block when all six faces are off, and vanilla's models in all 63 others.
+    """Test a huge-mushroom block's blockstate draws the block when all six faces are off, and vanilla's in the 63 others.
 
-    Its parts name only vanilla's stem models and the pack's own block, and the block's part is the last.
+    Its parts name only vanilla's own models for that block and the pack's own block, and the block's part is the last.
     """
-    blockstate = json.loads((_ASSETS / 'minecraft' / 'blockstates' / f'{_BORROWED[block]}.json').read_text())
+    base = _BORROWED[block]
+    blockstate = json.loads((_ASSETS / 'minecraft' / 'blockstates' / f'{base}.json').read_text())
     parts = blockstate['multipart']
     ours = f'mobs:block/{block}'
-    assert {part['apply']['model'] for part in parts} == _STEM_MODELS | {ours}
+    vanilla = {f'minecraft:block/{base}', 'minecraft:block/mushroom_block_inside'}
+    assert {part['apply']['model'] for part in parts} == vanilla | {ours}
     assert parts[-1]['apply']['model'] == ours
     for values in itertools.product(('true', 'false'), repeat=len(_FACES)):
         state = dict(zip(_FACES, values))
@@ -174,7 +194,20 @@ def test_borrowed_blockstate_draws_the_block_only_in_its_state(block: str) -> No
         else:
             assert drawn
             assert ours not in drawn
-            assert set(drawn) <= _STEM_MODELS
+            assert set(drawn) <= vanilla
+
+
+@pytest.mark.parametrize('slab', sorted(_SLABS))
+def test_borrowed_slab_draws_every_state_as_ours(slab: str) -> None:
+    """Test the borrowed slab's blockstate draws its three states on the pack's own models: the slab, its top half, and
+    the full block for the double."""
+    full, base = _SLABS[slab]
+    blockstate = json.loads((_ASSETS / 'minecraft' / 'blockstates' / f'{base}.json').read_text())
+    assert blockstate == {'variants': {'type=bottom': {'model': f'mobs:block/{slab}'},
+                                       'type=double': {'model': f'mobs:block/{full}'},
+                                       'type=top': {'model': f'mobs:block/{slab}_top'}}}
+    top = json.loads((_ASSETS / 'mobs' / 'models' / 'block' / f'{slab}_top.json').read_text())
+    assert top['parent'] == 'minecraft:block/slab_top'
 
 
 @pytest.mark.parametrize('model', _MODELS)

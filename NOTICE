@@ -24,7 +24,12 @@ client reads from its own assets at runtime. Its mushroom stem blockstate
 (packs/mobs/files/assets/minecraft/blockstates/mushroom_stem.json) likewise
 contains no pixels: it names the vanilla block models minecraft:block/
 mushroom_stem and minecraft:block/mushroom_block_inside, read from the
-player's own client, and this project's own moldy oak planks model.
+player's own client, and this project's own moldy oak planks model. Since
+0.13.0 its brown and red mushroom block blockstates likewise name only
+minecraft:block/brown_mushroom_block, minecraft:block/red_mushroom_block,
+minecraft:block/mushroom_block_inside and this project's own palm log and
+fertilized sand models, and its petrified oak slab blockstate names only this
+project's own palm slab and palm planks models.
 
 NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR
 MICROSOFT.
