@@ -28,6 +28,7 @@ _ITEMS = (
     'peg_leg',
     'crocofang_tooth',
     'throwing_knife',
+    'coconut',
 )
 _MODELS = (
     'blob',
@@ -62,6 +63,7 @@ _MODELS = (
     'infernoillager',
     'simphtomer',
     'crocofang',
+    'goblin',
 )
 _BLOCKS = ('moldy_oak_planks', 'fertilized_sand', 'palm_log', 'palm_planks', 'palm_slab')
 _BORROWED = {
