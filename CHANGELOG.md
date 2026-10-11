@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.14.0] - 2026-10-11
+
+The mobs pack's twelfth batch: Daxton's Goblin and the coconut, the Crocofang restyled on four legs and a shark-tooth Crocofang Tooth.
+
+### Added
+
+- `mobs` pack: the Goblin as a BetterModel 3.5.0 display model; and one item, the Coconut (`mobs:coconut`).
+
+### Changed
+
+- `mobs` pack: the Crocofang is redrawn on four legs, in ravager greys with a saddle: its eight models (`crocofang_arm_l_1.json`, `crocofang_arm_r_1.json`, `crocofang_h_head_1.json`, `crocofang_jaw_1.json`, `crocofang_leg_l_1.json`, `crocofang_leg_r_1.json`, `crocofang_tail_1.json`, `crocofang_torso_1.json`) and its texture (`crocofang_crocofang.png`) change; its bones keep their names, so its item definitions do not. The Crocofang Tooth (`mobs:crocofang_tooth`) is redrawn as a pale shark tooth (`crocofang_tooth.png`). Every other existing model, texture and item is unchanged, and so is the pack icon.
+
 ## [0.13.0] - 2026-10-07
 
 The mobs pack's eleventh batch: Daxton's Oasis blocks, the Palm Log, the Palm Planks, the Palm Slab and Fertilized Sand.
