@@ -29,6 +29,8 @@ _ITEMS = (
     'crocofang_tooth',
     'throwing_knife',
     'coconut',
+    'redstone_golem_head',
+    'redstone_golem_head_glow',
 )
 _MODELS = (
     'blob',
@@ -64,6 +66,8 @@ _MODELS = (
     'simphtomer',
     'crocofang',
     'goblin',
+    'charged_redstone_golem',
+    'redstone_golem',
 )
 _BLOCKS = ('moldy_oak_planks', 'fertilized_sand', 'palm_log', 'palm_planks', 'palm_slab')
 _BORROWED = {
