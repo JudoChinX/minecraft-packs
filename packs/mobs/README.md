@@ -38,6 +38,8 @@ Every custom mob look on the server this repository serves, as one resource pack
   the Crocofang Tooth as a shark tooth.
 - **Daxton's thirteenth batch**, from the same pipeline: the Charged Redstone Golem and the Redstone Golem, and
   the Redstone Golem Head.
+- **Daxton's fourteenth batch**, from the same pipeline: the Archevoker and the Miner, each wearing the illager face
+  (below).
 - **Thirteen items** under `assets/mobs/`: Jello, the Harmonizer Tentacle, the Cooked Harmonizer Tentacle, the Tropical
   Slime, the Orb of Dominance, the Ancient Callings, the Cutlass, the Peg Leg, the Crocofang Tooth, the Throwing Knife,
   the Coconut, the Redstone Golem Head and the Moldy Oak Planks, for items carrying an `item_model` of `mobs:jello`,
@@ -58,8 +60,8 @@ texture.
 
 ## The illager faces
 
-The Summoner, the Enchanter, the Arch-Illager, the five pirates, the Pirate Captain, the Geomancer, the Infernoillager
-and the Simphtomer wear the vanilla illager face, the one the pillager, the vindicator
+The Summoner, the Enchanter, the Arch-Illager, the five pirates, the Pirate Captain, the Geomancer, the Infernoillager,
+the Simphtomer, the Archevoker and the Miner wear the vanilla illager face, the one the pillager, the vindicator
 and the evoker share, without the pack carrying it. Their head and nose use a second texture,
 `bettermodel:item/<model>_illager_face`, laid out like the vanilla illager texture. The pack ships that texture as an
 original stand-in, `assets/bettermodel/textures/item/<model>_illager_face.png`: a grey-green illager-style face drawn

@@ -68,6 +68,8 @@ _MODELS = (
     'goblin',
     'charged_redstone_golem',
     'redstone_golem',
+    'archevoker',
+    'miner',
 )
 _BLOCKS = ('moldy_oak_planks', 'fertilized_sand', 'palm_log', 'palm_planks', 'palm_slab')
 _BORROWED = {
