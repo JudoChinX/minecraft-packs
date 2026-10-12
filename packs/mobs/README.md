@@ -36,11 +36,15 @@ Every custom mob look on the server this repository serves, as one resource pack
   `cube_column`), Fertilized Sand, the Palm Planks and the Palm Slab (below).
 - **Daxton's twelfth batch**, from the same pipeline: the Goblin and the Coconut; the Crocofang redrawn on four legs and
   the Crocofang Tooth as a shark tooth.
-- **Twelve items** under `assets/mobs/`: Jello, the Harmonizer Tentacle, the Cooked Harmonizer Tentacle, the Tropical
+- **Daxton's thirteenth batch**, from the same pipeline: the Charged Redstone Golem and the Redstone Golem, and
+  the Redstone Golem Head.
+- **Thirteen items** under `assets/mobs/`: Jello, the Harmonizer Tentacle, the Cooked Harmonizer Tentacle, the Tropical
   Slime, the Orb of Dominance, the Ancient Callings, the Cutlass, the Peg Leg, the Crocofang Tooth, the Throwing Knife,
-  the Coconut and the Moldy Oak Planks, for items carrying an `item_model` of `mobs:jello`, `mobs:harmonizer_tentacle`,
-  `mobs:cooked_harmonizer_tentacle`, `mobs:tropical_slime`, `mobs:orb_of_dominance`, `mobs:ancient_callings`,
-  `mobs:cutlass`, `mobs:peg_leg`, `mobs:crocofang_tooth`, `mobs:throwing_knife`, `mobs:coconut` or `mobs:moldy_oak_planks`. The Orb of Dominance, the Arch-Illager's trophy, is one cube that glows at full brightness
+  the Coconut, the Redstone Golem Head and the Moldy Oak Planks, for items carrying an `item_model` of `mobs:jello`,
+  `mobs:harmonizer_tentacle`, `mobs:cooked_harmonizer_tentacle`, `mobs:tropical_slime`, `mobs:orb_of_dominance`,
+  `mobs:ancient_callings`, `mobs:cutlass`, `mobs:peg_leg`, `mobs:crocofang_tooth`, `mobs:throwing_knife`, `mobs:coconut`,
+  `mobs:redstone_golem_head` (with `mobs:redstone_golem_head_glow`, the placed head's glowing eyes) or
+  `mobs:moldy_oak_planks`. The Orb of Dominance, the Arch-Illager's trophy, is one cube that glows at full brightness
   (`light_emission` 15). The Ancient Callings is a black, gold and sculk-teal book, original art. The Cutlass and the
   Throwing Knife are handheld models. The Moldy Oak Planks is a block model (`mobs:block/moldy_oak_planks`, a `cube_all`), and the
   placed block is drawn through `assets/minecraft/blockstates/mushroom_stem.json` (below).

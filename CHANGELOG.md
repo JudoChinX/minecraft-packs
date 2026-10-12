@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.15.0] - 2026-10-11
+
+The mobs pack's thirteenth batch: Daxton's Redstone Golem, normal and charged, and the Redstone Golem Head.
+
+### Added
+
+- `mobs` pack: two more mobs as BetterModel 3.5.0 display models — the Charged Redstone Golem and the Redstone Golem; and one item, the Redstone Golem Head (`mobs:redstone_golem_head`), with a second model for the placed head's glowing eyes (`mobs:redstone_golem_head_glow`). Every other existing model, texture and item is unchanged, and so is the pack icon.
+
 ## [0.14.0] - 2026-10-11
 
 The mobs pack's twelfth batch: Daxton's Goblin and the coconut, the Crocofang restyled on four legs and a shark-tooth Crocofang Tooth.
