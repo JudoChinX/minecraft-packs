@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.16.0] - 2026-10-12
+
+The mobs pack's fourteenth batch: Daxton's Miner and Archevoker.
+
+### Added
+
+- `mobs` pack: two more mobs as BetterModel 3.5.0 display models — the Archevoker and the Miner, each with its stand-in illager face texture (original), `bettermodel:item/archevoker_illager_face` and `bettermodel:item/miner_illager_face`, for the atlas to replace.
+
+### Changed
+
+- `mobs` pack: the items atlas, `assets/minecraft/atlases/items.json`, routes the client's pillager face to the Archevoker and the Miner too (two `minecraft:single` sources more). It only names the vanilla textures; no Mojang pixels ship. Every other existing model, texture and item is unchanged, and so is the pack icon.
+
 ## [0.15.0] - 2026-10-11
 
 The mobs pack's thirteenth batch: Daxton's Redstone Golem, normal and charged, and the Redstone Golem Head.
