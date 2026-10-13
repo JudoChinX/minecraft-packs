@@ -28,6 +28,11 @@
     {
       "type": "minecraft:single",
       "resource": "minecraft:entity/illager/pillager",
+      "sprite": "bettermodel:item/iceologer_illager_face"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "minecraft:entity/illager/pillager",
       "sprite": "bettermodel:item/infernoillager_illager_face"
     },
     {
@@ -74,6 +79,11 @@
       "type": "minecraft:single",
       "resource": "minecraft:entity/illager/pillager",
       "sprite": "bettermodel:item/summoner_illager_face"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "minecraft:entity/illager/pillager",
+      "sprite": "bettermodel:item/wielder_illager_face"
     }
   ]
 }

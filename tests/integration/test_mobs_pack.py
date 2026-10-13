@@ -70,6 +70,10 @@ _MODELS = (
     'redstone_golem',
     'archevoker',
     'miner',
+    'iceologer',
+    'magger',
+    'wicked_magger',
+    'wielder',
 )
 _BLOCKS = ('moldy_oak_planks', 'fertilized_sand', 'palm_log', 'palm_planks', 'palm_slab')
 _BORROWED = {
