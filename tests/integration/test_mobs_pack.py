@@ -31,6 +31,7 @@ _ITEMS = (
     'coconut',
     'redstone_golem_head',
     'redstone_golem_head_glow',
+    'wicked_geomancers_necklace',
 )
 _MODELS = (
     'blob',
@@ -74,6 +75,7 @@ _MODELS = (
     'magger',
     'wicked_magger',
     'wielder',
+    'wicked_geomancer',
 )
 _BLOCKS = ('moldy_oak_planks', 'fertilized_sand', 'palm_log', 'palm_planks', 'palm_slab')
 _BORROWED = {
