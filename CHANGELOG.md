@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.18.0] - 2026-10-12
+
+The mobs pack's sixteenth batch: Daxton's Wicked Geomancer and its necklace.
+
+### Added
+
+- `mobs` pack: one more mob as a BetterModel 3.5.0 display model — the Wicked Geomancer, with its stand-in illager face texture (original), `bettermodel:item/wicked_geomancer_illager_face`, for the atlas to replace — and one item, the Wicked Geomancer's Necklace (`mobs:wicked_geomancers_necklace`, an original 16 px texture).
+
+### Changed
+
+- `mobs` pack: the items atlas, `assets/minecraft/atlases/items.json`, routes the client's pillager face to the Wicked Geomancer too (one `minecraft:single` source more). It only names the vanilla textures; no Mojang pixels ship. Every other existing model, texture and item is unchanged, and so is the pack icon.
+
 ## [0.17.0] - 2026-10-12
 
 The mobs pack's fifteenth batch: Daxton's Iceologer, Wielder, Magger and Wicked Magger.
