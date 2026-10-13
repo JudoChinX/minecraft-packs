@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.19.0] - 2026-10-13
+
+The mobs pack's seventeenth batch: Daxton's Redstone Golem, Charged Redstone Golem and Archevoker, redrawn after his pictures.
+
+### Added
+
+- `mobs` pack: stone skin textures (original) for the three redrawn mobs, one texel a pixel on 64 x 64 sheets: `bettermodel:item/redstone_golem_stone_1` to `_5`, `bettermodel:item/charged_redstone_golem_stone_1` to `_5` and `bettermodel:item/archevoker_stone_1`; and the Charged Redstone Golem's glow textures, `bettermodel:item/charged_redstone_golem_glow_1` to `_4`, which carry its lit cracks and nothing else.
+
+### Changed
+
+- `mobs` pack: the Redstone Golem and the Charged Redstone Golem are redrawn as stone bricks and cobbles with branching cracks (dark red with patches of redstone; on the charged one orange to yellow and lit), with a bigger head and shoulders; the Archevoker's robe opens down the front (gold trim, an orange lining, near-black between) and its head, shoulder pads, hands and legs are speckled stone. Their display models and palette textures change; the Archevoker's face is still the client's pillager face by the atlas, so no Mojang pixels ship. Every other existing model, texture and item is unchanged, and so is the pack icon.
+
 ## [0.18.0] - 2026-10-12
 
 The mobs pack's sixteenth batch: Daxton's Wicked Geomancer and its necklace.
