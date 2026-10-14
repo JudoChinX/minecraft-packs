@@ -150,9 +150,12 @@ jobs:
 
       - name: Create GitHub Release
         run: |
-          gh release create "$GITHUB_REF_NAME" dist/*.zip dist/*.zip.sha1 \
+          VERSION="${GITHUB_REF_NAME#v}"
+          cp "dist/mobs-$VERSION.zip" dist/mobs.zip
+          gh release create "$GITHUB_REF_NAME" dist/*-"$VERSION".zip dist/*-"$VERSION".zip.sha1 dist/mobs.zip \
             --title "$GITHUB_REF_NAME" \
             --notes-file release-notes.md \
-            --verify-tag
+            --verify-tag \
+            --latest=false
         env:
           GH_TOKEN: ${{ github.token }}

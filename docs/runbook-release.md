@@ -63,6 +63,8 @@ git tag vX.Y.Z
 git push origin vX.Y.Z
 ```
 
+The mob skinner's workflow (`JudoChinX/minecraft` `skin.yml`) is the one exception to the pull request flow: it commits a skin's sprites and version straight to `main` and tags it. A release is never latest when published; the deploy that puts it on the server marks it latest.
+
 ### 4. Confirm the release
 
 - The release exists at `https://github.com/JudoChinX/minecraft-packs/releases/tag/vX.Y.Z`
@@ -72,8 +74,8 @@ git push origin vX.Y.Z
 
 ### 5. Update servers
 
-Point each server's resource pack URL at the new release asset and set its SHA-1 from the matching
-`.sha1`, in the same change.
+Mark the release latest (`gh release edit vX.Y.Z --latest`): the server's pack URL is fixed
+(`https://github.com/JudoChinX/minecraft-packs/releases/latest/download/mobs.zip`).
 
 ---
 
