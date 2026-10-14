@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Releases carry a fixed-name `mobs.zip` asset and are published not-latest.
+
 ## [0.19.0] - 2026-10-13
 
 The mobs pack's seventeenth batch: Daxton's Redstone Golem, Charged Redstone Golem and Archevoker, redrawn after his pictures.
