@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.20.4] - 2026-10-15
+
+minecraft-ref: 2b2d56d38b7fb6d29ffbac147b75f2ce05f5715a
+
+### Changed
+
+- New Piston Golem skin, painted by Daxton.
+
 ## [0.20.3] - 2026-10-15
 
 minecraft-ref: 7613f27d17f2206ffe75bda3fe39dfa718a832de
