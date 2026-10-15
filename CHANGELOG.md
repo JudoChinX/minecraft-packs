@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.20.5] - 2026-10-15
+
+minecraft-ref: c621e6c6a339068fcaad592dc1412bc21651c70e
+
+### Changed
+
+- New Tuff Golem skin, painted by Daxton.
+
 ## [0.20.4] - 2026-10-15
 
 minecraft-ref: 2b2d56d38b7fb6d29ffbac147b75f2ce05f5715a
