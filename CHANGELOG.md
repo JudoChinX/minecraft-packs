@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.19.6] - 2026-10-15
+
+minecraft-ref: e571d331fd0704024968467ed06d3c962d340ee2
+
+### Changed
+
+- New Geomancer skin, painted by Daxton.
+
 ## [0.19.5] - 2026-10-15
 
 minecraft-ref: 77565ad0d1a29be85e82f7b40a9a1fc75fc6419a
