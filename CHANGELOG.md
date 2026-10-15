@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.19.5] - 2026-10-15
+
+minecraft-ref: 77565ad0d1a29be85e82f7b40a9a1fc75fc6419a
+
+### Changed
+
+- New Iceologer skin, painted by Daxton.
+
 ## [0.19.4] - 2026-10-14
 
 minecraft-ref: f5a3d965c8b7f64dc9adb2c9445bd5842939be3c
