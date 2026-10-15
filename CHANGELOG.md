@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.19.2] - 2026-10-14
+
+minecraft-ref: a9a3e83b7cdacb9b5d346e621646dbaef1067b2b
+
+### Changed
+
+- New Jellyfish skin, painted by Daxton.
+
 ## [0.19.1] - 2026-10-14
 
 minecraft-ref: a78af36824b322da748424c3e72a1c9b1ec43cba
