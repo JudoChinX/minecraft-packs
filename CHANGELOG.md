@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.19.10] - 2026-10-15
+
+minecraft-ref: 9ca9bffb89d9dde203f016c8274d97f924c05c03
+
+### Changed
+
+- New Goblin skin, painted by Daxton.
+
 ## [0.19.9] - 2026-10-15
 
 minecraft-ref: 9dc88db1b16fdae2aab877ce0d6b75022471293f
