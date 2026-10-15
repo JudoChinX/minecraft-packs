@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.20.0] - 2026-10-15
+
+The mobs pack's eighteenth batch: Daxton's Redstone Golems reshaped and his Wicked Geomancer glowing.
+
+### Changed
+
+- `mobs` pack: the Redstone Golem Head (`mobs:redstone_golem_head`), the Redstone Golem Head Glow (`mobs:redstone_golem_head_glow`), the Wicked Geomancer's Necklace (`mobs:wicked_geomancers_necklace`), the Charged Redstone Golem, the Redstone Golem and the Wicked Geomancer change: `redstone_golem_head.png`, `redstone_golem_head_glow.png`, `wicked_geomancers_necklace.png`, `charged_redstone_golem_arm_l_1.json`, `charged_redstone_golem_arm_r_1.json`, `charged_redstone_golem_h_head_1.json`, `charged_redstone_golem_leg_l_1.json`, `charged_redstone_golem_leg_r_1.json`, `charged_redstone_golem_torso_1.json`, `charged_redstone_golem_charged_redstone_golem.png`, `charged_redstone_golem_glow_1.png`, `charged_redstone_golem_glow_2.png`, `charged_redstone_golem_glow_3.png`, `charged_redstone_golem_glow_4.png`, `charged_redstone_golem_stone_1.png`, `charged_redstone_golem_stone_2.png`, `charged_redstone_golem_stone_3.png`, `charged_redstone_golem_stone_4.png`, `charged_redstone_golem_stone_5.png`, `redstone_golem_arm_l_1.json`, `redstone_golem_arm_r_1.json`, `redstone_golem_h_head_1.json`, `redstone_golem_leg_l_1.json`, `redstone_golem_leg_r_1.json`, `redstone_golem_torso_1.json`, `redstone_golem_redstone_golem.png`, `redstone_golem_stone_1.png`, `redstone_golem_stone_2.png`, `redstone_golem_stone_3.png`, `redstone_golem_stone_4.png`, `redstone_golem_stone_5.png`, `wicked_geomancer_arm_l_1.json`, `wicked_geomancer_arm_r_1.json`, `wicked_geomancer_h_head_1.json`, `wicked_geomancer_leg_l_1.json`, `wicked_geomancer_leg_r_1.json`, `wicked_geomancer_staff_1.json` and `wicked_geomancer_torso_1.json` change, `charged_redstone_golem_glow_5.png`, `charged_redstone_golem_glow_6.png`, `charged_redstone_golem_stone_6.png`, `redstone_golem_stone_6.png`, `wicked_geomancer_glow_1.png`, `wicked_geomancer_robe_1.png` and `wicked_geomancer_robe_2.png` are added, and `wicked_geomancer_wicked_geomancer.png` is removed. Every other existing model, texture and item is unchanged, and so is the pack icon.
+
 ## [0.19.2] - 2026-10-14
 
 minecraft-ref: a9a3e83b7cdacb9b5d346e621646dbaef1067b2b
