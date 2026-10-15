@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.20.1] - 2026-10-15
+
+minecraft-ref: 6347a3d3e9cf732da435026f00f10f3b1964b5e1
+
+### Changed
+
+- New Pirate 1 skin, painted by Daxton.
+
 ## [0.20.0] - 2026-10-15
 
 The mobs pack's eighteenth batch: Daxton's Redstone Golems reshaped and his Wicked Geomancer glowing.
