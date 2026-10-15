@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.19.9] - 2026-10-15
+
+minecraft-ref: 9dc88db1b16fdae2aab877ce0d6b75022471293f
+
+### Changed
+
+- New Archevoker skin, painted by Daxton.
+
 ## [0.19.8] - 2026-10-15
 
 minecraft-ref: 72d180a162e412b992548078ad5a62a85028962c
