@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.19.4] - 2026-10-14
+
+minecraft-ref: f5a3d965c8b7f64dc9adb2c9445bd5842939be3c
+
+### Changed
+
+- New Crocofang skin, painted by Daxton.
+
 ## [0.19.3] - 2026-10-14
 
 minecraft-ref: ba9c48a73f3a283a2ee18621311385fa6cb270ec
