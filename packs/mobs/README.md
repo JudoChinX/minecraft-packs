@@ -45,6 +45,8 @@ Every custom mob look on the server this repository serves, as one resource pack
 - **Daxton's sixteenth batch**, from the same pipeline: the Wicked Geomancer, wearing the illager face (below).
 - **Daxton's nineteenth batch**, from the same pipeline: the Echo Shard Golem, the Invader (wearing the illager
   face, below), the Lapis Golem and the Monkey.
+- **Daxton's 22nd batch**, from the same pipeline: the Crystallized, the Burned, the Anemone (pink, blue, yellow and
+  red) and the Frilled Anemone, with the Geode, the Geode Spear and the raw and cooked Anemone Membrane.
 - **Sixteen items** under `assets/mobs/`: Jello, the Harmonizer Tentacle, the Cooked Harmonizer Tentacle, the Tropical
   Slime, the Orb of Dominance, the Ancient Callings, the Cutlass, the Peg Leg, the Crocofang Tooth, the Throwing Knife,
   the Coconut, the Redstone Golem Head, the Wicked Geomancer's Necklace, the Moldy Oak Planks, the Banana and the
