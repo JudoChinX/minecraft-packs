@@ -32,6 +32,8 @@ _ITEMS = (
     'redstone_golem_head',
     'redstone_golem_head_glow',
     'wicked_geomancers_necklace',
+    'banana',
+    'illager_crown',
 )
 _MODELS = (
     'blob',
@@ -76,6 +78,10 @@ _MODELS = (
     'wicked_magger',
     'wielder',
     'wicked_geomancer',
+    'echo_shard_golem',
+    'invader',
+    'lapis_golem',
+    'monkey',
 )
 _BLOCKS = ('moldy_oak_planks', 'fertilized_sand', 'palm_log', 'palm_planks', 'palm_slab')
 _BORROWED = {
@@ -252,6 +258,15 @@ def test_every_reference_resolves() -> None:
             candidates = [
                 _ASSETS / namespace / 'models' / f'{rest}.json',
                 _ASSETS / namespace / 'textures' / f'{rest}.png',
+                # An equipment asset's layer texture is read at textures/entity/equipment/<layer>/<name>.png.
+                *(
+                    [
+                        _ASSETS / namespace / 'textures' / 'entity' / 'equipment' / layer / f'{rest}.png'
+                        for layer in json.loads(path.read_text()).get('layers', {})
+                    ]
+                    if path.parent.name == 'equipment'
+                    else []
+                ),
             ]
             if not any(c.is_file() for c in candidates):
                 missing.append(f'{path.relative_to(_ASSETS)}: {ref}')

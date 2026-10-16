@@ -1,3 +1,3 @@
 """Build Minecraft Java resource packs reproducibly from official assets."""
 
-__version__ = '0.20.5'
+__version__ = '0.21.0'
