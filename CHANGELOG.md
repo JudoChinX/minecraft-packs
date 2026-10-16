@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.22.0] - 2026-10-16
+
+The mobs pack's twentieth batch: Daxton's Redstone Golems rebuilt after his picture, and his Wielder's wand, hair and cape.
+
+### Changed
+
+- `mobs` pack: the Redstone Golem and the Charged Redstone Golem redrawn: an upright block, a big head set into its top front, straight arms from shoulder blocks with two long fingers, short square legs, and large cobbles with red patches on the shoulders and veins elsewhere (the charged one's lit). The Wielder redrawn: a wand held out in its hand, tall ragged hair and a red-orange cape on a strap, on skins of its own (`wielder_robe_1-3.png`). The Redstone Golem Head's two textures (`mobs:redstone_golem_head`, `mobs:redstone_golem_head_glow`) redrawn to match. No mob or item is added or removed; as files only, `wielder_wielder.png` (unused), `redstone_golem_stone_6.png`, `charged_redstone_golem_stone_6.png` and `charged_redstone_golem_glow_5.png`/`_glow_6.png` are removed. Every other existing model, texture and item is unchanged, and so is the pack icon.
+
 ## [0.21.0] - 2026-10-16
 
 The mobs pack's nineteenth batch: the Echo Shard Golem, the Invader, the Lapis Golem and the Monkey.
