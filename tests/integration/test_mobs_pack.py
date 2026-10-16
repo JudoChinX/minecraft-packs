@@ -259,9 +259,14 @@ def test_every_reference_resolves() -> None:
                 _ASSETS / namespace / 'models' / f'{rest}.json',
                 _ASSETS / namespace / 'textures' / f'{rest}.png',
                 # An equipment asset's layer texture is read at textures/entity/equipment/<layer>/<name>.png.
-                *([_ASSETS / namespace / 'textures' / 'entity' / 'equipment' / layer / f'{rest}.png'
-                   for layer in json.loads(path.read_text()).get('layers', {})]
-                  if path.parent.name == 'equipment' else []),
+                *(
+                    [
+                        _ASSETS / namespace / 'textures' / 'entity' / 'equipment' / layer / f'{rest}.png'
+                        for layer in json.loads(path.read_text()).get('layers', {})
+                    ]
+                    if path.parent.name == 'equipment'
+                    else []
+                ),
             ]
             if not any(c.is_file() for c in candidates):
                 missing.append(f'{path.relative_to(_ASSETS)}: {ref}')
