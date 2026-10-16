@@ -142,6 +142,9 @@ jobs:
           python -m minecraft_packs build --check --out-dir dist
           python -m minecraft_packs verify dist/*.zip
 
+      - name: Zip the built mobs
+        run: python -m minecraft_packs built-mobs dist/built-mobs.zip
+
       - name: Extract changelog section
         run: |
           VERSION="${GITHUB_REF_NAME#v}"
@@ -152,7 +155,7 @@ jobs:
         run: |
           VERSION="${GITHUB_REF_NAME#v}"
           cp "dist/mobs-$VERSION.zip" dist/mobs.zip
-          gh release create "$GITHUB_REF_NAME" dist/*-"$VERSION".zip dist/*-"$VERSION".zip.sha1 dist/mobs.zip \
+          gh release create "$GITHUB_REF_NAME" dist/*-"$VERSION".zip dist/*-"$VERSION".zip.sha1 dist/mobs.zip dist/built-mobs.zip dist/built-mobs.sha256 \
             --title "$GITHUB_REF_NAME" \
             --notes-file release-notes.md \
             --verify-tag \
