@@ -38,6 +38,11 @@
     {
       "type": "minecraft:single",
       "resource": "minecraft:entity/illager/pillager",
+      "sprite": "bettermodel:item/invader_illager_face"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "minecraft:entity/illager/pillager",
       "sprite": "bettermodel:item/miner_illager_face"
     },
     {

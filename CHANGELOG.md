@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.21.0] - 2026-10-16
+
+The mobs pack's nineteenth batch: the Echo Shard Golem, the Invader, the Lapis Golem and the Monkey.
+
+### Added
+
+- `mobs` pack: four more mobs as BetterModel 3.5.0 display models — the Echo Shard Golem, the Invader, the Lapis Golem and the Monkey, and an original stand-in texture for the atlas to replace, `bettermodel:item/invader_illager_face`; and two items, the Banana (`mobs:banana`) and the Illager Crown (`mobs:illager_crown`).
+- `mobs` pack: `assets/mobs/equipment/illager_crown.json`.
+- `mobs` pack: `assets/mobs/textures/entity/equipment/humanoid/illager_crown.png`.
+
+### Changed
+
+- `mobs` pack: the items atlas, `assets/minecraft/atlases/items.json`, adds `minecraft:entity/illager/pillager` for the Invader. It only names the vanilla textures; no Mojang pixels ship. Every other existing model, texture and item is unchanged, and so is the pack icon.
+- Tests: the pack test resolves an equipment asset's layer textures (`textures/entity/equipment/<layer>/<name>.png`).
+
 ## [0.20.5] - 2026-10-15
 
 minecraft-ref: c621e6c6a339068fcaad592dc1412bc21651c70e
