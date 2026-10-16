@@ -142,3 +142,17 @@ def test_version(capsys: pytest.CaptureFixture[str]) -> None:
 
     assert exit_info.value.code == 0
     assert capsys.readouterr().out == f'python -m minecraft_packs {__version__}\n'
+
+
+def test_built_mobs(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
+    """Test built-mobs zips the source directory, writes the SHA-256 file and prints both paths and the digest."""
+    src = tmp_path / 'built-mobs'
+    src.mkdir()
+    (src / 'built_ant.json').write_text('{}', encoding='utf-8')
+    out = tmp_path / 'dist' / 'built-mobs.zip'
+
+    status = main(['built-mobs', str(out), '--src', str(src)])
+
+    digest = (tmp_path / 'dist' / 'built-mobs.sha256').read_text(encoding='utf-8').split()[0]
+    assert status == 0
+    assert capsys.readouterr().out == f'{out}\n{tmp_path / "dist" / "built-mobs.sha256"}\nBUILT_MOBS_SHA256={digest}\n'

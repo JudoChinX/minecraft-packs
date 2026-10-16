@@ -1,4 +1,4 @@
-"""Command-line interface: ``python -m minecraft_packs build|preview|verify``.
+"""Command-line interface: ``python -m minecraft_packs build|built-mobs|preview|verify``.
 
 Run it from the repository root. Results a script might consume (zip paths and SHA-1s) go to
 standard output; progress and errors go to standard error.
@@ -15,9 +15,12 @@ from minecraft_packs.archive import verify_zip
 from minecraft_packs.build import build_pack
 from minecraft_packs.build import preview_pack
 from minecraft_packs.build import record_expected_sha1
+from minecraft_packs.built_mobs import sha256_path
+from minecraft_packs.built_mobs import zip_bundle
 from minecraft_packs.config import load_packs
 from minecraft_packs.errors import PackError
 
+DEFAULT_BUILT_MOBS_DIR = Path('built-mobs')
 DEFAULT_CACHE_DIR = Path('.cache')
 DEFAULT_OUT_DIR = Path('dist')
 DEFAULT_PACKS_DIR = Path('packs')
@@ -61,6 +64,13 @@ def _build(args: argparse.Namespace) -> int:
     return 1 if args.check and mismatched else 0
 
 
+def _built_mobs(args: argparse.Namespace) -> int:
+    """Zip the built mobs, print the zip's and SHA-256 file's paths, and the SHA-256."""
+    digest = zip_bundle(args.src, args.out)
+    print(f'{args.out}\n{sha256_path(args.out)}\nBUILT_MOBS_SHA256={digest}')
+    return 0
+
+
 def _parser() -> argparse.ArgumentParser:
     """Build the argument parser."""
     parser = argparse.ArgumentParser(
@@ -78,6 +88,13 @@ def _parser() -> argparse.ArgumentParser:
     pin.add_argument('--update-expected', action='store_true', help="record each zip's SHA-1 in its expected.sha1")
     _add_source_options(build)
     build.set_defaults(handler=_build)
+
+    bundle = commands.add_parser('built-mobs', help='zip the built mobs into a deterministic zip with a .sha256 file')
+    bundle.add_argument('out', type=Path, metavar='OUT', help='the zip to write; its .sha256 file lands beside it')
+    bundle.add_argument(
+        '--src', type=Path, default=DEFAULT_BUILT_MOBS_DIR, help='directory of built mobs (default: built-mobs)'
+    )
+    bundle.set_defaults(handler=_built_mobs)
 
     preview = commands.add_parser('preview', help="render a review sheet of a pack's texture and front view")
     preview.add_argument('pack', metavar='PACK', help='the pack to preview')

@@ -104,7 +104,7 @@ If your contribution adds or changes a download, update SECURITY.md accordingly.
 
 ## Pull Request Process
 
-The mob skinner's workflow (`JudoChinX/minecraft` `skin.yml`) is the one exception to the pull request flow: it commits a skin's sprites and version straight to `main` and tags it. A release is never latest when published; the deploy that puts it on the server marks it latest.
+The `JudoChinX/minecraft` workflows `skin.yml`, `build.yml` and `undo.yml` are the exception to the pull request flow: each commits straight to `main` and tags it (`skin.yml` a skin's sprites and version; `build.yml` and `undo.yml` the `built-mobs/` directory). A release is never latest when published; the deploy that puts it on the server marks it latest.
 
 ### Before Creating a Pull Request
 
