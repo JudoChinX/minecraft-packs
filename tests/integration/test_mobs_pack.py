@@ -34,6 +34,10 @@ _ITEMS = (
     'wicked_geomancers_necklace',
     'banana',
     'illager_crown',
+    'anemone_membrane',
+    'cooked_anemone_membrane',
+    'geode',
+    'geode_spear',
 )
 _MODELS = (
     'blob',
@@ -82,6 +86,13 @@ _MODELS = (
     'invader',
     'lapis_golem',
     'monkey',
+    'anemone_blue',
+    'anemone_pink',
+    'anemone_red',
+    'anemone_yellow',
+    'burned',
+    'crystallized',
+    'frilled_anemone',
 )
 _BLOCKS = ('moldy_oak_planks', 'fertilized_sand', 'palm_log', 'palm_planks', 'palm_slab')
 _BORROWED = {

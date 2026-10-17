@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.23.0] - 2026-10-16
+
+The mobs pack's 22nd batch: the Crystallized, the Burned, the Anemone (pink, blue, yellow and red) and the Frilled Anemone.
+
+### Added
+
+- `mobs` pack: seven more mobs as BetterModel 3.5.0 display models — the Crystallized, the Burned, the Anemone (pink, blue, yellow and red) and the Frilled Anemone; and four items, the Anemone Membrane (`mobs:anemone_membrane`), the Cooked Anemone Membrane (`mobs:cooked_anemone_membrane`), the Geode (`mobs:geode`) and the Geode Spear (`mobs:geode_spear`). Every other existing model, texture and item is unchanged, and so is the pack icon.
+
 ## [0.22.0] - 2026-10-16
 
 The mobs pack's twentieth batch: Daxton's Redstone Golems rebuilt after his picture, and his Wielder's wand, hair and cape.
