@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.24.0] - 2026-10-17
+
+The mobs pack's 21st batch (look only): the Magger's and the Wicked Magger's capes sway behind them.
+
+### Changed
+
+- `mobs` pack: the Magger's and the Wicked Magger's capes hang behind the skirt and legs instead of inside them (`magger_mantle_1.json`, `wicked_magger_mantle_1.json`). Every other existing model, texture and item is unchanged, and so is the pack icon.
+
 ## [0.23.0] - 2026-10-16
 
 The mobs pack's 22nd batch: the Crystallized, the Burned, the Anemone (pink, blue, yellow and red) and the Frilled Anemone.
