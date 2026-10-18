@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.25.0] - 2026-10-18
+
+The mobs pack's 23rd and 24th batches: the Mallard Duck, the Crab (blue, green and red), the Scorched, the Illadator and the Sword Illadator.
+
+### Added
+
+- `mobs` pack: seven more mobs as BetterModel 3.5.0 display models — the Mallard Duck, the Crab (blue, green and red), the Scorched, the Illadator and the Sword Illadator, and original stand-in textures for the atlas to replace, `bettermodel:item/illadator_illager_face` and `bettermodel:item/illadator_sword_illager_face`; and three items, the Ancient Staff (`mobs:ancient_staff`), the Crab Claw (`mobs:crab_claw`) and the Illadator Crown (`mobs:illadator_crown`).
+- `mobs` pack: `assets/mobs/equipment/illadator_crown.json`.
+- `mobs` pack: `assets/mobs/textures/entity/equipment/humanoid/illadator_crown.png`.
+
+### Changed
+
+- `mobs` pack: the items atlas, `assets/minecraft/atlases/items.json`, adds `minecraft:entity/illager/pillager` for the Illadator and the Sword Illadator. It only names the vanilla textures; no Mojang pixels ship. Every other existing model, texture and item is unchanged, and so is the pack icon.
+
 ## [0.24.0] - 2026-10-17
 
 The mobs pack's 21st batch (look only): the Magger's and the Wicked Magger's capes sway behind them.

@@ -38,6 +38,9 @@ _ITEMS = (
     'cooked_anemone_membrane',
     'geode',
     'geode_spear',
+    'ancient_staff',
+    'crab_claw',
+    'illadator_crown',
 )
 _MODELS = (
     'blob',
@@ -93,6 +96,13 @@ _MODELS = (
     'burned',
     'crystallized',
     'frilled_anemone',
+    'crab_blue',
+    'crab_green',
+    'crab_red',
+    'illadator',
+    'illadator_sword',
+    'mallard_duck',
+    'scorched',
 )
 _BLOCKS = ('moldy_oak_planks', 'fertilized_sand', 'palm_log', 'palm_planks', 'palm_slab')
 _BORROWED = {

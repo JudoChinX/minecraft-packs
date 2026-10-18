@@ -33,6 +33,16 @@
     {
       "type": "minecraft:single",
       "resource": "minecraft:entity/illager/pillager",
+      "sprite": "bettermodel:item/illadator_illager_face"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "minecraft:entity/illager/pillager",
+      "sprite": "bettermodel:item/illadator_sword_illager_face"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "minecraft:entity/illager/pillager",
       "sprite": "bettermodel:item/infernoillager_illager_face"
     },
     {
