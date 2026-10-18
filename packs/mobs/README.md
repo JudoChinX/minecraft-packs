@@ -47,6 +47,9 @@ Every custom mob look on the server this repository serves, as one resource pack
   face, below), the Lapis Golem and the Monkey.
 - **Daxton's 22nd batch**, from the same pipeline: the Crystallized, the Burned, the Anemone (pink, blue, yellow and
   red) and the Frilled Anemone, with the Geode, the Geode Spear and the raw and cooked Anemone Membrane.
+- **Daxton's 23rd and 24th batches**, from the same pipeline: the Mallard Duck, the Crab (blue, green and red) and
+  the Scorched, with the Crab Claw and the Ancient Staff; and the Illadator and the Sword Illadator, each wearing
+  the illager face (below), with the Illadator Crown.
 - **Sixteen items** under `assets/mobs/`: Jello, the Harmonizer Tentacle, the Cooked Harmonizer Tentacle, the Tropical
   Slime, the Orb of Dominance, the Ancient Callings, the Cutlass, the Peg Leg, the Crocofang Tooth, the Throwing Knife,
   the Coconut, the Redstone Golem Head, the Wicked Geomancer's Necklace, the Moldy Oak Planks, the Banana and the
@@ -71,7 +74,7 @@ texture.
 ## The illager faces
 
 The Summoner, the Enchanter, the Arch-Illager, the five pirates, the Pirate Captain, the Geomancer, the Infernoillager,
-the Simphtomer, the Archevoker, the Miner, the Iceologer, the Wielder, the Wicked Geomancer and the Invader wear the vanilla illager face, the one the pillager, the vindicator
+the Simphtomer, the Archevoker, the Miner, the Iceologer, the Wielder, the Wicked Geomancer, the Invader, the Illadator and the Sword Illadator wear the vanilla illager face, the one the pillager, the vindicator
 and the evoker share, without the pack carrying it. Their head and nose use a second texture,
 `bettermodel:item/<model>_illager_face`, laid out like the vanilla illager texture. The pack ships that texture as an
 original stand-in, `assets/bettermodel/textures/item/<model>_illager_face.png`: a grey-green illager-style face drawn
