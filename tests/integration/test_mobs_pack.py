@@ -2,7 +2,8 @@
 
 The pack is its files alone, with no vanilla source to download, and every mob's models and items resolve to files that
 exist. Its files under ``assets/minecraft/`` are the items atlas, which only names the client's own illager and pig
-textures, and the blockstate of each borrowed block, which only names the client's own block models and the pack's own.
+textures, and the blockstate of each borrowed block (and of the tripwire, whose disarmed state draws the Spike Trap),
+which only names the client's own block models and the pack's own.
 """
 
 import itertools
@@ -41,6 +42,8 @@ _ITEMS = (
     'ancient_staff',
     'crab_claw',
     'illadator_crown',
+    'spike_trap',
+    'urchin_spikes',
 )
 _MODELS = (
     'blob',
@@ -103,6 +106,7 @@ _MODELS = (
     'illadator_sword',
     'mallard_duck',
     'scorched',
+    'sea_urchin',
 )
 _BLOCKS = ('moldy_oak_planks', 'fertilized_sand', 'palm_log', 'palm_planks', 'palm_slab')
 _BORROWED = {
@@ -113,6 +117,8 @@ _BORROWED = {
 # The borrowed slab (mobs 11): the slab's id, its full block's id and the vanilla slab borrowed whole, every state ours.
 _SLABS = {'palm_slab': ('palm_planks', 'petrified_oak_slab')}
 _FULL_OF = {full: slab for slab, (full, _) in _SLABS.items()}
+# The borrowed tripwire state (mobs 25): vanilla's tripwire, its disarmed variants drawn as the Spike Trap, open or shut.
+_TRIPWIRE = ('tripwire', ('spike_trap', 'spike_trap_shut'))
 # A borrowed block drawn as a column: its end texture (mobs 11's palm log, ringed ends).
 _COLUMNS = {'palm_log': 'palm_log_top'}
 _FACES = ('north', 'east', 'south', 'west', 'up', 'down')
@@ -130,8 +136,8 @@ def test_mobs_is_a_resource_pack_for_26_3() -> None:
 def test_mobs_recolours_nothing() -> None:
     """Test the pack takes nothing from the client jar: no Illusioner recolour, so the build downloads nothing for it.
 
-    The files it may hold under ``assets/minecraft/`` are the items atlas and each borrowed block's blockstate: JSON
-    naming vanilla textures and block models, no pixels.
+    The files it may hold under ``assets/minecraft/`` are the items atlas, each borrowed block's blockstate and the
+    tripwire's: JSON naming vanilla textures and block models, no pixels.
     """
     assert _MOBS.vanilla is None
     assert not _MOBS.textures
@@ -141,6 +147,7 @@ def test_mobs_recolours_nothing() -> None:
     )
     allowed = ['minecraft/atlases/items.json'] + [f'minecraft/blockstates/{base}.json' for base in _BORROWED.values()]
     allowed += [f'minecraft/blockstates/{base}.json' for _, base in _SLABS.values()]
+    allowed.append(f'minecraft/blockstates/{_TRIPWIRE[0]}.json')
     assert shipped == sorted(allowed)
 
 
@@ -259,6 +266,25 @@ def test_borrowed_slab_draws_every_state_as_ours(slab: str) -> None:
     }
     top = json.loads((_ASSETS / 'mobs' / 'models' / 'block' / f'{slab}_top.json').read_text())
     assert top['parent'] == 'minecraft:block/slab_top'
+
+
+def test_tripwire_draws_the_trap_only_when_disarmed() -> None:
+    """Test the tripwire's blockstate keeps vanilla's 32 armed variants and draws the 32 disarmed ones as the Spike Trap.
+
+    Armed variants name only the client's own tripwire models; disarmed ones only the trap's open and shut models.
+    """
+    base, ours = _TRIPWIRE
+    variants = json.loads((_ASSETS / 'minecraft' / 'blockstates' / f'{base}.json').read_text())['variants']
+    assert len(variants) == 64
+    for key, variant in variants.items():
+        state = dict(pair.split('=') for pair in key.split(','))
+        assert set(state) == {'attached', 'disarmed', 'east', 'north', 'south', 'west'}
+        if state['disarmed'] == 'true':
+            assert variant['model'] in {f'mobs:block/{model}' for model in ours}
+        else:
+            assert re.fullmatch(r'minecraft:block/tripwire(_attached)?_n[sew]*', variant['model'])
+    for model in ours:
+        assert (_ASSETS / 'mobs' / 'models' / 'block' / f'{model}.json').is_file()
 
 
 @pytest.mark.parametrize('model', _MODELS)

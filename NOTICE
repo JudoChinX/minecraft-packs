@@ -29,7 +29,9 @@ player's own client, and this project's own moldy oak planks model. Since
 minecraft:block/brown_mushroom_block, minecraft:block/red_mushroom_block,
 minecraft:block/mushroom_block_inside and this project's own palm log and
 fertilized sand models, and its petrified oak slab blockstate names only this
-project's own palm slab and palm planks models.
+project's own palm slab and palm planks models. Since 0.26.0 its tripwire
+blockstate likewise names only the vanilla minecraft:block/tripwire_* models
+and this project's own spike trap models.
 
 NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR
 MICROSOFT.
