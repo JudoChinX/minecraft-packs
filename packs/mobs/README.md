@@ -50,6 +50,8 @@ Every custom mob look on the server this repository serves, as one resource pack
 - **Daxton's 23rd and 24th batches**, from the same pipeline: the Mallard Duck, the Crab (blue, green and red) and
   the Scorched, with the Crab Claw and the Ancient Staff; and the Illadator and the Sword Illadator, each wearing
   the illager face (below), with the Illadator Crown.
+- **Daxton's 25th batch**, from the same pipeline: the Sea Urchin, with the Urchin Spikes and the Spike Trap (a
+  borrowed tripwire state, open and shut; below).
 - **Sixteen items** under `assets/mobs/`: Jello, the Harmonizer Tentacle, the Cooked Harmonizer Tentacle, the Tropical
   Slime, the Orb of Dominance, the Ancient Callings, the Cutlass, the Peg Leg, the Crocofang Tooth, the Throwing Knife,
   the Coconut, the Redstone Golem Head, the Wicked Geomancer's Necklace, the Moldy Oak Planks, the Banana and the
@@ -67,7 +69,7 @@ Every custom mob look on the server this repository serves, as one resource pack
 Since 0.6.0 the Enchanter is the 3D model, and the pack no longer recolours the Illusioner: it holds no
 `assets/minecraft/` texture, and its build downloads nothing from Mojang. Its files under `assets/minecraft/` are the
 items atlas below and, since 0.10.0, the mushroom stem's blockstate (since 0.13.0 also the brown and red mushroom
-blocks' and the petrified oak slab's; below), all JSON files. The recolour lives on, unchanged, in the separate [`enchanter`](../enchanter/) pack. The
+blocks' and the petrified oak slab's; since 0.26.0 the tripwire's; below), all JSON files. The recolour lives on, unchanged, in the separate [`enchanter`](../enchanter/) pack. The
 pack's icon, `files/pack.png`, is a front view of the Enchanter model's head and hat, drawn from that model and its
 texture.
 
@@ -108,11 +110,17 @@ the petrified oak slab whole, a block survival play never sees: `petrified_oak_s
 halves as `mobs:block/palm_slab` and `mobs:block/palm_slab_top` (vanilla's `slab` and `slab_top` on the palm planks'
 texture) and its double as `mobs:block/palm_planks`.
 
+Since 0.26.0 the Spike Trap takes the tripwire's `disarmed=true` states, which a survival world never leaves at rest.
+`tripwire.json` is the client's own 32 tripwire variants, each narrowed to `disarmed=false` and naming only vanilla's
+`minecraft:block/tripwire_*` models, plus the 32 `disarmed=true` variants drawn as `mobs:block/spike_trap` (open) or
+`mobs:block/spike_trap_shut`. Every tripwire a player or a structure makes draws exactly as before.
+
 ## Licensing
 
 Every file under `files/` is original art; nothing is taken from Mojang's assets. The illager-face PNGs and the
 Hopping Pig's texture are original stand-ins, not copies of Mojang's textures. The items atlas only *references* the
 client's own `minecraft:entity/illager/pillager` and `minecraft:entity/pig/pig_temperate` textures by name, and the
 blockstates only *name* the client's own block models (`minecraft:block/mushroom_stem`,
-`minecraft:block/brown_mushroom_block`, `minecraft:block/red_mushroom_block`, `minecraft:block/mushroom_block_inside`)
+`minecraft:block/brown_mushroom_block`, `minecraft:block/red_mushroom_block`, `minecraft:block/mushroom_block_inside`,
+the `minecraft:block/tripwire_*` models)
 or the pack's own; the client reads them from its own assets at runtime; no Mojang pixels are shipped in the repository or the zip. The zip's expected SHA-1 is in [`expected.sha1`](expected.sha1).

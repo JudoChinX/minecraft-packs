@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.26.0] - 2026-10-19
+
+The mobs pack's twenty-fifth batch: Daxton's Sea Urchin, Urchin Spikes and the Spike Trap (a borrowed tripwire state, open and shut).
+
+### Added
+
+- `mobs` pack: the Sea Urchin as a BetterModel 3.5.0 display model; and two items, the Spike Trap (`mobs:spike_trap`) and the Urchin Spikes (`mobs:urchin_spikes`).
+- `mobs` pack: the Spike Trap's block models, `assets/mobs/models/block/spike_trap.json` (open) and `spike_trap_shut.json`, and its block texture, `assets/mobs/textures/block/spike_trap.png`.
+- `mobs` pack: the tripwire's blockstate, `assets/minecraft/blockstates/tripwire.json`: the client's own 32 tripwire variants, each narrowed to `disarmed=false` and naming only vanilla's tripwire models, plus the 32 `disarmed=true` variants drawn as the Spike Trap, open or shut. A disarmed tripwire never rests in a survival world, so every tripwire a player or a structure makes draws exactly as before. It only names models; no Mojang pixels ship. Every other existing model, texture and item is unchanged, and so is the pack icon.
+
 ## [0.25.0] - 2026-10-18
 
 The mobs pack's 23rd and 24th batches: the Mallard Duck, the Crab (blue, green and red), the Scorched, the Illadator and the Sword Illadator.
