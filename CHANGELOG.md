@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.26.3] - 2026-10-19
+
+minecraft-ref: 05092091ecddbf9517aa03f9f5912654c62e0225
+
+### Changed
+
+- New Crab Blue skin, painted by Daxton.
+
 ## [0.26.2] - 2026-10-19
 
 minecraft-ref: cb315f4f3d559df3d801365373fdb8d3b98413e3
