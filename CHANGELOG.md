@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.26.4] - 2026-10-19
+
+minecraft-ref: abe176a7fde957e6d24f3c4e47927e0344fcc3c5
+
+### Changed
+
+- New Echo Shard Golem skin, painted by Daxton.
+
 ## [0.26.3] - 2026-10-19
 
 minecraft-ref: 05092091ecddbf9517aa03f9f5912654c62e0225
