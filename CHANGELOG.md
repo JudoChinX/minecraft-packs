@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.26.5] - 2026-10-20
+
+minecraft-ref: 704f6d875149c45512f11110e1e61a4f700c0a0e
+
+### Changed
+
+- New Frilled Anemone skin, painted by Daxton.
+
 ## [0.26.4] - 2026-10-19
 
 minecraft-ref: abe176a7fde957e6d24f3c4e47927e0344fcc3c5
