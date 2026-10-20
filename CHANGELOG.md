@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.26.1] - 2026-10-19
+
+minecraft-ref: c19be6ee1641031654d4363d9464063dbc912738
+
+### Changed
+
+- New Burned skin, painted by Daxton.
+
 ## [0.26.0] - 2026-10-19
 
 The mobs pack's twenty-fifth batch: Daxton's Sea Urchin, Urchin Spikes and the Spike Trap (a borrowed tripwire state, open and shut).
