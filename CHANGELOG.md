@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.26.2] - 2026-10-19
+
+minecraft-ref: cb315f4f3d559df3d801365373fdb8d3b98413e3
+
+### Changed
+
+- New Illadator skin, painted by Daxton.
+
 ## [0.26.1] - 2026-10-19
 
 minecraft-ref: c19be6ee1641031654d4363d9464063dbc912738
