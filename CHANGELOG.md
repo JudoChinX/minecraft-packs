@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.27.1] - 2026-10-21
+
+minecraft-ref: 8cb30b76b8f3295cb528c57e8d6a105a006b2aec
+
+### Changed
+
+- New Frilled Anemone skin, painted by Daxton.
+
 ## [0.27.0] - 2026-10-21
 
 The mobs pack's twenty-sixth batch: Daxton's Invader redrawn after his picture.
