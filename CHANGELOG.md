@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.27.5] - 2026-10-21
+
+minecraft-ref: ddddf6adb99dcda05b5612155d7cb27020ae52ee
+
+### Changed
+
+- New Harmonizer skin, painted by Daxton.
+
 ## [0.27.4] - 2026-10-21
 
 minecraft-ref: 54e1864c18dde6e96ee05f8d4e77138994b32490
