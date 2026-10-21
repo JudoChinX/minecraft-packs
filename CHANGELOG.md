@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.27.2] - 2026-10-21
+
+minecraft-ref: b88d6103184e518abed20ae0e5ef6ec4a36a479e
+
+### Changed
+
+- New Crystallized skin, painted by Daxton.
+
 ## [0.27.1] - 2026-10-21
 
 minecraft-ref: 8cb30b76b8f3295cb528c57e8d6a105a006b2aec
