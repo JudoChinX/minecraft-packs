@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.27.0] - 2026-10-21
+
+The mobs pack's twenty-sixth batch: Daxton's Invader redrawn after his picture.
+
+### Changed
+
+- `mobs` pack: the Invader is redrawn after Daxton's picture: a closed navy helm with a gold band, gold corner caps, a grey T nose guard and a neck flap; red sleeves under grey pauldrons; a red cape with gold edges; a big gold-framed shield of red rings held in front; a long glowing teal blade. These files change: `invader_arm_l_1.json`, `invader_arm_r_1.json`, `invader_h_head_1.json`, `invader_leg_l_1.json`, `invader_leg_r_1.json`, `invader_mantle_1.json`, `invader_shield_1.json`, `invader_spear_1.json`, `invader_torso_1.json` and `invader_invader.png` change. Every other existing model, texture and item is unchanged, and so is the pack icon.
+
 ## [0.26.4] - 2026-10-19
 
 minecraft-ref: abe176a7fde957e6d24f3c4e47927e0344fcc3c5
