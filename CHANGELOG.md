@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.27.3] - 2026-10-21
+
+minecraft-ref: d02e41c83db8157c637a1248de3b41799a0895be
+
+### Changed
+
+- New Burned skin, painted by Daxton.
+
 ## [0.27.2] - 2026-10-21
 
 minecraft-ref: b88d6103184e518abed20ae0e5ef6ec4a36a479e
