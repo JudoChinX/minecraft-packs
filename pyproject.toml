@@ -5,7 +5,7 @@ description = "Reproducible Minecraft Java resource packs, built from official a
 requires-python = ">=3.13"
 license = "MIT"
 dependencies = [
-    "pillow==12.3.0",
+    "pillow==13.0.0",
 ]
 
 [tool.ruff]
