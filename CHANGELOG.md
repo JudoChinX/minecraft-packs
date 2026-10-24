@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.27.7] - 2026-10-24
+
+minecraft-ref: 5fc2351eb3bbc013a7936f9a7b0ea4850b51a72f
+
+### Changed
+
+- New mob squog, built by Daxton.
+
 ## [0.27.6] - 2026-10-24
 
 minecraft-ref: cf1682d7802a4dc196fc32419c81a0a03340eae5
