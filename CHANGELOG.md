@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.27.9] - 2026-10-24
+
+minecraft-ref: bdf96714659ddee3b702b93ae105d729378f2078
+
+### Changed
+
+- New mob Box Elder Bug, built by Daxton.
+
 ## [0.27.8] - 2026-10-24
 
 minecraft-ref: 1c9834347bf26211839638050d067e237cebc3ee
