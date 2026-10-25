@@ -44,6 +44,8 @@ _ITEMS = (
     'illadator_crown',
     'spike_trap',
     'urchin_spikes',
+    'primary_catalyst',
+    'totem_of_paradox',
 )
 _MODELS = (
     'blob',
@@ -107,6 +109,10 @@ _MODELS = (
     'mallard_duck',
     'scorched',
     'sea_urchin',
+    'built_box_elder_bug',
+    'built_halibut',
+    'built_squog',
+    'paradox_seeker',
 )
 _BLOCKS = ('moldy_oak_planks', 'fertilized_sand', 'palm_log', 'palm_planks', 'palm_slab')
 _BORROWED = {

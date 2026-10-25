@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.28.0] - 2026-10-25
+
+The mobs pack's twenty-seventh batch: Daxton's Paradox Seeker, the Totem of Paradox and the Primary Catalyst.
+
+### Added
+
+- `mobs` pack: the Paradox Seeker as a BetterModel 3.5.0 display model; and two items, the Primary Catalyst (`mobs:primary_catalyst`) and the Totem of Paradox (`mobs:totem_of_paradox`). Every other existing model, texture and item is unchanged, and so is the pack icon.
+
 ## [0.27.10] - 2026-10-24
 
 minecraft-ref: 53c4b3c6e04c92a8d0867a01bed77aaf03c5d006
