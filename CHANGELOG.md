@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.27.10] - 2026-10-24
+
+minecraft-ref: 53c4b3c6e04c92a8d0867a01bed77aaf03c5d006
+
+### Changed
+
+- New mob halibut, built by Daxton.
+
 ## [0.27.9] - 2026-10-24
 
 minecraft-ref: bdf96714659ddee3b702b93ae105d729378f2078
