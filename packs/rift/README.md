@@ -50,8 +50,11 @@ from vanilla blocks.
 - **`paradox:chests/ancient_ruin`** is the loot table of the chests in the Rift's ancient ruins (placed
   by the Mobs plugin). It draws vanilla's ancient-city chest table once; the plugin adds the Rift's own
   items to it as the chest is opened.
-- **Mob spawns** are the vanilla plains' on the surface. The Primary Cave has vanilla's cave monsters,
-  each weight halved, and bats.
+- **Mob spawns** are the vanilla plains' on the surface. The Primary Cave has vanilla's cave monsters
+  and bats, but fewer monsters: each has a `spawn_costs` entry (charge 0.7, energy budget 0.15, the
+  soul sand valley's), so a monster does not spawn where the monsters already near it would push the
+  spot's charge over that budget. Their weights are vanilla's halved, which keeps the mix: weights are
+  relative, so halving them alone would not spawn one monster fewer.
 
 ## Installing
 

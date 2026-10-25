@@ -258,3 +258,31 @@ def test_rift_biome_colours() -> None:
     assert primary_cave['attributes']['minecraft:visual/fog_color'] == '#0f2a2e'
     assert 'crimson_spore' in json.dumps(the_rift['attributes']['minecraft:visual/ambient_particles'])
     assert 'warped_spore' in json.dumps(primary_cave['attributes']['minecraft:visual/ambient_particles'])
+
+
+# Vanilla 26.3's common overworld monsters and their weights (misode/mcmeta 26.3-data-json: the list every cave biome
+# starts from; dripstone_caves adds drowned, which the dry Primary Cave leaves out).
+_VANILLA_CAVE_MONSTERS = {
+    'minecraft:spider': 100,
+    'minecraft:zombie': 95,
+    'minecraft:zombie_villager': 5,
+    'minecraft:skeleton': 100,
+    'minecraft:creeper': 100,
+    'minecraft:slime': 100,
+    'minecraft:enderman': 10,
+    'minecraft:witch': 5,
+}
+
+
+def test_rift_primary_cave_spawns_fewer_monsters() -> None:
+    """Test every Primary Cave monster has a spawn cost: weights are relative, so only spawn_costs spawn fewer."""
+    spawns = _read('worldgen/biome/primary_cave.json')['attributes']['minecraft:gameplay/natural_mob_spawns']
+    monsters = spawns['argument']['spawns_by_category']['monster']
+    costs = spawns['argument']['spawn_costs']
+
+    assert {entry['type']: entry['weight'] for entry in monsters} == {
+        mob: weight // 2 for mob, weight in _VANILLA_CAVE_MONSTERS.items()
+    }
+    assert set(costs) == set(_VANILLA_CAVE_MONSTERS)
+    for mob, cost in costs.items():
+        assert cost == {'charge': 0.7, 'energy_budget': 0.15}, mob
