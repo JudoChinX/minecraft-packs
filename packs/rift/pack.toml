@@ -1,0 +1,11 @@
+# The Paradox Rift (Daxton, minecraft/ideas#41): a data-pack dimension, paradox:rift.
+#
+# SPIKE DRAFT (R0, 2026-10-25): the dimension, the two biomes and one ore feature only; never released.
+# Everything is under files/data/paradox/. The build only checks it (paths, JSON) and zips it.
+
+[pack]
+kind = "data"
+description = "The Paradox Rift - a dimension of red moss, rifts and the Primary Cave"
+# Minecraft 26.3 is data pack format 121 (as the Sift).
+min_format = 121
+max_format = 121
