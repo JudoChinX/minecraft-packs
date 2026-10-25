@@ -166,6 +166,42 @@ def test_rift_abyslite_only_in_primary_cave() -> None:
         assert f'paradox:{ore}_ore' in _features('primary_cave'), ore
 
 
+# Vanilla 26.3 placed features the Rift's biomes would list whose heights are anchored to the world's bottom
+# (above_bottom, in misode/mcmeta 26.3-data-json): at the Rift's -416 floor they would sink 352 blocks.
+_BOTTOM_ANCHORED = {
+    # placed feature: the vanilla configured feature it places
+    'ore_gravel': 'ore_gravel',
+    'ore_tuff': 'ore_tuff',
+    'ore_iron_small': 'ore_iron_small',
+    'ore_redstone': 'ore_redstone',
+    'ore_redstone_lower': 'ore_redstone',
+    'ore_diamond': 'ore_diamond_small',
+    'ore_diamond_large': 'ore_diamond_large',
+    'ore_diamond_buried': 'ore_diamond_buried',
+    'ore_lapis_buried': 'ore_lapis_buried',
+}
+
+
+def test_rift_features_keep_overworld_y_bands() -> None:
+    """Test no listed placed feature is bottom-anchored: the pack's own use absolute y, and no vanilla one that is."""
+    listed = set(_features('the_rift')) | set(_features('primary_cave'))
+
+    assert not any('above_bottom' in path.read_text(encoding='utf-8') for path in _json_files())
+    assert not {f'minecraft:{name}' for name in _BOTTOM_ANCHORED} & listed
+    assert {f'paradox:{name}' for name in _BOTTOM_ANCHORED} <= listed
+    for name, configured in _BOTTOM_ANCHORED.items():
+        assert _read(f'worldgen/placed_feature/{name}.json')['feature'] == f'minecraft:{configured}', name
+
+
+def test_rift_shared_features_keep_one_order() -> None:
+    """Test the features both biomes list come in the same order in each step (no feature-order cycle)."""
+    the_rift = _read('worldgen/biome/the_rift.json')['features']
+    primary_cave = _read('worldgen/biome/primary_cave.json')['features']
+    for step_rift, step_cave in zip(the_rift, primary_cave, strict=True):
+        shared = set(step_rift) & set(step_cave)
+        assert [f for f in step_rift if f in shared] == [f for f in step_cave if f in shared]
+
+
 def test_rift_surface_feature_rarity() -> None:
     """Test fire mud is about one chunk in 2, and a warped clump one in 3, both on the Rift's surface."""
     fire_mud = _read('worldgen/placed_feature/fire_mud.json')

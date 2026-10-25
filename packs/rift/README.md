@@ -27,6 +27,12 @@ from vanilla blocks.
 - **Fire mud** (`paradox:fire_mud`): a disk of mud, radius 2-4, in the surface, with a magma-block core
   (radius 0-1) set into its middle, flush with the mud's top and one block deeper. It burns feet that
   do not sneak.
+- **Vanilla ores keep their overworld heights** (diamonds from y 16 down, and so on): vanilla placed
+  features measured from the world's bottom (`above_bottom`) would sink 352 blocks to the Rift's -416
+  floor, so the pack lists `paradox:` copies of the nine that are (`ore_diamond`, `ore_redstone`,
+  `ore_lapis_buried` and the rest), on vanilla's configured features, each anchor made the absolute y
+  it has in the overworld (bottom -64). The overworld cuts a range off at -64 and the Rift does not, so
+  the diamond and lower-redstone ranges reach their full depth (to y -144 and -96).
 - **Warped clumps** (`paradox:warped_clump`): a patch of warped wart block with warped nylium cells.
   Warped roots and nether sprouts grow on the nylium only, since they cannot survive on wart.
 - **The four Rift ores** are `minecraft:ore` features that place mushroom-block states no vanilla
