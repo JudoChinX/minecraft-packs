@@ -52,6 +52,8 @@ Every custom mob look on the server this repository serves, as one resource pack
   the illager face (below), with the Illadator Crown.
 - **Daxton's 25th batch**, from the same pipeline: the Sea Urchin, with the Urchin Spikes and the Spike Trap (a
   borrowed tripwire state, open and shut; below).
+- **Daxton's 27th batch**, from the same pipeline: the Paradox Seeker, with the Totem of Paradox and the Primary
+  Catalyst.
 - **Sixteen items** under `assets/mobs/`: Jello, the Harmonizer Tentacle, the Cooked Harmonizer Tentacle, the Tropical
   Slime, the Orb of Dominance, the Ancient Callings, the Cutlass, the Peg Leg, the Crocofang Tooth, the Throwing Knife,
   the Coconut, the Redstone Golem Head, the Wicked Geomancer's Necklace, the Moldy Oak Planks, the Banana and the

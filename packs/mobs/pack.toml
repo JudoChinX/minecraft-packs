@@ -9,15 +9,15 @@
 # Golem, the Redstone Golem, the Archevoker, the Miner, the Iceologer, the Magger, the Wicked Magger, the Wielder, the
 # Wicked Geomancer, the Echo Shard Golem, the Invader, the Lapis Golem, the Monkey, the Crystallized, the Burned, the
 # Anemone (pink, blue, yellow and red), the Frilled Anemone, the Mallard Duck, the Crab (blue, green and
-# red), the Scorched, the Illadator, the Sword Illadator and the Sea Urchin; seventeen item models (assets/mobs/):
-# Jello, the Harmonizer Tentacle, the Cooked Harmonizer Tentacle, the Tropical Slime, the Orb of Dominance, the Ancient
-# Callings, the Cutlass, the Peg Leg, the Crocofang Tooth, the Throwing Knife, the Coconut, the Redstone Golem Head and
-# its glowing-eyes twin, the Wicked Geomancer's Necklace, the Banana, the Illager Crown (also worn, through
-# assets/mobs/equipment/), and the Moldy Oak Planks (a block model, assets/mobs/models/block/); the items atlas
-# (assets/minecraft/atlases/items.json), which gives the illagers' and the pirates' heads the client's own pillager
-# texture and the Hopping Pig the client's own pig texture by name, so the pack ships no Mojang pixels; the mushroom
-# stem's blockstate (assets/minecraft/blockstates/mushroom_stem.json), vanilla's multipart naming vanilla's own models,
-# with its all-faces-off state drawn as the Moldy Oak Planks; since 0.13.0 the brown and red mushroom blocks'
+# red), the Scorched, the Illadator, the Sword Illadator, the Sea Urchin and the Paradox Seeker; seventeen item models
+# (assets/mobs/): Jello, the Harmonizer Tentacle, the Cooked Harmonizer Tentacle, the Tropical Slime, the Orb of
+# Dominance, the Ancient Callings, the Cutlass, the Peg Leg, the Crocofang Tooth, the Throwing Knife, the Coconut, the
+# Redstone Golem Head and its glowing-eyes twin, the Wicked Geomancer's Necklace, the Banana, the Illager Crown (also
+# worn, through assets/mobs/equipment/), and the Moldy Oak Planks (a block model, assets/mobs/models/block/); the items
+# atlas (assets/minecraft/atlases/items.json), which gives the illagers' and the pirates' heads the client's own
+# pillager texture and the Hopping Pig the client's own pig texture by name, so the pack ships no Mojang pixels; the
+# mushroom stem's blockstate (assets/minecraft/blockstates/mushroom_stem.json), vanilla's multipart naming vanilla's own
+# models, with its all-faces-off state drawn as the Moldy Oak Planks; since 0.13.0 the brown and red mushroom blocks'
 # blockstates the same way for the Palm Log and Fertilized Sand, and the petrified oak slab's, every state drawn as the
 # Palm Slab or (its double) the Palm Planks; since 0.26.0 the tripwire's (assets/minecraft/blockstates/tripwire.json),
 # vanilla's variants narrowed to disarmed=false, with the disarmed states drawn as the Spike Trap, open or shut; and
