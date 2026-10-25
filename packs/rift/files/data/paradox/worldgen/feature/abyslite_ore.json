@@ -1,0 +1,41 @@
+{
+  "discard_chance_on_air_exposure": 1.0,
+  "size": 2,
+  "targets": [
+    {
+      "state": {
+        "id": "minecraft:brown_mushroom_block",
+        "properties": {
+          "down": "true",
+          "east": "false",
+          "north": "false",
+          "south": "false",
+          "up": "false",
+          "west": "false"
+        }
+      },
+      "target": {
+        "predicate_type": "minecraft:tag_match",
+        "tag": "minecraft:stone_ore_replaceables"
+      }
+    },
+    {
+      "state": {
+        "id": "minecraft:brown_mushroom_block",
+        "properties": {
+          "down": "true",
+          "east": "false",
+          "north": "false",
+          "south": "false",
+          "up": "false",
+          "west": "false"
+        }
+      },
+      "target": {
+        "predicate_type": "minecraft:tag_match",
+        "tag": "minecraft:deepslate_ore_replaceables"
+      }
+    }
+  ],
+  "type": "minecraft:ore"
+}

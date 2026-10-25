@@ -171,13 +171,19 @@
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
-      "paradox:eatherite_ore"
+      "paradox:eatherite_ore",
+      "paradox:pirelite_ore",
+      "paradox:pirelite_ore_lava",
+      "paradox:paralite_ore"
     ],
     [],
     [],
     [
-      "minecraft:patch_grass_plain",
-      "minecraft:trees_plains"
+      "paradox:fire_mud",
+      "paradox:warped_clump",
+      "minecraft:trees_plains",
+      "paradox:sparse_dark_oak",
+      "minecraft:patch_grass_plain"
     ],
     []
   ],

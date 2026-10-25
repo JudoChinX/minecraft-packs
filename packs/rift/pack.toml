@@ -1,7 +1,7 @@
-# The Paradox Rift (Daxton, minecraft/ideas#41): a data-pack dimension, paradox:rift.
+# The Paradox Rift (Daxton, minecraft/ideas#41): a data-pack dimension, paradox:rift, for a Paper server.
 #
-# SPIKE DRAFT (R0, 2026-10-25): the dimension, the two biomes and one ore feature only; never released.
 # Everything is under files/data/paradox/. The build only checks it (paths, JSON) and zips it.
+# ORE_STATES (beside this file, not in the zip) lists the four mushroom-block states the ore features place.
 
 [pack]
 kind = "data"

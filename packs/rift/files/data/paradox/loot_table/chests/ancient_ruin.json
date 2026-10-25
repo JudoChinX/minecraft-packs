@@ -1,0 +1,15 @@
+{
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/ancient_city"
+        }
+      ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "paradox:chests/ancient_ruin",
+  "type": "minecraft:chest"
+}

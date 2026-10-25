@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `rift` data pack for Minecraft Java 26.3 (data pack format 121): one dimension, `paradox:rift`, Daxton's Paradox Rift — y -416 to 320 on vanilla terrain shapes; The Paradox Rift (red-tinted grass with moss patches, light-cyan leaves on sparse oak and dark oak, cyan water, a dusky magenta sky, fire-mud puddles and warped clumps) over the Primary Cave (deepslate, tuff and smooth basalt, dark teal fog); four ore features placing the mushroom-block states in `packs/rift/ORE_STATES` (eatherite, pirelite, paralite, abyslite); and the ancient-ruin chest table `paradox:chests/ancient_ruin`. No client install.
+
 ## [0.28.0] - 2026-10-25
 
 The mobs pack's twenty-seventh batch: Daxton's Paradox Seeker, the Totem of Paradox and the Primary Catalyst.

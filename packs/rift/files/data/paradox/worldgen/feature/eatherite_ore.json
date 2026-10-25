@@ -6,10 +6,10 @@
       "state": {
         "id": "minecraft:mushroom_stem",
         "properties": {
-          "down": "true",
+          "down": "false",
           "east": "false",
-          "north": "true",
-          "south": "false",
+          "north": "false",
+          "south": "true",
           "up": "false",
           "west": "true"
         }
@@ -23,10 +23,10 @@
       "state": {
         "id": "minecraft:mushroom_stem",
         "properties": {
-          "down": "true",
+          "down": "false",
           "east": "false",
-          "north": "true",
-          "south": "false",
+          "north": "false",
+          "south": "true",
           "up": "false",
           "west": "true"
         }

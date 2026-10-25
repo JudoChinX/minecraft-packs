@@ -1,0 +1,4 @@
+minecraft:mushroom_stem[down=false,east=false,north=false,south=true,up=false,west=true]
+minecraft:mushroom_stem[down=false,east=false,north=true,south=false,up=false,west=true]
+minecraft:red_mushroom_block[down=true,east=true,north=false,south=false,up=true,west=true]
+minecraft:brown_mushroom_block[down=true,east=false,north=false,south=false,up=false,west=false]

@@ -1,5 +1,66 @@
 {
   "attributes": {
+    "minecraft:gameplay/natural_mob_spawns": {
+      "argument": {
+        "spawn_costs": {},
+        "spawns_by_category": {
+          "ambient": [
+            {
+              "count": 8,
+              "type": "minecraft:bat",
+              "weight": 10
+            }
+          ],
+          "monster": [
+            {
+              "count": 4,
+              "type": "minecraft:spider",
+              "weight": 50
+            },
+            {
+              "count": 4,
+              "type": "minecraft:zombie",
+              "weight": 47
+            },
+            {
+              "count": 1,
+              "type": "minecraft:zombie_villager",
+              "weight": 2
+            },
+            {
+              "count": 4,
+              "type": "minecraft:skeleton",
+              "weight": 50
+            },
+            {
+              "count": 4,
+              "type": "minecraft:creeper",
+              "weight": 50
+            },
+            {
+              "count": 4,
+              "type": "minecraft:slime",
+              "weight": 50
+            },
+            {
+              "count": {
+                "max_inclusive": 4,
+                "min_inclusive": 1,
+                "type": "minecraft:uniform"
+              },
+              "type": "minecraft:enderman",
+              "weight": 5
+            },
+            {
+              "count": 1,
+              "type": "minecraft:witch",
+              "weight": 2
+            }
+          ]
+        }
+      },
+      "modifier": "overlay"
+    },
     "minecraft:visual/ambient_particles": {
       "argument": [
         {
@@ -51,7 +112,11 @@
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
-      "paradox:eatherite_ore"
+      "paradox:eatherite_ore",
+      "paradox:pirelite_ore",
+      "paradox:pirelite_ore_lava",
+      "paradox:paralite_ore",
+      "paradox:abyslite_ore"
     ],
     [],
     [],
