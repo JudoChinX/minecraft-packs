@@ -46,6 +46,15 @@ _ITEMS = (
     'urchin_spikes',
     'primary_catalyst',
     'totem_of_paradox',
+    'abyslite_ingot',
+    'eatherite_ingot',
+    'paralite_ingot',
+    'pirelite_ingot',
+    'raw_abyslite',
+    'raw_eatherite',
+    'raw_paralite',
+    'raw_pirelite',
+    'rift_upgrade_template',
 )
 _MODELS = (
     'blob',
@@ -114,7 +123,17 @@ _MODELS = (
     'built_squog',
     'paradox_seeker',
 )
-_BLOCKS = ('moldy_oak_planks', 'fertilized_sand', 'palm_log', 'palm_planks', 'palm_slab')
+_BLOCKS = (
+    'moldy_oak_planks',
+    'fertilized_sand',
+    'palm_log',
+    'palm_planks',
+    'palm_slab',
+    'abyslite_ore',
+    'eatherite_ore',
+    'paralite_ore',
+    'pirelite_ore',
+)
 _BORROWED = {
     'moldy_oak_planks': 'mushroom_stem',
     'palm_log': 'brown_mushroom_block',
@@ -128,6 +147,24 @@ _TRIPWIRE = ('tripwire', ('spike_trap', 'spike_trap_shut'))
 # A borrowed block drawn as a column: its end texture (mobs 11's palm log, ringed ends).
 _COLUMNS = {'palm_log': 'palm_log_top'}
 _FACES = ('north', 'east', 'south', 'west', 'up', 'down')
+# The Paradox Rift's ores (0.29.0): each a mushroom-block state the rift data pack places, one a line of its ORE_STATES,
+# in this order; the base's blockstate draws it as the ore alone.
+_ORE_NAMES = ('eatherite_ore', 'pirelite_ore', 'paralite_ore', 'abyslite_ore')
+_ORE_LINE = re.compile(r'^minecraft:([a-z_]+)\[([a-z=,]+)\]$')
+
+
+def _ore_states() -> dict[str, tuple[str, dict[str, str]]]:
+    """Each Rift ore's base block and its six face values, from the rift pack's ORE_STATES."""
+    lines = (REPO_ROOT / 'packs' / 'rift' / 'ORE_STATES').read_text().split()
+    ores = {}
+    for name, line in zip(_ORE_NAMES, lines, strict=True):
+        found = _ORE_LINE.match(line)
+        assert found, line
+        ores[name] = (found[1], dict(pair.split('=') for pair in found[2].split(',')))
+    return ores
+
+
+_ORES = _ore_states()
 _REFERENCE = re.compile(r'^(bettermodel|mobs):([a-z0-9_/]+)$')
 _ATLAS = _ASSETS / 'minecraft' / 'atlases' / 'items.json'
 _VANILLA_TEXTURE = re.compile(r'^minecraft:entity/(illager|pig)/[a-z0-9_]+$')
@@ -231,24 +268,42 @@ def _matches(when: dict, state: dict) -> bool:
     return all(state[key] == value for key, value in when.items())
 
 
+def _state_key(faces: dict[str, str]) -> tuple[str, ...]:
+    """A state's six face values in ``_FACES`` order."""
+    return tuple(faces[face] for face in _FACES)
+
+
+def test_ore_states_are_on_the_borrowed_bases() -> None:
+    """Test each Rift ore sits on a borrowed base and differs from the all-faces-off state."""
+    assert set(_ORES) == {block for block in _BLOCKS if block.endswith('_ore')}
+    for base, faces in _ORES.values():
+        assert base in _BORROWED.values()
+        assert set(faces) == set(_FACES)
+        assert 'true' in faces.values()
+
+
 @pytest.mark.parametrize('block', sorted(_BORROWED))
 def test_borrowed_blockstate_draws_the_block_only_in_its_state(block: str) -> None:
-    """Test a huge-mushroom block's blockstate draws the block when all six faces are off, and vanilla's in the 63 others.
+    """Test a huge-mushroom block's blockstate draws the block when all six faces are off, and vanilla's in the others.
 
-    Its parts name only vanilla's own models for that block and the pack's own block, and the block's part is the last.
+    Its parts name only vanilla's own models for that block, the pack's own block and any Rift ore on that base, and
+    those come after vanilla's parts. A Rift ore's state draws that ore alone (0.29.0).
     """
     base = _BORROWED[block]
     blockstate = json.loads((_ASSETS / 'minecraft' / 'blockstates' / f'{base}.json').read_text())
     parts = blockstate['multipart']
     ours = f'mobs:block/{block}'
+    ores = {_state_key(faces): f'mobs:block/{ore}' for ore, (on, faces) in _ORES.items() if on == base}
     vanilla = {f'minecraft:block/{base}', 'minecraft:block/mushroom_block_inside'}
-    assert {part['apply']['model'] for part in parts} == vanilla | {ours}
-    assert parts[-1]['apply']['model'] == ours
+    assert {part['apply']['model'] for part in parts} == vanilla | {ours} | set(ores.values())
+    assert [part['apply']['model'] for part in parts[-1 - len(ores) :]] == [ours, *ores.values()]
     for values in itertools.product(('true', 'false'), repeat=len(_FACES)):
         state = dict(zip(_FACES, values))
         drawn = [part['apply']['model'] for part in parts if _matches(part.get('when', {}), state)]
         if all(value == 'false' for value in values):
             assert drawn == [ours]
+        elif _state_key(state) in ores:
+            assert drawn == [ores[_state_key(state)]]
         else:
             assert drawn
             assert ours not in drawn

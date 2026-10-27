@@ -15,7 +15,28 @@
         "uvlock": true
       },
       "when": {
-        "east": "true"
+        "OR": [
+          {
+            "east": "true",
+            "north": "true"
+          },
+          {
+            "east": "true",
+            "south": "true"
+          },
+          {
+            "east": "true",
+            "west": "false"
+          },
+          {
+            "east": "true",
+            "up": "false"
+          },
+          {
+            "east": "true",
+            "down": "false"
+          }
+        ]
       }
     },
     {
@@ -35,7 +56,28 @@
         "uvlock": true
       },
       "when": {
-        "west": "true"
+        "OR": [
+          {
+            "west": "true",
+            "north": "true"
+          },
+          {
+            "west": "true",
+            "east": "false"
+          },
+          {
+            "west": "true",
+            "south": "true"
+          },
+          {
+            "west": "true",
+            "up": "false"
+          },
+          {
+            "west": "true",
+            "down": "false"
+          }
+        ]
       }
     },
     {
@@ -45,7 +87,28 @@
         "uvlock": true
       },
       "when": {
-        "up": "true"
+        "OR": [
+          {
+            "up": "true",
+            "north": "true"
+          },
+          {
+            "up": "true",
+            "east": "false"
+          },
+          {
+            "up": "true",
+            "south": "true"
+          },
+          {
+            "up": "true",
+            "west": "false"
+          },
+          {
+            "up": "true",
+            "down": "false"
+          }
+        ]
       }
     },
     {
@@ -55,7 +118,28 @@
         "uvlock": true
       },
       "when": {
-        "down": "true"
+        "OR": [
+          {
+            "down": "true",
+            "north": "true"
+          },
+          {
+            "down": "true",
+            "east": "false"
+          },
+          {
+            "down": "true",
+            "south": "true"
+          },
+          {
+            "down": "true",
+            "west": "false"
+          },
+          {
+            "down": "true",
+            "up": "false"
+          }
+        ]
       }
     },
     {
@@ -66,7 +150,23 @@
         "OR": [
           {
             "north": "false",
-            "east": "true"
+            "east": "true",
+            "south": "true"
+          },
+          {
+            "north": "false",
+            "east": "true",
+            "west": "false"
+          },
+          {
+            "north": "false",
+            "east": "true",
+            "up": "false"
+          },
+          {
+            "north": "false",
+            "east": "true",
+            "down": "false"
           },
           {
             "north": "false",
@@ -74,15 +174,63 @@
           },
           {
             "north": "false",
-            "west": "true"
+            "west": "true",
+            "east": "false"
           },
           {
             "north": "false",
-            "up": "true"
+            "west": "true",
+            "south": "true"
           },
           {
             "north": "false",
-            "down": "true"
+            "west": "true",
+            "up": "false"
+          },
+          {
+            "north": "false",
+            "west": "true",
+            "down": "false"
+          },
+          {
+            "north": "false",
+            "up": "true",
+            "east": "false"
+          },
+          {
+            "north": "false",
+            "up": "true",
+            "south": "true"
+          },
+          {
+            "north": "false",
+            "up": "true",
+            "west": "false"
+          },
+          {
+            "north": "false",
+            "up": "true",
+            "down": "false"
+          },
+          {
+            "north": "false",
+            "down": "true",
+            "east": "false"
+          },
+          {
+            "north": "false",
+            "down": "true",
+            "south": "true"
+          },
+          {
+            "north": "false",
+            "down": "true",
+            "west": "false"
+          },
+          {
+            "north": "false",
+            "down": "true",
+            "up": "false"
           }
         ]
       }
@@ -130,19 +278,83 @@
           },
           {
             "south": "false",
-            "east": "true"
+            "east": "true",
+            "north": "true"
           },
           {
             "south": "false",
-            "west": "true"
+            "east": "true",
+            "west": "false"
           },
           {
             "south": "false",
-            "up": "true"
+            "east": "true",
+            "up": "false"
           },
           {
             "south": "false",
-            "down": "true"
+            "east": "true",
+            "down": "false"
+          },
+          {
+            "south": "false",
+            "west": "true",
+            "north": "true"
+          },
+          {
+            "south": "false",
+            "west": "true",
+            "east": "false"
+          },
+          {
+            "south": "false",
+            "west": "true",
+            "up": "false"
+          },
+          {
+            "south": "false",
+            "west": "true",
+            "down": "false"
+          },
+          {
+            "south": "false",
+            "up": "true",
+            "north": "true"
+          },
+          {
+            "south": "false",
+            "up": "true",
+            "east": "false"
+          },
+          {
+            "south": "false",
+            "up": "true",
+            "west": "false"
+          },
+          {
+            "south": "false",
+            "up": "true",
+            "down": "false"
+          },
+          {
+            "south": "false",
+            "down": "true",
+            "north": "true"
+          },
+          {
+            "south": "false",
+            "down": "true",
+            "east": "false"
+          },
+          {
+            "south": "false",
+            "down": "true",
+            "west": "false"
+          },
+          {
+            "south": "false",
+            "down": "true",
+            "up": "false"
           }
         ]
       }
@@ -248,6 +460,19 @@
         "west": "false",
         "up": "false",
         "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "mobs:block/paralite_ore"
+      },
+      "when": {
+        "down": "true",
+        "east": "true",
+        "north": "false",
+        "south": "false",
+        "up": "true",
+        "west": "true"
       }
     }
   ]
