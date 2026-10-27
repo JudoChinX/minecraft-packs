@@ -299,4 +299,4 @@ def test_rift_primary_cave_spawns_fewer_monsters() -> None:
     }
     assert set(costs) == set(_VANILLA_CAVE_MONSTERS)
     for mob, cost in costs.items():
-        assert cost == {'charge': 0.7, 'energy_budget': 0.15}, mob
+        assert cost == {'charge': 0.7, 'energy_budget': 0.4}, mob

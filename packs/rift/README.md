@@ -51,10 +51,12 @@ from vanilla blocks.
   by the Mobs plugin). It draws vanilla's ancient-city chest table once; the plugin adds the Rift's own
   items to it as the chest is opened.
 - **Mob spawns** are the vanilla plains' on the surface. The Primary Cave has vanilla's cave monsters
-  and bats, but fewer monsters: each has a `spawn_costs` entry (charge 0.7, energy budget 0.15, the
-  soul sand valley's), so a monster does not spawn where the monsters already near it would push the
-  spot's charge over that budget. Their weights are vanilla's halved, which keeps the mix: weights are
-  relative, so halving them alone would not spawn one monster fewer.
+  and bats, but fewer monsters: each has a `spawn_costs` entry (charge 0.7, energy budget 0.4), so a
+  monster does not spawn where the monsters already near it would push the spot's charge over that
+  budget. On a copy of the server that keeps about 13 monsters round a player on a hollow's floor,
+  against vanilla's 77 (the soul sand valley's budget, 0.15, kept 1; a budget of 1.0 kept all of
+  them). Their weights are vanilla's halved, which keeps the mix: weights are relative, so halving
+  them alone would not spawn one monster fewer.
 
 ## Installing
 
