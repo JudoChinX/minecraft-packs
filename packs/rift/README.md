@@ -45,7 +45,7 @@ from vanilla blocks.
 | eatherite | `paradox:eatherite_ore` | y -64 to 100 | 6, ×6 | both |
 | pirelite | `paradox:pirelite_ore`, and `paradox:pirelite_ore_lava` (6 more tries a chunk, kept only within 2 blocks of lava or magma) | y -100 to 0 | 4, ×3 | both |
 | paralite | `paradox:paralite_ore` | y -200 to -40 | 3, ×2 | both |
-| abyslite | `paradox:abyslite_ore`, hidden: a vein block next to air is discarded, as ancient debris | y -400 to -120 | 2, ×1 | the Primary Cave only |
+| abyslite | `paradox:abyslite_ore`, half hidden: a vein block next to air is discarded at even odds; it also replaces tuff, the Primary Cave's rock below about y -250 | y -400 to -120 | 3, one vein in 5 chunks | the Primary Cave only |
 
 - **`paradox:chests/ancient_ruin`** is the loot table of the chests in the Rift's ancient ruins (placed
   by the Mobs plugin). It draws vanilla's ancient-city chest table once; the plugin adds the Rift's own

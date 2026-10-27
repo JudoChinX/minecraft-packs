@@ -116,8 +116,9 @@ def test_rift_ore_features_place_the_four_states() -> None:
     assert len(lines) == len(_ORES)
     for ore, line in zip(_ORES, lines, strict=True):
         feature = _read(f'worldgen/feature/{ore}_ore.json')
+        tags = [target['target']['tag'] for target in feature['targets'] if 'tag' in target['target']]
         assert feature['type'] == 'minecraft:ore'
-        assert [target['target']['tag'] for target in feature['targets']] == _ORE_TARGETS, ore
+        assert tags == _ORE_TARGETS, ore
         assert {_state_string(target['state']) for target in feature['targets']} == {line}, ore
 
 
@@ -127,10 +128,12 @@ def test_rift_ore_features_place_the_four_states() -> None:
         ('eatherite', -64, 100, 6, 6, 0.0),
         ('pirelite', -100, 0, 4, 3, 0.0),
         ('paralite', -200, -40, 3, 2, 0.0),
-        ('abyslite', -400, -120, 2, 1, 1.0),
+        # One vein in 5 chunks (a rarity filter, not a count): the 2026-10-26 settlement, size 3 and discard 0.5,
+        # since a size-2 vein with discard 1.0 places nothing on 26.3.
+        ('abyslite', -400, -120, 3, None, 0.5),
     ],
 )
-def test_rift_ore_ranges(ore: str, bottom: int, top: int, size: int, count: int, discard: float) -> None:
+def test_rift_ore_ranges(ore: str, bottom: int, top: int, size: int, count: int | None, discard: float) -> None:
     """Test each ore's height range, vein size, veins per chunk and air-exposure discard."""
     feature = _read(f'worldgen/feature/{ore}_ore.json')
     placed = _read(f'worldgen/placed_feature/{ore}_ore.json')
@@ -138,7 +141,11 @@ def test_rift_ore_ranges(ore: str, bottom: int, top: int, size: int, count: int,
 
     assert placed['feature'] == f'paradox:{ore}_ore'
     assert (feature['size'], feature['discard_chance_on_air_exposure']) == (size, discard)
-    assert _modifier(placed, 'count')['count'] == count
+    if count is None:
+        assert _modifier(placed, 'rarity_filter')['chance'] == 5
+        assert not [m for m in placed['placement'] if m['type'] == 'minecraft:count']
+    else:
+        assert _modifier(placed, 'count')['count'] == count
     assert height['type'] == 'minecraft:uniform'
     assert (height['min_inclusive'], height['max_inclusive']) == ({'absolute': bottom}, {'absolute': top})
     assert placed['placement'][-1] == {'type': 'minecraft:biome'}
@@ -155,6 +162,13 @@ def test_rift_pirelite_ore_lava_is_kept_beside_lava_or_magma() -> None:
     assert 'minecraft:magma_block' in near
     assert 'paradox:pirelite_ore_lava' in _features('the_rift')
     assert 'paradox:pirelite_ore_lava' in _features('primary_cave')
+
+
+def test_rift_abyslite_also_replaces_tuff() -> None:
+    """Test abyslite alone also replaces tuff, the Primary Cave's rock below about y -250 (no ore tag holds it)."""
+    for ore in _ORES:
+        blocks = [target['target'].get('block') for target in _read(f'worldgen/feature/{ore}_ore.json')['targets']]
+        assert ('minecraft:tuff' in blocks) == (ore == 'abyslite'), ore
 
 
 def test_rift_abyslite_only_in_primary_cave() -> None:

@@ -1,6 +1,6 @@
 {
-  "discard_chance_on_air_exposure": 1.0,
-  "size": 2,
+  "discard_chance_on_air_exposure": 0.5,
+  "size": 3,
   "targets": [
     {
       "state": {
@@ -34,6 +34,23 @@
       "target": {
         "predicate_type": "minecraft:tag_match",
         "tag": "minecraft:deepslate_ore_replaceables"
+      }
+    },
+    {
+      "state": {
+        "id": "minecraft:brown_mushroom_block",
+        "properties": {
+          "down": "true",
+          "east": "false",
+          "north": "false",
+          "south": "false",
+          "up": "false",
+          "west": "false"
+        }
+      },
+      "target": {
+        "block": "minecraft:tuff",
+        "predicate_type": "minecraft:block_match"
       }
     }
   ],
