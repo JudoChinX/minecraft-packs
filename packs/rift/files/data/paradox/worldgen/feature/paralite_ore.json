@@ -1,0 +1,41 @@
+{
+  "discard_chance_on_air_exposure": 0.0,
+  "size": 3,
+  "targets": [
+    {
+      "state": {
+        "id": "minecraft:red_mushroom_block",
+        "properties": {
+          "down": "true",
+          "east": "true",
+          "north": "false",
+          "south": "false",
+          "up": "true",
+          "west": "true"
+        }
+      },
+      "target": {
+        "predicate_type": "minecraft:tag_match",
+        "tag": "minecraft:stone_ore_replaceables"
+      }
+    },
+    {
+      "state": {
+        "id": "minecraft:red_mushroom_block",
+        "properties": {
+          "down": "true",
+          "east": "true",
+          "north": "false",
+          "south": "false",
+          "up": "true",
+          "west": "true"
+        }
+      },
+      "target": {
+        "predicate_type": "minecraft:tag_match",
+        "tag": "minecraft:deepslate_ore_replaceables"
+      }
+    }
+  ],
+  "type": "minecraft:ore"
+}

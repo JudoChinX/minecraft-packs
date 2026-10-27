@@ -1,0 +1,65 @@
+{
+  "feature": "paradox:pirelite_ore",
+  "placement": [
+    {
+      "count": 6,
+      "type": "minecraft:count"
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "height": {
+        "max_inclusive": {
+          "absolute": 0
+        },
+        "min_inclusive": {
+          "absolute": -100
+        },
+        "type": "minecraft:uniform"
+      },
+      "type": "minecraft:height_range"
+    },
+    {
+      "predicate": {
+        "predicate": {
+          "match": {
+            "predicate": {
+              "predicates": [
+                {
+                  "fluids": [
+                    "minecraft:lava",
+                    "minecraft:flowing_lava"
+                  ],
+                  "type": "minecraft:matching_fluids"
+                },
+                {
+                  "blocks": "minecraft:magma_block",
+                  "type": "minecraft:matching_blocks"
+                }
+              ],
+              "type": "minecraft:any_of"
+            },
+            "type": "minecraft:not"
+          },
+          "max": [
+            2,
+            2,
+            2
+          ],
+          "min": [
+            -2,
+            -2,
+            -2
+          ],
+          "type": "minecraft:volume_match"
+        },
+        "type": "minecraft:not"
+      },
+      "type": "minecraft:block_predicate_filter"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

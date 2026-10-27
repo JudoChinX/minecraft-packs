@@ -55,7 +55,28 @@
         "uvlock": true
       },
       "when": {
-        "down": "true"
+        "OR": [
+          {
+            "down": "true",
+            "north": "true"
+          },
+          {
+            "down": "true",
+            "east": "true"
+          },
+          {
+            "down": "true",
+            "south": "true"
+          },
+          {
+            "down": "true",
+            "west": "true"
+          },
+          {
+            "down": "true",
+            "up": "true"
+          }
+        ]
       }
     },
     {
@@ -82,7 +103,23 @@
           },
           {
             "north": "false",
-            "down": "true"
+            "down": "true",
+            "east": "true"
+          },
+          {
+            "north": "false",
+            "down": "true",
+            "south": "true"
+          },
+          {
+            "north": "false",
+            "down": "true",
+            "west": "true"
+          },
+          {
+            "north": "false",
+            "down": "true",
+            "up": "true"
           }
         ]
       }
@@ -112,7 +149,23 @@
           },
           {
             "east": "false",
-            "down": "true"
+            "down": "true",
+            "north": "true"
+          },
+          {
+            "east": "false",
+            "down": "true",
+            "south": "true"
+          },
+          {
+            "east": "false",
+            "down": "true",
+            "west": "true"
+          },
+          {
+            "east": "false",
+            "down": "true",
+            "up": "true"
           }
         ]
       }
@@ -142,7 +195,23 @@
           },
           {
             "south": "false",
-            "down": "true"
+            "down": "true",
+            "north": "true"
+          },
+          {
+            "south": "false",
+            "down": "true",
+            "east": "true"
+          },
+          {
+            "south": "false",
+            "down": "true",
+            "west": "true"
+          },
+          {
+            "south": "false",
+            "down": "true",
+            "up": "true"
           }
         ]
       }
@@ -172,7 +241,23 @@
           },
           {
             "west": "false",
-            "down": "true"
+            "down": "true",
+            "north": "true"
+          },
+          {
+            "west": "false",
+            "down": "true",
+            "east": "true"
+          },
+          {
+            "west": "false",
+            "down": "true",
+            "south": "true"
+          },
+          {
+            "west": "false",
+            "down": "true",
+            "up": "true"
           }
         ]
       }
@@ -202,7 +287,23 @@
           },
           {
             "up": "false",
-            "down": "true"
+            "down": "true",
+            "north": "true"
+          },
+          {
+            "up": "false",
+            "down": "true",
+            "east": "true"
+          },
+          {
+            "up": "false",
+            "down": "true",
+            "south": "true"
+          },
+          {
+            "up": "false",
+            "down": "true",
+            "west": "true"
           }
         ]
       }
@@ -248,6 +349,19 @@
         "west": "false",
         "up": "false",
         "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "mobs:block/abyslite_ore"
+      },
+      "when": {
+        "down": "true",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false"
       }
     }
   ]

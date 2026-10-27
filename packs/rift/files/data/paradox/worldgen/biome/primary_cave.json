@@ -1,0 +1,161 @@
+{
+  "attributes": {
+    "minecraft:gameplay/natural_mob_spawns": {
+      "argument": {
+        "spawn_costs": {
+          "minecraft:creeper": {
+            "charge": 0.7,
+            "energy_budget": 0.4
+          },
+          "minecraft:enderman": {
+            "charge": 0.7,
+            "energy_budget": 0.4
+          },
+          "minecraft:skeleton": {
+            "charge": 0.7,
+            "energy_budget": 0.4
+          },
+          "minecraft:slime": {
+            "charge": 0.7,
+            "energy_budget": 0.4
+          },
+          "minecraft:spider": {
+            "charge": 0.7,
+            "energy_budget": 0.4
+          },
+          "minecraft:witch": {
+            "charge": 0.7,
+            "energy_budget": 0.4
+          },
+          "minecraft:zombie": {
+            "charge": 0.7,
+            "energy_budget": 0.4
+          },
+          "minecraft:zombie_villager": {
+            "charge": 0.7,
+            "energy_budget": 0.4
+          }
+        },
+        "spawns_by_category": {
+          "ambient": [
+            {
+              "count": 8,
+              "type": "minecraft:bat",
+              "weight": 10
+            }
+          ],
+          "monster": [
+            {
+              "count": 4,
+              "type": "minecraft:spider",
+              "weight": 50
+            },
+            {
+              "count": 4,
+              "type": "minecraft:zombie",
+              "weight": 47
+            },
+            {
+              "count": 1,
+              "type": "minecraft:zombie_villager",
+              "weight": 2
+            },
+            {
+              "count": 4,
+              "type": "minecraft:skeleton",
+              "weight": 50
+            },
+            {
+              "count": 4,
+              "type": "minecraft:creeper",
+              "weight": 50
+            },
+            {
+              "count": 4,
+              "type": "minecraft:slime",
+              "weight": 50
+            },
+            {
+              "count": {
+                "max_inclusive": 4,
+                "min_inclusive": 1,
+                "type": "minecraft:uniform"
+              },
+              "type": "minecraft:enderman",
+              "weight": 5
+            },
+            {
+              "count": 1,
+              "type": "minecraft:witch",
+              "weight": 2
+            }
+          ]
+        }
+      },
+      "modifier": "overlay"
+    },
+    "minecraft:visual/ambient_particles": {
+      "argument": [
+        {
+          "particle": {
+            "type": "minecraft:warped_spore"
+          },
+          "probability": 0.01
+        }
+      ],
+      "modifier": "append"
+    },
+    "minecraft:visual/fog_color": "#0f2a2e"
+  },
+  "carvers": [],
+  "downfall": 0.4,
+  "effects": {
+    "water_color": "#3fd0d0"
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "minecraft:ore_dirt",
+      "paradox:ore_gravel",
+      "minecraft:ore_granite_upper",
+      "minecraft:ore_granite_lower",
+      "minecraft:ore_diorite_upper",
+      "minecraft:ore_diorite_lower",
+      "minecraft:ore_andesite_upper",
+      "minecraft:ore_andesite_lower",
+      "paradox:ore_tuff",
+      "minecraft:ore_coal_upper",
+      "minecraft:ore_coal_lower",
+      "minecraft:ore_iron_upper",
+      "minecraft:ore_iron_middle",
+      "paradox:ore_iron_small",
+      "minecraft:ore_gold",
+      "minecraft:ore_gold_lower",
+      "paradox:ore_redstone",
+      "paradox:ore_redstone_lower",
+      "paradox:ore_diamond",
+      "minecraft:ore_diamond_medium",
+      "paradox:ore_diamond_large",
+      "paradox:ore_diamond_buried",
+      "minecraft:ore_lapis",
+      "paradox:ore_lapis_buried",
+      "minecraft:ore_copper",
+      "paradox:eatherite_ore",
+      "paradox:pirelite_ore",
+      "paradox:pirelite_ore_lava",
+      "paradox:paralite_ore",
+      "paradox:abyslite_ore"
+    ],
+    [],
+    [],
+    [],
+    []
+  ],
+  "has_precipitation": true,
+  "temperature": 0.8
+}

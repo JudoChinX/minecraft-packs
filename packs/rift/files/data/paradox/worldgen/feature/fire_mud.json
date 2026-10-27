@@ -1,0 +1,57 @@
+{
+  "features": [
+    {
+      "feature": {
+        "half_height": 1,
+        "radius": {
+          "max_inclusive": 4,
+          "min_inclusive": 2,
+          "type": "minecraft:uniform"
+        },
+        "state_provider": {
+          "id": "minecraft:mud"
+        },
+        "target": {
+          "blocks": [
+            "minecraft:grass_block",
+            "minecraft:moss_block",
+            "minecraft:dirt"
+          ],
+          "type": "minecraft:matching_blocks"
+        },
+        "type": "minecraft:disk"
+      },
+      "placement": []
+    },
+    {
+      "feature": {
+        "half_height": 1,
+        "radius": {
+          "max_inclusive": 1,
+          "min_inclusive": 0,
+          "type": "minecraft:uniform"
+        },
+        "state_provider": {
+          "id": "minecraft:magma_block"
+        },
+        "target": {
+          "blocks": [
+            "minecraft:mud",
+            "minecraft:dirt"
+          ],
+          "type": "minecraft:matching_blocks"
+        },
+        "type": "minecraft:disk"
+      },
+      "placement": [
+        {
+          "type": "minecraft:offset",
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      ]
+    }
+  ],
+  "type": "minecraft:sequence"
+}

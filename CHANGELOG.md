@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.29.0] - 2026-10-27
+
+Daxton's Paradox Rift: the `rift` data pack, and in the mobs pack the Rift's four ores, their raw items and ingots, and the Rift Upgrade Template.
+
+### Added
+
+- `rift` data pack for Minecraft Java 26.3 (data pack format 121): one dimension, `paradox:rift`, Daxton's Paradox Rift — y -416 to 320 on vanilla terrain shapes; The Paradox Rift (red-tinted grass with moss patches, light-cyan leaves on sparse oak and dark oak, cyan water, a dusky magenta sky, fire-mud puddles and warped clumps) over the Primary Cave (deepslate, tuff and smooth basalt, dark teal fog, fewer cave monsters by `spawn_costs`); four ore features placing the mushroom-block states in `packs/rift/ORE_STATES` (eatherite, pirelite, paralite, abyslite); and the ancient-ruin chest table `paradox:chests/ancient_ruin`. No client install.
+- `mobs` pack: 13 items, the four Rift ores' looks as placed blocks and as items (eatherite light cyan, pirelite dark red, paralite violet-magenta and abyslite near-black navy with cyan flecks, each as flecks in deepslate and stone), their raw items and ingots, and the Rift Upgrade Template: the Abyslite Ingot (`mobs:abyslite_ingot`), the Abyslite Ore (`mobs:abyslite_ore`), the Eatherite Ingot (`mobs:eatherite_ingot`), the Eatherite Ore (`mobs:eatherite_ore`), the Paralite Ingot (`mobs:paralite_ingot`), the Paralite Ore (`mobs:paralite_ore`), the Pirelite Ingot (`mobs:pirelite_ingot`), the Pirelite Ore (`mobs:pirelite_ore`), the Raw Abyslite (`mobs:raw_abyslite`), the Raw Eatherite (`mobs:raw_eatherite`), the Raw Paralite (`mobs:raw_paralite`), the Raw Pirelite (`mobs:raw_pirelite`) and the Rift Upgrade Template (`mobs:rift_upgrade_template`).
+
+### Changed
+
+- `mobs` pack: `assets/minecraft/blockstates/mushroom_stem.json`, `brown_mushroom_block.json` and `red_mushroom_block.json` draw each Rift ore's mushroom-block state (`packs/rift/ORE_STATES`) as that ore alone: vanilla's face parts are narrowed so none matches an ore state. Every other state of those blocks draws as before. Every other existing model, texture and item is unchanged, and so is the pack icon.
+
 ## [0.28.0] - 2026-10-25
 
 The mobs pack's twenty-seventh batch: Daxton's Paradox Seeker, the Totem of Paradox and the Primary Catalyst.

@@ -54,6 +54,8 @@ Every custom mob look on the server this repository serves, as one resource pack
   borrowed tripwire state, open and shut; below).
 - **Daxton's 27th batch**, from the same pipeline: the Paradox Seeker, with the Totem of Paradox and the Primary
   Catalyst.
+- **The Paradox Rift** (0.29.0), from the same pipeline: the four Rift ores (eatherite, pirelite, paralite and
+  abyslite) as placed blocks and items, their raw items and ingots, and the Rift Upgrade Template (below).
 - **Sixteen items** under `assets/mobs/`: Jello, the Harmonizer Tentacle, the Cooked Harmonizer Tentacle, the Tropical
   Slime, the Orb of Dominance, the Ancient Callings, the Cutlass, the Peg Leg, the Crocofang Tooth, the Throwing Knife,
   the Coconut, the Redstone Golem Head, the Wicked Geomancer's Necklace, the Moldy Oak Planks, the Banana and the
@@ -116,6 +118,12 @@ Since 0.26.0 the Spike Trap takes the tripwire's `disarmed=true` states, which a
 `tripwire.json` is the client's own 32 tripwire variants, each narrowed to `disarmed=false` and naming only vanilla's
 `minecraft:block/tripwire_*` models, plus the 32 `disarmed=true` variants drawn as `mobs:block/spike_trap` (open) or
 `mobs:block/spike_trap_shut`. Every tripwire a player or a structure makes draws exactly as before.
+
+Since 0.29.0 the Paradox Rift's four ores are mushroom-block states too, placed by the [`rift`](../rift/) data pack
+(the states are in its `ORE_STATES`; the server keeps them with Paper's mushroom block updates off): two of the
+mushroom stem's, one of the red and one of the brown mushroom block's. A multipart's parts add up, so each of the
+three files narrows vanilla's face parts with an `OR` that leaves the ore states out, and draws each ore state as
+`mobs:block/<ore>_ore` alone. Every other state still draws as vanilla, and the all-faces-`false` state as before.
 
 ## Licensing
 
