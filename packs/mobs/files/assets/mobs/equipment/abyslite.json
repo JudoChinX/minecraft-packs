@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "mobs:abyslite"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "mobs:abyslite"
+      }
+    ]
+  }
+}
