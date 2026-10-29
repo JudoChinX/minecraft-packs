@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "mobs:eatherite"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "mobs:eatherite"
+      }
+    ]
+  }
+}

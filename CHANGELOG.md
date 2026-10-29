@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.30.0] - 2026-10-29
+
+The mobs pack's Paradox Rift gear: 36 eatherite, pirelite, paralite and abyslite pieces and their armour looks.
+
+### Added
+
+- `mobs` pack: 36 items, the Abyslite Axe (`mobs:abyslite_axe`), the Abyslite Boots (`mobs:abyslite_boots`), the Abyslite Chestplate (`mobs:abyslite_chestplate`), the Abyslite Helmet (`mobs:abyslite_helmet`), the Abyslite Hoe (`mobs:abyslite_hoe`), the Abyslite Leggings (`mobs:abyslite_leggings`), the Abyslite Pickaxe (`mobs:abyslite_pickaxe`), the Abyslite Shovel (`mobs:abyslite_shovel`), the Abyslite Sword (`mobs:abyslite_sword`), the Eatherite Axe (`mobs:eatherite_axe`), the Eatherite Boots (`mobs:eatherite_boots`), the Eatherite Chestplate (`mobs:eatherite_chestplate`), the Eatherite Helmet (`mobs:eatherite_helmet`), the Eatherite Hoe (`mobs:eatherite_hoe`), the Eatherite Leggings (`mobs:eatherite_leggings`), the Eatherite Pickaxe (`mobs:eatherite_pickaxe`), the Eatherite Shovel (`mobs:eatherite_shovel`), the Eatherite Sword (`mobs:eatherite_sword`), the Paralite Axe (`mobs:paralite_axe`), the Paralite Boots (`mobs:paralite_boots`), the Paralite Chestplate (`mobs:paralite_chestplate`), the Paralite Helmet (`mobs:paralite_helmet`), the Paralite Hoe (`mobs:paralite_hoe`), the Paralite Leggings (`mobs:paralite_leggings`), the Paralite Pickaxe (`mobs:paralite_pickaxe`), the Paralite Shovel (`mobs:paralite_shovel`), the Paralite Sword (`mobs:paralite_sword`), the Pirelite Axe (`mobs:pirelite_axe`), the Pirelite Boots (`mobs:pirelite_boots`), the Pirelite Chestplate (`mobs:pirelite_chestplate`), the Pirelite Helmet (`mobs:pirelite_helmet`), the Pirelite Hoe (`mobs:pirelite_hoe`), the Pirelite Leggings (`mobs:pirelite_leggings`), the Pirelite Pickaxe (`mobs:pirelite_pickaxe`), the Pirelite Shovel (`mobs:pirelite_shovel`) and the Pirelite Sword (`mobs:pirelite_sword`).
+- `mobs` pack: the four armour looks, `assets/mobs/equipment/<ore>.json` for abyslite, eatherite, paralite and pirelite, each with its `humanoid` and `humanoid_leggings` texture under `assets/mobs/textures/entity/equipment/`. Every other existing model, texture and item is unchanged, and so is the pack icon.
+
 ## [0.29.0] - 2026-10-27
 
 Daxton's Paradox Rift: the `rift` data pack, and in the mobs pack the Rift's four ores, their raw items and ingots, and the Rift Upgrade Template.

@@ -56,6 +56,9 @@ Every custom mob look on the server this repository serves, as one resource pack
   Catalyst.
 - **The Paradox Rift** (0.29.0), from the same pipeline: the four Rift ores (eatherite, pirelite, paralite and
   abyslite) as placed blocks and items, their raw items and ingots, and the Rift Upgrade Template (below).
+- **The Paradox Rift gear** (0.30.0), from the same pipeline: a sword, pickaxe, axe, shovel, hoe, helmet, chestplate,
+  leggings and boots in each of the four Rift tiers (36 items), and each tier's armour look as worn
+  (`assets/mobs/equipment/<ore>.json`).
 - **Sixteen items** under `assets/mobs/`: Jello, the Harmonizer Tentacle, the Cooked Harmonizer Tentacle, the Tropical
   Slime, the Orb of Dominance, the Ancient Callings, the Cutlass, the Peg Leg, the Crocofang Tooth, the Throwing Knife,
   the Coconut, the Redstone Golem Head, the Wicked Geomancer's Necklace, the Moldy Oak Planks, the Banana and the

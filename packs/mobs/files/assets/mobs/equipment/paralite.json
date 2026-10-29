@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "mobs:paralite"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "mobs:paralite"
+      }
+    ]
+  }
+}
