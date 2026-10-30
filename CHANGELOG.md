@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.30.1] - 2026-10-30
+
+minecraft-ref: 0951da0fb330b6dc00ba04f22544be4af871f16a
+
+### Changed
+
+- New Paradox Seeker skin, painted by Daxton.
+
 ## [0.30.0] - 2026-10-29
 
 The mobs pack's Paradox Rift gear: 36 eatherite, pirelite, paralite and abyslite pieces and their armour looks.
