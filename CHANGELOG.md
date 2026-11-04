@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.30.2] - 2026-11-04
+
+minecraft-ref: 5d812d1e85b77ba1a8a6f3e8c04b1c361a7aa531
+
+### Changed
+
+- New Illadator Sword skin, painted by Daxton.
+
 ## [0.30.1] - 2026-10-30
 
 minecraft-ref: 0951da0fb330b6dc00ba04f22544be4af871f16a
