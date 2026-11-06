@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.31.0] - 2026-11-06
+
+The mobs pack's 28th batch, the Archer: no pack files change. The client draws the Archer as the vanilla pillager, holding a bow and a shield.
+
 ## [0.30.2] - 2026-11-04
 
 minecraft-ref: 5d812d1e85b77ba1a8a6f3e8c04b1c361a7aa531
