@@ -91,6 +91,8 @@ _ITEMS = (
     'pirelite_pickaxe',
     'pirelite_shovel',
     'pirelite_sword',
+    'junk_axe',
+    'sand_dust',
 )
 _MODELS = (
     'blob',
@@ -158,6 +160,8 @@ _MODELS = (
     'built_halibut',
     'built_squog',
     'paradox_seeker',
+    'hunter',
+    'sulter',
 )
 _BLOCKS = (
     'moldy_oak_planks',

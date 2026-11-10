@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.32.0] - 2026-11-10
+
+The mobs pack's 30th batch: the Hunter and the Sulter.
+
+### Added
+
+- `mobs` pack: two more mobs as BetterModel 3.5.0 display models — the Hunter and the Sulter, and original stand-in textures for the atlas to replace, `bettermodel:item/hunter_illager_face` and `bettermodel:item/sulter_illager_face`; and two items, the Junk Axe (`mobs:junk_axe`) and the Sand Dust (`mobs:sand_dust`).
+
+### Changed
+
+- `mobs` pack: the items atlas, `assets/minecraft/atlases/items.json`, adds `minecraft:entity/illager/pillager` for the Hunter and the Sulter. It only names the vanilla textures; no Mojang pixels ship. Every other existing model, texture and item is unchanged, and so is the pack icon.
+
 ## [0.31.0] - 2026-11-06
 
 The mobs pack's 28th batch, the Archer: no pack files change. The client draws the Archer as the vanilla pillager, holding a bow and a shield.
