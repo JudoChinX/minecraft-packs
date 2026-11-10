@@ -28,6 +28,11 @@
     {
       "type": "minecraft:single",
       "resource": "minecraft:entity/illager/pillager",
+      "sprite": "bettermodel:item/hunter_illager_face"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "minecraft:entity/illager/pillager",
       "sprite": "bettermodel:item/iceologer_illager_face"
     },
     {
@@ -89,6 +94,11 @@
       "type": "minecraft:single",
       "resource": "minecraft:entity/illager/pillager",
       "sprite": "bettermodel:item/simphtomer_illager_face"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "minecraft:entity/illager/pillager",
+      "sprite": "bettermodel:item/sulter_illager_face"
     },
     {
       "type": "minecraft:single",

@@ -54,6 +54,8 @@ Every custom mob look on the server this repository serves, as one resource pack
   borrowed tripwire state, open and shut; below).
 - **Daxton's 27th batch**, from the same pipeline: the Paradox Seeker, with the Totem of Paradox and the Primary
   Catalyst.
+- **Daxton's 30th batch**, from the same pipeline: the Hunter and the Sulter, each wearing the illager face (below),
+  with the Junk Axe and the Sand Dust.
 - **The Paradox Rift** (0.29.0), from the same pipeline: the four Rift ores (eatherite, pirelite, paralite and
   abyslite) as placed blocks and items, their raw items and ingots, and the Rift Upgrade Template (below).
 - **The Paradox Rift gear** (0.30.0), from the same pipeline: a sword, pickaxe, axe, shovel, hoe, helmet, chestplate,
@@ -83,7 +85,7 @@ texture.
 ## The illager faces
 
 The Summoner, the Enchanter, the Arch-Illager, the five pirates, the Pirate Captain, the Geomancer, the Infernoillager,
-the Simphtomer, the Archevoker, the Miner, the Iceologer, the Wielder, the Wicked Geomancer, the Invader, the Illadator and the Sword Illadator wear the vanilla illager face, the one the pillager, the vindicator
+the Simphtomer, the Archevoker, the Miner, the Iceologer, the Wielder, the Wicked Geomancer, the Invader, the Illadator, the Sword Illadator, the Hunter and the Sulter wear the vanilla illager face, the one the pillager, the vindicator
 and the evoker share, without the pack carrying it. Their head and nose use a second texture,
 `bettermodel:item/<model>_illager_face`, laid out like the vanilla illager texture. The pack ships that texture as an
 original stand-in, `assets/bettermodel/textures/item/<model>_illager_face.png`: a grey-green illager-style face drawn
