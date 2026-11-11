@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.33.2] - 2026-11-11
+
+minecraft-ref: 622b74fc6159dc5c8341b65740990b246f192864
+
+### Changed
+
+- Undid v0.33.1.
+
 ## [0.33.1] - 2026-11-11
 
 minecraft-ref: eb75b979bbae6edf689080b392abe3493dec54a3
