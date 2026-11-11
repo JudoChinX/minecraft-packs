@@ -156,3 +156,19 @@ def test_built_mobs(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
     digest = (tmp_path / 'dist' / 'built-mobs.sha256').read_text(encoding='utf-8').split()[0]
     assert status == 0
     assert capsys.readouterr().out == f'{out}\n{tmp_path / "dist" / "built-mobs.sha256"}\nBUILT_MOBS_SHA256={digest}\n'
+
+
+def test_built_structures(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
+    """Test built-structures zips the source directory, writes the SHA-256 file and prints both paths and the digest."""
+    src = tmp_path / 'built-structures'
+    src.mkdir()
+    (src / 'built_ant.nbt').write_bytes(b'nbt')
+    (src / 'built_ant.json').write_text('{}', encoding='utf-8')
+    out = tmp_path / 'dist' / 'built-structures.zip'
+
+    status = main(['built-structures', str(out), '--src', str(src)])
+
+    sha_file = tmp_path / 'dist' / 'built-structures.sha256'
+    digest = sha_file.read_text(encoding='utf-8').split()[0]
+    assert status == 0
+    assert capsys.readouterr().out == f'{out}\n{sha_file}\nBUILT_STRUCTURES_SHA256={digest}\n'
