@@ -4,8 +4,12 @@ import hashlib
 import zipfile
 from pathlib import Path
 
+import pytest
+
 from minecraft_packs.built_mobs import sha256_path
+from minecraft_packs.built_structures import MAX_STRUCTURES
 from minecraft_packs.built_structures import zip_bundle
+from minecraft_packs.errors import PackError
 
 EMPTY_ZIP_SIZE = 22
 
@@ -22,7 +26,8 @@ def _bundle(root: Path) -> Path:
     (src / 'notes.txt').write_text('stray', encoding='utf-8')
     (src / 'built_Bad.nbt').write_bytes(b'x')
     (src / 'built_ant.bbmodel').write_text('{}', encoding='utf-8')
-    (src / 'sub').mkdir()
+    (src / 'built_dir.nbt').mkdir()
+    (src / 'built_a__b.nbt').write_bytes(b'x')
     return src
 
 
@@ -80,3 +85,29 @@ def test_sha_file_format(tmp_path: Path) -> None:
 
     assert sha256_path(zip_path).read_text(encoding='utf-8') == f'{digest}  built-structures.zip\n'
     assert digest == hashlib.sha256(zip_path.read_bytes()).hexdigest()
+
+
+def test_unpaired_file_is_an_error(tmp_path: Path) -> None:
+    """Test a .nbt without its .json, or the reverse, fails before a release."""
+    src = tmp_path / 'built-structures'
+    src.mkdir()
+    (src / 'built_ant.nbt').write_bytes(b'x')
+    (src / 'built_bee.json').write_text('{}', encoding='utf-8')
+
+    with pytest.raises(PackError, match='built_ant, built_bee'):
+        zip_bundle(src, tmp_path / 'built-structures.zip')
+
+
+def test_too_many_structures_is_an_error(tmp_path: Path) -> None:
+    """Test 50 structures pass and 51 fail."""
+    src = tmp_path / 'built-structures'
+    src.mkdir()
+    for number in range(MAX_STRUCTURES):
+        (src / f'built_s{number}.nbt').write_bytes(b'x')
+        (src / f'built_s{number}.json').write_text('{}', encoding='utf-8')
+    zip_bundle(src, tmp_path / 'built-structures.zip')
+    (src / 'built_extra.nbt').write_bytes(b'x')
+    (src / 'built_extra.json').write_text('{}', encoding='utf-8')
+
+    with pytest.raises(PackError, match='51 structures'):
+        zip_bundle(src, tmp_path / 'built-structures.zip')

@@ -5,11 +5,10 @@ It reuses the pack zip layout (sorted, stored, zip epoch, mode 0644), so the sam
 same bytes and the same SHA-256.
 """
 
-import hashlib
 import re
 from pathlib import Path
 
-from minecraft_packs.archive import write_zip
+from minecraft_packs.archive import zip_flat
 
 SHA256_SUFFIX = '.sha256'
 
@@ -41,8 +40,4 @@ def zip_bundle(src: Path, out: Path) -> str:
     Returns:
         The zip's SHA-256.
     """
-    entries = {path.name: path.read_bytes() for path in src.iterdir() if path.is_file() and _ENTRY.fullmatch(path.name)}
-    write_zip(entries, out)
-    digest = hashlib.sha256(out.read_bytes()).hexdigest()
-    sha256_path(out).write_text(f'{digest}  {out.name}\n', encoding='utf-8')
-    return digest
+    return zip_flat(src, out, _ENTRY)[0]

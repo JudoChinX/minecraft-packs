@@ -10,6 +10,7 @@ pin.
 import hashlib
 import io
 import json
+import re
 import zipfile
 import zlib
 from pathlib import Path
@@ -196,3 +197,27 @@ def write_zip(entries: dict[str, bytes], zip_path: Path) -> str:
     zip_path.write_bytes(data)
     sidecar_path(zip_path).write_text(f'{digest}  {zip_path.name}\n', encoding='utf-8')
     return digest
+
+
+def zip_flat(src: Path, out: Path, pattern: re.Pattern[str]) -> tuple[str, list[str]]:
+    """Zip a directory's top-level files whose names match, and write the zip's SHA-256 file beside it.
+
+    The zip uses the pack layout (sorted, stored, zip epoch, mode 0644), so the same files always give the same
+    bytes. The SHA-256 file holds one ``sha256sum`` line, ``<sha256>  <zip name>``, at ``out`` with ``.zip``
+    replaced by ``.sha256``.
+
+    Args:
+        src: The directory to read.
+        out: Where to write the zip; its directory is created if needed.
+        pattern: A regular expression a file name must match in full.
+
+    Returns:
+        The zip's SHA-256 and the sorted names that went in.
+    """
+    entries = {
+        path.name: path.read_bytes() for path in src.iterdir() if path.is_file() and pattern.fullmatch(path.name)
+    }
+    write_zip(entries, out)
+    digest = hashlib.sha256(out.read_bytes()).hexdigest()
+    out.with_suffix('.sha256').write_text(f'{digest}  {out.name}\n', encoding='utf-8')
+    return digest, sorted(entries)

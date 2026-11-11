@@ -1,18 +1,20 @@
 """The built-structures bundle: ``built-structures/`` zipped deterministically for a release.
 
-The Mobs plugin reads the bundle as a stored zip of flat ``built_*.nbt`` and ``built_*.json`` entries, one
-pair per structure. It reuses the pack zip layout (sorted, stored, zip epoch, mode 0644), so the same files
-always give the same bytes and the same SHA-256.
+The Mobs plugin reads the bundle as a stored zip of flat ``built_<id>.nbt`` and ``built_<id>.json`` pairs, each
+id once and at most 50 of them. It reuses the pack zip layout (sorted, stored, zip epoch, mode 0644), so the
+same files always give the same bytes and the same SHA-256. A directory the plugin would refuse fails here, so
+CI stops before a release rather than the server pausing every Send.
 """
 
-import hashlib
 import re
 from pathlib import Path
 
-from minecraft_packs.archive import write_zip
-from minecraft_packs.built_mobs import sha256_path
+from minecraft_packs.archive import zip_flat
+from minecraft_packs.errors import PackError
 
-_ENTRY = re.compile(r'built_[a-z0-9_]+\.(nbt|json)')
+MAX_STRUCTURES = 50
+
+_ENTRY = re.compile(r'built_[a-z0-9]+(_[a-z0-9]+)*\.(nbt|json)')
 
 
 def zip_bundle(src: Path, out: Path) -> str:
@@ -27,9 +29,18 @@ def zip_bundle(src: Path, out: Path) -> str:
 
     Returns:
         The zip's SHA-256.
+
+    Raises:
+        PackError: A ``.nbt`` has no ``.json`` or the reverse, or there are more than 50 structures.
     """
-    entries = {path.name: path.read_bytes() for path in src.iterdir() if path.is_file() and _ENTRY.fullmatch(path.name)}
-    write_zip(entries, out)
-    digest = hashlib.sha256(out.read_bytes()).hexdigest()
-    sha256_path(out).write_text(f'{digest}  {out.name}\n', encoding='utf-8')
+    digest, names = zip_flat(src, out, _ENTRY)
+    kinds: dict[str, set[str]] = {}
+    for name in names:
+        stem, _, kind = name.rpartition('.')
+        kinds.setdefault(stem, set()).add(kind)
+    unpaired = sorted(stem for stem, found in kinds.items() if len(found) != 2)
+    if unpaired:
+        raise PackError(f'{src}: needs both .nbt and .json: {", ".join(unpaired)}')
+    if len(kinds) > MAX_STRUCTURES:
+        raise PackError(f'{src}: {len(kinds)} structures; the limit is {MAX_STRUCTURES}')
     return digest
