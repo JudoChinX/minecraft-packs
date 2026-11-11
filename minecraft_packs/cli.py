@@ -1,4 +1,4 @@
-"""Command-line interface: ``python -m minecraft_packs build|built-mobs|preview|verify``.
+"""Command-line interface: ``python -m minecraft_packs build|built-mobs|built-structures|preview|verify``.
 
 Run it from the repository root. Results a script might consume (zip paths and SHA-1s) go to
 standard output; progress and errors go to standard error.
@@ -17,10 +17,12 @@ from minecraft_packs.build import preview_pack
 from minecraft_packs.build import record_expected_sha1
 from minecraft_packs.built_mobs import sha256_path
 from minecraft_packs.built_mobs import zip_bundle
+from minecraft_packs.built_structures import zip_bundle as zip_structures
 from minecraft_packs.config import load_packs
 from minecraft_packs.errors import PackError
 
 DEFAULT_BUILT_MOBS_DIR = Path('built-mobs')
+DEFAULT_BUILT_STRUCTURES_DIR = Path('built-structures')
 DEFAULT_CACHE_DIR = Path('.cache')
 DEFAULT_OUT_DIR = Path('dist')
 DEFAULT_PACKS_DIR = Path('packs')
@@ -71,6 +73,13 @@ def _built_mobs(args: argparse.Namespace) -> int:
     return 0
 
 
+def _built_structures(args: argparse.Namespace) -> int:
+    """Zip the built structures, print the zip's and SHA-256 file's paths, and the SHA-256."""
+    digest = zip_structures(args.src, args.out)
+    print(f'{args.out}\n{sha256_path(args.out)}\nBUILT_STRUCTURES_SHA256={digest}')
+    return 0
+
+
 def _parser() -> argparse.ArgumentParser:
     """Build the argument parser."""
     parser = argparse.ArgumentParser(
@@ -95,6 +104,18 @@ def _parser() -> argparse.ArgumentParser:
         '--src', type=Path, default=DEFAULT_BUILT_MOBS_DIR, help='directory of built mobs (default: built-mobs)'
     )
     bundle.set_defaults(handler=_built_mobs)
+
+    structures = commands.add_parser(
+        'built-structures', help='zip the built structures into a deterministic zip with a .sha256 file'
+    )
+    structures.add_argument('out', type=Path, metavar='OUT', help='the zip to write; its .sha256 file lands beside it')
+    structures.add_argument(
+        '--src',
+        type=Path,
+        default=DEFAULT_BUILT_STRUCTURES_DIR,
+        help='directory of built structures (default: built-structures)',
+    )
+    structures.set_defaults(handler=_built_structures)
 
     preview = commands.add_parser('preview', help="render a review sheet of a pack's texture and front view")
     preview.add_argument('pack', metavar='PACK', help='the pack to preview')

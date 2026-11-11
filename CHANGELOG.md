@@ -9,7 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.33.0] - 2026-11-11
 
-The mobs pack's 31st batch: no mob changes.
+The mobs pack's 31st batch: no mob changes; Daxton's builds get their own release assets (fleet/tickets#411).
+
+### Added
+
+- `built-structures` command and release assets: `built-structures/` (the structures sent from the Mobs plugin's board, `built_<name>.nbt` plus `built_<name>.json`) is zipped deterministically into `built-structures.zip` with `built-structures.sha256`, published beside the built-mobs pair for the plugin's updater. An empty directory gives the 22-byte empty zip.
 
 ## [0.32.0] - 2026-11-10
 
