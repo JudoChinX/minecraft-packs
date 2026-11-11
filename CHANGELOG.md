@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.33.1] - 2026-11-11
+
+minecraft-ref: eb75b979bbae6edf689080b392abe3493dec54a3
+
+### Changed
+
+- New structure Test E2e, built by Daxton.
+
 ## [0.33.0] - 2026-11-11
 
 The mobs pack's 31st batch: no mob changes; Daxton's builds get their own release assets (fleet/tickets#411).

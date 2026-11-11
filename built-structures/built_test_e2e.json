@@ -1,0 +1,19 @@
+{
+  "name": "Test E2e",
+  "size": [
+    3,
+    4,
+    3
+  ],
+  "guards": [
+    {
+      "post": "archer-1",
+      "mob": "archer",
+      "at": [
+        1,
+        1,
+        1
+      ]
+    }
+  ]
+}
