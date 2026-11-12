@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.33.3] - 2026-11-12
+
+minecraft-ref: 53957a2c6746712b58ce1f0ec4616fc9ffca68a1
+
+### Changed
+
+- New mob cinnabar cube, built by Daxton.
+
 ## [0.33.2] - 2026-11-11
 
 minecraft-ref: 622b74fc6159dc5c8341b65740990b246f192864
