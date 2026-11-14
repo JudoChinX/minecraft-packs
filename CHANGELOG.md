@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.35.1] - 2026-11-14
+
+minecraft-ref: 39b3fdc1e4237d2270ed06bb72e372f3d7ccef52
+
+### Changed
+
+- New mob poisonous slime, built by Daxton.
+
 ## [0.35.0] - 2026-11-14
 
 The mobs pack's 32nd batch: the Redstone Golems' face and stone, look only.
