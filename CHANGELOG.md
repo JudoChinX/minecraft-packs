@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.35.0] - 2026-11-14
+
+The mobs pack's 32nd batch: the Redstone Golems' face and stone, look only.
+
+### Changed
+
+- `mobs` pack: the Redstone Golem and the Charged Redstone Golem are redrawn: shaded cobbles parted by thin dark cracks (red on the normal golem, a web of glowing lava on the charged one) instead of mortar-ringed stones, and a heavy brow over deep, warm-shadowed eye sockets with brighter eyes and a crack down the face (`redstone_golem_*` and `charged_redstone_golem_*` models and textures). The Redstone Golem Head's two item textures (`redstone_golem_head.png`, `redstone_golem_head_glow.png`) follow the new stone. Every other existing model, texture and item is unchanged, and so is the pack icon.
+
 ## [0.34.0] - 2026-11-14
 
 The Archer gets its own look, after Daxton's picture (look only).
