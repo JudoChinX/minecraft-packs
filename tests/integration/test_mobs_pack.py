@@ -162,6 +162,8 @@ _MODELS = (
     'paradox_seeker',
     'hunter',
     'sulter',
+    'archer',
+    'built_cinnabar_cube',
 )
 _BLOCKS = (
     'moldy_oak_planks',
