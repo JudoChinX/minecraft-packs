@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.34.0] - 2026-11-14
+
+The Archer gets its own look, after Daxton's picture (look only).
+
+### Added
+
+- `mobs` pack: the Archer's own BetterModel 3.5.0 display model (grey helmet, orange jacket), and an original stand-in texture for the atlas to replace, `bettermodel:item/archer_illager_face`.
+
+### Changed
+
+- `mobs` pack: the items atlas, `assets/minecraft/atlases/items.json`, adds `minecraft:entity/illager/pillager` for the Archer. It only names the vanilla textures; no Mojang pixels ship. Every other existing model, texture and item is unchanged, and so is the pack icon.
+
 ## [0.33.4] - 2026-11-13
 
 minecraft-ref: 892fe7865a27f1ee4fcca894e297aa942ec3efec

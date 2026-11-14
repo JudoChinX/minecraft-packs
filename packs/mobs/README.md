@@ -56,6 +56,7 @@ Every custom mob look on the server this repository serves, as one resource pack
   Catalyst.
 - **Daxton's 30th batch**, from the same pipeline: the Hunter and the Sulter, each wearing the illager face (below),
   with the Junk Axe and the Sand Dust.
+- **The Archer's look** (0.34.0), from the same pipeline: the Archer wearing the illager face (below), a grey helmet and an orange jacket.
 - **The Paradox Rift** (0.29.0), from the same pipeline: the four Rift ores (eatherite, pirelite, paralite and
   abyslite) as placed blocks and items, their raw items and ingots, and the Rift Upgrade Template (below).
 - **The Paradox Rift gear** (0.30.0), from the same pipeline: a sword, pickaxe, axe, shovel, hoe, helmet, chestplate,
