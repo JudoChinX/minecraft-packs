@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.35.2] - 2026-11-15
+
+minecraft-ref: a3cf43d6bde5f1c4e04b4531474b24dffcd3d7a1
+
+### Changed
+
+- New mob hopper, built by Daxton.
+
 ## [0.35.1] - 2026-11-14
 
 minecraft-ref: 39b3fdc1e4237d2270ed06bb72e372f3d7ccef52
