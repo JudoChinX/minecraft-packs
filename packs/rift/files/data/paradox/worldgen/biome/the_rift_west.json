@@ -1,0 +1,82 @@
+{
+  "attributes": {
+    "minecraft:gameplay/natural_mob_spawns": {
+      "argument": {
+        "spawn_costs": {},
+        "spawns_by_category": {}
+      },
+      "modifier": "overlay"
+    },
+    "minecraft:visual/ambient_particles": {
+      "argument": [
+        {
+          "particle": {
+            "type": "minecraft:crimson_spore"
+          },
+          "probability": 0.01
+        }
+      ],
+      "modifier": "append"
+    },
+    "minecraft:visual/fog_color": "#f0b868",
+    "minecraft:visual/sky_color": "#e8a030"
+  },
+  "carvers": [],
+  "downfall": 0.4,
+  "effects": {
+    "foliage_color": "#7fe6e6",
+    "grass_color": "#b8323c",
+    "water_color": "#d08a2a"
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "minecraft:ore_dirt",
+      "paradox:ore_gravel",
+      "minecraft:ore_granite_upper",
+      "minecraft:ore_granite_lower",
+      "minecraft:ore_diorite_upper",
+      "minecraft:ore_diorite_lower",
+      "minecraft:ore_andesite_upper",
+      "minecraft:ore_andesite_lower",
+      "paradox:ore_tuff",
+      "minecraft:ore_coal_upper",
+      "minecraft:ore_coal_lower",
+      "minecraft:ore_iron_upper",
+      "minecraft:ore_iron_middle",
+      "paradox:ore_iron_small",
+      "minecraft:ore_gold",
+      "minecraft:ore_gold_lower",
+      "paradox:ore_redstone",
+      "paradox:ore_redstone_lower",
+      "paradox:ore_diamond",
+      "minecraft:ore_diamond_medium",
+      "paradox:ore_diamond_large",
+      "paradox:ore_diamond_buried",
+      "minecraft:ore_lapis",
+      "paradox:ore_lapis_buried",
+      "minecraft:ore_copper",
+      "paradox:eatherite_ore",
+      "paradox:pirelite_ore",
+      "paradox:pirelite_ore_lava",
+      "paradox:paralite_ore"
+    ],
+    [],
+    [],
+    [
+      "paradox:fire_mud",
+      "paradox:warped_clump",
+      "minecraft:trees_plains",
+      "paradox:sparse_dark_oak",
+      "minecraft:patch_grass_plain"
+    ],
+    []
+  ],
+  "has_precipitation": true,
+  "temperature": 0.8
+}

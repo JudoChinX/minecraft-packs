@@ -92,7 +92,7 @@ def test_rift_dimension_type_height() -> None:
 
 def test_rift_biomes_have_no_carvers() -> None:
     """Test neither biome lists a carver: a vanilla cave carver would fill the deep stone with lava."""
-    for biome in ('the_rift', 'primary_cave'):
+    for biome in ('the_rift', 'the_rift_west', 'primary_cave'):
         assert not _read(f'worldgen/biome/{biome}.json')['carvers'], biome
 
 
@@ -261,17 +261,40 @@ def test_rift_ancient_ruin_loot_is_the_ancient_city_s() -> None:
     assert table['pools'][0]['entries'] == [{'type': 'minecraft:loot_table', 'value': 'minecraft:chests/ancient_city'}]
 
 
+_SURFACE = ('the_rift', 'the_rift_west')
+
+
 def test_rift_biome_colours() -> None:
-    """Test the Rift's red grass, cyan leaves and water, magenta sky, and the Primary Cave's teal fog."""
-    the_rift = _read('worldgen/biome/the_rift.json')
+    """Test the Rift's red grass, cyan leaves, purple east sky and water, and the Primary Cave's teal fog."""
+    east = _read('worldgen/biome/the_rift.json')
     primary_cave = _read('worldgen/biome/primary_cave.json')
 
-    assert the_rift['effects'] == {'foliage_color': '#7fe6e6', 'grass_color': '#b8323c', 'water_color': '#3fd0d0'}
-    assert the_rift['attributes']['minecraft:visual/sky_color'] == '#5a1f45'
-    assert the_rift['attributes']['minecraft:visual/fog_color'] == '#9a3a4a'
+    assert east['effects'] == {'foliage_color': '#7fe6e6', 'grass_color': '#b8323c', 'water_color': '#9a2f6a'}
+    assert east['attributes']['minecraft:visual/sky_color'] == '#5b2a86'
+    assert east['attributes']['minecraft:visual/fog_color'] == '#7a3a6e'
     assert primary_cave['attributes']['minecraft:visual/fog_color'] == '#0f2a2e'
-    assert 'crimson_spore' in json.dumps(the_rift['attributes']['minecraft:visual/ambient_particles'])
+    assert 'crimson_spore' in json.dumps(east['attributes']['minecraft:visual/ambient_particles'])
     assert 'warped_spore' in json.dumps(primary_cave['attributes']['minecraft:visual/ambient_particles'])
+
+
+def test_rift_west_biome_is_the_east_in_yellow_orange() -> None:
+    """Test the west biome is the east's twin with a yellow-orange sky, fog and water."""
+    east, west = (_read(f'worldgen/biome/{b}.json') for b in _SURFACE)
+
+    assert west['effects'] == {'foliage_color': '#7fe6e6', 'grass_color': '#b8323c', 'water_color': '#d08a2a'}
+    assert west['attributes']['minecraft:visual/sky_color'] == '#e8a030'
+    assert west['attributes']['minecraft:visual/fog_color'] == '#f0b868'
+    for key in ('features', 'carvers', 'temperature', 'downfall', 'has_precipitation'):
+        assert west[key] == east[key], key
+    for key in ('minecraft:visual/ambient_particles', 'minecraft:gameplay/natural_mob_spawns'):
+        assert west['attributes'][key] == east['attributes'][key], key
+
+
+def test_rift_surface_biomes_spawn_nothing() -> None:
+    """Test neither surface biome lists a spawn; the Primary Cave keeps its own."""
+    for biome in _SURFACE:
+        spawns = _read(f'worldgen/biome/{biome}.json')['attributes']['minecraft:gameplay/natural_mob_spawns']
+        assert spawns['argument']['spawns_by_category'] == {}, biome
 
 
 # Vanilla 26.3's common overworld monsters and their weights (misode/mcmeta 26.3-data-json: the list every cave biome

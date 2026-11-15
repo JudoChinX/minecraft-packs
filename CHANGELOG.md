@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- The Rift has a purple east sky and a new yellow-orange `paradox:the_rift_west` biome, and the surface spawns nothing.
+
 ## [0.35.2] - 2026-11-15
 
 minecraft-ref: a3cf43d6bde5f1c4e04b4531474b24dffcd3d7a1

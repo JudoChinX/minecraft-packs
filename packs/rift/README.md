@@ -6,7 +6,8 @@ from vanilla blocks.
 
 | Biome | Ground | Plants and features | Sky, fog, water | Where |
 |---|---|---|---|---|
-| `paradox:the_rift` ("The Paradox Rift") | grass tinted red (`#b8323c`), patches of moss block (about 15 %, from the surface noise) | sparse oak and dark oak with light-cyan leaves (`#7fe6e6`), red short grass; fire-mud puddles (about 1 chunk in 2) and warped clumps (about 1 in 3) | dusky magenta sky (`#5a1f45`), red fog (`#9a3a4a`), cyan water (`#3fd0d0`), crimson spores | the surface, down to about y -37 |
+| `paradox:the_rift` ("The Paradox Rift") | grass tinted red (`#b8323c`), patches of moss block (about 15 %, from the surface noise) | sparse oak and dark oak with light-cyan leaves (`#7fe6e6`), red short grass; fire-mud puddles (about 1 chunk in 2) and warped clumps (about 1 in 3) | purple sky (`#5b2a86`), plum fog (`#7a3a6e`), mauve water (`#9a2f6a`), crimson spores | the surface, down to about y -37 |
+| `paradox:the_rift_west` ("The Paradox Rift") | as the east | as the east | yellow-orange sky (`#e8a030`), pale amber fog (`#f0b868`), amber water (`#d08a2a`), crimson spores | the surface west of x 0, by the Mobs plugin's one-time repaint; never in the dimension's biome source |
 | `paradox:primary_cave` | deepslate, with blobs of tuff and smooth basalt | none | dark teal fog (`#0f2a2e`), warped spores | `depth` 0.8 and more: everything from about y -37 down to the floor |
 
 - **The dimension type** reaches from **y -416 to 320** (`min_y` -416, `height` 736, `logical_height`
@@ -50,7 +51,7 @@ from vanilla blocks.
 - **`paradox:chests/ancient_ruin`** is the loot table of the chests in the Rift's ancient ruins (placed
   by the Mobs plugin). It draws vanilla's ancient-city chest table once; the plugin adds the Rift's own
   items to it as the chest is opened.
-- **Mob spawns** are the vanilla plains' on the surface. The Primary Cave has vanilla's cave monsters
+- **Mob spawns:** the surface spawns nothing new (both surface biomes list no spawns; the Primary Cave's are unchanged). The Primary Cave has vanilla's cave monsters
   and bats, but fewer monsters: each has a `spawn_costs` entry (charge 0.7, energy budget 0.4), so a
   monster does not spawn where the monsters already near it would push the spot's charge over that
   budget. On a copy of the server that keeps about 13 monsters round a player on a hollow's floor,
@@ -66,3 +67,9 @@ worldgen). Paper creates the world, and Multiverse-Core 5 imports it as `world_p
 **Once the world has generated, never remove the pack.** Its chunks name `paradox:` biomes and hold
 the ore states. Delete the world first, then the pack. A new version of the pack changes only chunks
 generated after it.
+
+A biome's colours and spawns are registry data and change every chunk at the next restart, but which
+biome a chunk holds is stored at generation. The Mobs plugin's one-time repaint
+(`mobs rift biomes apply`) rewrites the stored biome of the surface west of x 0 to
+`paradox:the_rift_west`. **Once repainted, every later pack must keep `paradox:the_rift_west`, and a pack
+rollback needs `mobs rift biomes revert` first.**
