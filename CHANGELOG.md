@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.36.0] - 2026-11-20
 
+minecraft-ref: 96ad724051dfe0314d9822569b5432e356e91cdf
+
 The Paradox Rift rework (Daxton's idea): the Rift's two biomes, and the art for the Prime Illusioner and the Paradox items.
 
 ### Added
