@@ -93,6 +93,9 @@ _ITEMS = (
     'pirelite_sword',
     'junk_axe',
     'sand_dust',
+    'paradox_pickaxe',
+    'paradox_prism',
+    'paradox_prism_shard',
 )
 _MODELS = (
     'blob',
@@ -164,6 +167,9 @@ _MODELS = (
     'sulter',
     'archer',
     'built_cinnabar_cube',
+    'built_hopper',
+    'built_poisonous_slime',
+    'prime_illusioner',
 )
 _BLOCKS = (
     'moldy_oak_planks',

@@ -7,9 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.36.0] - 2026-11-20
+
+The Paradox Rift rework (Daxton's idea): the Rift's two biomes, and the art for the Prime Illusioner and the Paradox items.
+
+### Added
+
+- `mobs` pack: the Prime Illusioner as a BetterModel 3.5.0 display model, and an original stand-in texture for the atlas to replace, `bettermodel:item/prime_illusioner_illager_face`; and three items, the Paradox Pickaxe (`mobs:paradox_pickaxe`), the Paradox Prism (`mobs:paradox_prism`) and the Paradox Prism Shard (`mobs:paradox_prism_shard`).
+
 ### Changed
 
 - The Rift has a purple east sky and a new yellow-orange `paradox:the_rift_west` biome, and the surface spawns nothing.
+- `mobs` pack: the items atlas, `assets/minecraft/atlases/items.json`, adds `minecraft:entity/illager/pillager` for the Prime Illusioner. It only names the vanilla textures; no Mojang pixels ship. Every other existing model, texture and item is unchanged, and so is the pack icon.
 
 ## [0.35.2] - 2026-11-15
 

@@ -98,6 +98,11 @@
     {
       "type": "minecraft:single",
       "resource": "minecraft:entity/illager/pillager",
+      "sprite": "bettermodel:item/prime_illusioner_illager_face"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "minecraft:entity/illager/pillager",
       "sprite": "bettermodel:item/simphtomer_illager_face"
     },
     {
