@@ -1,0 +1,44 @@
+{
+ "abilities": [
+  {
+   "cooldown": 100,
+   "damage": 6,
+   "kind": "cast",
+   "range_max": 12,
+   "range_min": 0
+  }
+ ],
+ "acts_like": "zombie",
+ "drops": [
+  {
+   "chance": 0.5,
+   "item": "minecraft:emerald",
+   "looting": 1,
+   "max": 1,
+   "min": 1,
+   "player_kill_only": true
+  }
+ ],
+ "id": "built_manier",
+ "look": {
+  "model": "manier"
+ },
+ "name": "Manier",
+ "spawn": {
+  "menu": {
+   "page": "even_more",
+   "slot": 19
+  },
+  "menu_cap": 3
+ },
+ "stats": {
+  "attack": 1,
+  "hearts": 9,
+  "speed": "normal"
+ },
+ "version": 2,
+ "voice": {
+  "mob": "witch",
+  "pitch": "deep"
+ }
+}

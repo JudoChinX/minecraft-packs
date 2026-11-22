@@ -7,9 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.37.0] - 2026-11-22
+
+The mobs pack's 33rd batch: the Manier.
+
+### Added
+
+- `mobs` pack: the Manier as a BetterModel 3.5.0 display model, and an original stand-in texture for the atlas to replace, `bettermodel:item/manier_illager_face`; and three borrowed brown mushroom block states, the Fire Mud (`mobs:fire_mud`), the Paradox Moss (`mobs:paradox_moss`) and the Warped Moss (`mobs:warped_moss`), each with its block model, item and texture.
+
 ### Changed
 
 - `rift` pack: the Primary Cave spawns only zombies (count 1 to 2, weight 100, one `spawn_costs` entry), which the Mobs plugin turns into Maniers. Bats are unchanged.
+- `mobs` pack: the items atlas, `assets/minecraft/atlases/items.json`, adds `minecraft:entity/illager/pillager` for the Manier. It only names the vanilla textures; no Mojang pixels ship.
+- `mobs` pack: the brown mushroom block's blockstate, `assets/minecraft/blockstates/brown_mushroom_block.json`, draws three more of its states as the Rift's surface blocks (paradox moss, fire mud and warped moss). Every other existing model, texture and item is unchanged, and so is the pack icon.
+
+minecraft-ref: b0edd69c7121232b0274a144f94c969e8dc12b5d
 
 ## [0.36.0] - 2026-11-20
 

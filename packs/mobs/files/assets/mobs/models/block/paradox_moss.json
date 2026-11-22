@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "mobs:block/paradox_moss_top",
+    "side": "mobs:block/paradox_moss_side",
+    "bottom": "minecraft:block/dirt"
+  }
+}

@@ -10,11 +10,11 @@
 # Wicked Geomancer, the Echo Shard Golem, the Invader, the Lapis Golem, the Monkey, the Crystallized, the Burned, the
 # Anemone (pink, blue, yellow and red), the Frilled Anemone, the Mallard Duck, the Crab (blue, green and
 # red), the Scorched, the Illadator, the Sword Illadator, the Sea Urchin, the Paradox Seeker, the Hunter, the Sulter,
-# the Archer and the Prime Illusioner; nineteen item models (assets/mobs/): Jello, the Harmonizer Tentacle, the Cooked
-# Harmonizer Tentacle, the Tropical Slime, the Orb of Dominance, the Ancient Callings, the Cutlass, the Peg Leg, the
-# Crocofang Tooth, the Throwing Knife, the Coconut, the Redstone Golem Head and its glowing-eyes twin, the Wicked
-# Geomancer's Necklace, the Banana, the Illager Crown (also worn, through assets/mobs/equipment/), the Junk Axe, the
-# Sand Dust, and the Moldy Oak Planks (a block model, assets/mobs/models/block/); the items atlas
+# the Archer, the Prime Illusioner and the Manier; nineteen item models (assets/mobs/): Jello, the Harmonizer Tentacle,
+# the Cooked Harmonizer Tentacle, the Tropical Slime, the Orb of Dominance, the Ancient Callings, the Cutlass, the Peg
+# Leg, the Crocofang Tooth, the Throwing Knife, the Coconut, the Redstone Golem Head and its glowing-eyes twin, the
+# Wicked Geomancer's Necklace, the Banana, the Illager Crown (also worn, through assets/mobs/equipment/), the Junk Axe,
+# the Sand Dust, and the Moldy Oak Planks (a block model, assets/mobs/models/block/); the items atlas
 # (assets/minecraft/atlases/items.json), which gives the illagers' and the pirates' heads the client's own pillager
 # texture and the Hopping Pig the client's own pig texture by name, so the pack ships no Mojang pixels; the mushroom
 # stem's blockstate (assets/minecraft/blockstates/mushroom_stem.json), vanilla's multipart naming vanilla's own models,

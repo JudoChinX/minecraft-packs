@@ -170,6 +170,7 @@ _MODELS = (
     'built_hopper',
     'built_poisonous_slime',
     'prime_illusioner',
+    'manier',
 )
 _BLOCKS = (
     'moldy_oak_planks',
@@ -181,6 +182,9 @@ _BLOCKS = (
     'eatherite_ore',
     'paralite_ore',
     'pirelite_ore',
+    'fire_mud',
+    'paradox_moss',
+    'warped_moss',
 )
 _BORROWED = {
     'moldy_oak_planks': 'mushroom_stem',
@@ -213,6 +217,20 @@ def _ore_states() -> dict[str, tuple[str, dict[str, str]]]:
 
 
 _ORES = _ore_states()
+# The Rift's surface blocks (0.37.0): three more brown-mushroom-block states, pinned here because the rift data pack no
+# longer places them (the Mobs plugin's console repaint did), in the blockstate's order after the ores.
+_SURFACE = {
+    'paradox_moss': {
+        'down': 'true',
+        'east': 'false',
+        'north': 'false',
+        'south': 'false',
+        'up': 'true',
+        'west': 'false',
+    },
+    'fire_mud': {'down': 'true', 'east': 'true', 'north': 'false', 'south': 'false', 'up': 'true', 'west': 'false'},
+    'warped_moss': {'down': 'true', 'east': 'false', 'north': 'false', 'south': 'false', 'up': 'true', 'west': 'true'},
+}
 _REFERENCE = re.compile(r'^(bettermodel|mobs):([a-z0-9_/]+)$')
 _ATLAS = _ASSETS / 'minecraft' / 'atlases' / 'items.json'
 _VANILLA_TEXTURE = re.compile(r'^minecraft:entity/(illager|pig)/[a-z0-9_]+$')
@@ -290,7 +308,7 @@ def test_block_item_resolves(block: str) -> None:
     """Test each borrowed block's item names its block model, which draws the block's own texture, which exists.
 
     Most are a ``cube_all``; the palm log is a ``cube_column`` with ringed ends, and the palm slab vanilla's ``slab``
-    on the palm planks' texture.
+    on the palm planks' texture, and the paradox moss a ``cube_bottom_top`` over vanilla's dirt.
     """
     definition = json.loads((_ASSETS / 'mobs' / 'items' / f'{block}.json').read_text())
     assert definition['model']['model'] == f'mobs:block/{block}'
@@ -303,6 +321,15 @@ def test_block_item_resolves(block: str) -> None:
         texture = _SLABS[block][0]
         assert model['parent'] == 'minecraft:block/slab'
         assert model['textures'] == dict.fromkeys(('bottom', 'side', 'top'), f'mobs:block/{texture}')
+    elif block == 'paradox_moss':
+        assert model['parent'] == 'minecraft:block/cube_bottom_top'
+        assert model['textures'] == {
+            'top': 'mobs:block/paradox_moss_top',
+            'side': 'mobs:block/paradox_moss_side',
+            'bottom': 'minecraft:block/dirt',
+        }
+        texture = 'paradox_moss_top'
+        assert (_ASSETS / 'mobs' / 'textures' / 'block' / 'paradox_moss_side.png').read_bytes().startswith(b'\x89PNG')
     else:
         assert model['parent'] == 'minecraft:block/cube_all'
         assert model['textures'] == {'all': f'mobs:block/{block}'}
@@ -342,6 +369,8 @@ def test_borrowed_blockstate_draws_the_block_only_in_its_state(block: str) -> No
     parts = blockstate['multipart']
     ours = f'mobs:block/{block}'
     ores = {_state_key(faces): f'mobs:block/{ore}' for ore, (on, faces) in _ORES.items() if on == base}
+    if base == 'brown_mushroom_block':
+        ores |= {_state_key(faces): f'mobs:block/{name}' for name, faces in _SURFACE.items()}
     vanilla = {f'minecraft:block/{base}', 'minecraft:block/mushroom_block_inside'}
     assert {part['apply']['model'] for part in parts} == vanilla | {ours} | set(ores.values())
     assert [part['apply']['model'] for part in parts[-1 - len(ores) :]] == [ours, *ores.values()]

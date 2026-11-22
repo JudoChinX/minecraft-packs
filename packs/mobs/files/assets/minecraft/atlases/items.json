@@ -63,6 +63,11 @@
     {
       "type": "minecraft:single",
       "resource": "minecraft:entity/illager/pillager",
+      "sprite": "bettermodel:item/manier_illager_face"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "minecraft:entity/illager/pillager",
       "sprite": "bettermodel:item/miner_illager_face"
     },
     {
