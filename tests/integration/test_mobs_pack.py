@@ -217,8 +217,8 @@ def _ore_states() -> dict[str, tuple[str, dict[str, str]]]:
 
 
 _ORES = _ore_states()
-# The Rift's surface blocks (0.37.0): three more brown-mushroom-block states, pinned here because the rift data pack no
-# longer places them (the Mobs plugin's console repaint did), in the blockstate's order after the ores.
+# The Rift's surface blocks (0.37.0): three more brown-mushroom-block states, in the blockstate's order after the ores.
+# The rift data pack names vanilla blocks; the Mobs plugin's console repaint places these states, so they are pinned here.
 _SURFACE = {
     'paradox_moss': {
         'down': 'true',
