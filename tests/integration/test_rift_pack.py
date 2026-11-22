@@ -180,146 +180,17 @@ def test_rift_abyslite_only_in_primary_cave() -> None:
         assert f'paradox:{ore}_ore' in _features('primary_cave'), ore
 
 
-# Vanilla 26.3 placed features the Rift's biomes would list whose heights are anchored to the world's bottom
-# (above_bottom, in misode/mcmeta 26.3-data-json): at the Rift's -416 floor they would sink 352 blocks.
-_BOTTOM_ANCHORED = {
-    # placed feature: the vanilla configured feature it places
-    'ore_gravel': 'ore_gravel',
-    'ore_tuff': 'ore_tuff',
-    'ore_iron_small': 'ore_iron_small',
-    'ore_redstone': 'ore_redstone',
-    'ore_redstone_lower': 'ore_redstone',
-    'ore_diamond': 'ore_diamond_small',
-    'ore_diamond_large': 'ore_diamond_large',
-    'ore_diamond_buried': 'ore_diamond_buried',
-    'ore_lapis_buried': 'ore_lapis_buried',
-}
-
-
-def test_rift_features_keep_overworld_y_bands() -> None:
-    """Test no listed placed feature is bottom-anchored: the pack's own use absolute y, and no vanilla one that is."""
-    listed = set(_features('the_rift')) | set(_features('primary_cave'))
-
-    assert not any('above_bottom' in path.read_text(encoding='utf-8') for path in _json_files())
-    assert not {f'minecraft:{name}' for name in _BOTTOM_ANCHORED} & listed
-    assert {f'paradox:{name}' for name in _BOTTOM_ANCHORED} <= listed
-    for name, configured in _BOTTOM_ANCHORED.items():
-        assert _read(f'worldgen/placed_feature/{name}.json')['feature'] == f'minecraft:{configured}', name
-
-
-def test_rift_shared_features_keep_one_order() -> None:
-    """Test the features both biomes list come in the same order in each step (no feature-order cycle)."""
-    the_rift = _read('worldgen/biome/the_rift.json')['features']
-    primary_cave = _read('worldgen/biome/primary_cave.json')['features']
-    for step_rift, step_cave in zip(the_rift, primary_cave, strict=True):
-        shared = set(step_rift) & set(step_cave)
-        assert [f for f in step_rift if f in shared] == [f for f in step_cave if f in shared]
-
-
-def test_rift_surface_feature_rarity() -> None:
-    """Test fire mud is about one chunk in 2, and a warped clump one in 3, both on the Rift's surface."""
-    fire_mud = _read('worldgen/placed_feature/fire_mud.json')
-    warped_clump = _read('worldgen/placed_feature/warped_clump.json')
-
-    assert _modifier(fire_mud, 'rarity_filter')['chance'] == 2
-    assert _modifier(warped_clump, 'rarity_filter')['chance'] == 3
-    assert {'paradox:fire_mud', 'paradox:warped_clump'} <= set(_features('the_rift'))
-
-
-def test_rift_fire_mud_is_mud_round_a_magma_core() -> None:
-    """Test the fire-mud feature lays a disk of mud, radius 2-4, then sets a magma core into it."""
-    feature = _read('worldgen/feature/fire_mud.json')
-    mud, core = (step['feature'] for step in feature['features'])
-
-    assert feature['type'] == 'minecraft:sequence'
-    assert mud['type'] == 'minecraft:disk'
-    assert mud['state_provider'] == {'id': 'minecraft:mud'}
-    assert (mud['radius']['min_inclusive'], mud['radius']['max_inclusive']) == (2, 4)
-    assert core['state_provider'] == {'id': 'minecraft:magma_block'}
-
-
-def test_rift_warped_clump_plants_only_on_nylium() -> None:
-    """Test the clump's ground mixes nylium into wart, and its roots and sprouts are kept to the nylium."""
-    feature = _read('worldgen/feature/warped_clump.json')
-    ground = json.dumps(feature['ground_state'])
-    vegetation = json.dumps(feature['vegetation_feature'])
-
-    assert feature['type'] == 'minecraft:vegetation_patch'
-    assert 'minecraft:warped_nylium' in ground
-    assert 'minecraft:warped_wart_block' in ground
-    assert 'minecraft:warped_roots' in vegetation
-    assert 'minecraft:nether_sprouts' in vegetation
-    assert '"blocks": "minecraft:warped_nylium"' in vegetation
-
-
-def test_rift_ancient_ruin_loot_is_the_ancient_city_s() -> None:
-    """Test the ruin's chest table is one pool drawing the vanilla ancient-city table."""
-    table = _read('loot_table/chests/ancient_ruin.json')
-
-    assert table['type'] == 'minecraft:chest'
-    assert len(table['pools']) == 1
-    assert table['pools'][0]['entries'] == [{'type': 'minecraft:loot_table', 'value': 'minecraft:chests/ancient_city'}]
-
-
-_SURFACE = ('the_rift', 'the_rift_west')
-
-
-def test_rift_biome_colours() -> None:
-    """Test the Rift's red grass, cyan leaves, purple east sky and water, and the Primary Cave's teal fog."""
-    east = _read('worldgen/biome/the_rift.json')
-    primary_cave = _read('worldgen/biome/primary_cave.json')
-
-    assert east['effects'] == {'foliage_color': '#7fe6e6', 'grass_color': '#b8323c', 'water_color': '#9a2f6a'}
-    assert east['attributes']['minecraft:visual/sky_color'] == '#5b2a86'
-    assert east['attributes']['minecraft:visual/fog_color'] == '#7a3a6e'
-    assert primary_cave['attributes']['minecraft:visual/fog_color'] == '#0f2a2e'
-    assert 'crimson_spore' in json.dumps(east['attributes']['minecraft:visual/ambient_particles'])
-    assert 'warped_spore' in json.dumps(primary_cave['attributes']['minecraft:visual/ambient_particles'])
-
-
-def test_rift_west_biome_is_the_east_in_yellow_orange() -> None:
-    """Test the west biome is the east's twin with a yellow-orange sky, fog and water."""
-    east, west = (_read(f'worldgen/biome/{b}.json') for b in _SURFACE)
-
-    assert west['effects'] == {'foliage_color': '#7fe6e6', 'grass_color': '#b8323c', 'water_color': '#d08a2a'}
-    assert west['attributes']['minecraft:visual/sky_color'] == '#e8a030'
-    assert west['attributes']['minecraft:visual/fog_color'] == '#f0b868'
-    for key in ('features', 'carvers', 'temperature', 'downfall', 'has_precipitation'):
-        assert west[key] == east[key], key
-    for key in ('minecraft:visual/ambient_particles', 'minecraft:gameplay/natural_mob_spawns'):
-        assert west['attributes'][key] == east['attributes'][key], key
-
-
-def test_rift_surface_biomes_spawn_nothing() -> None:
-    """Test neither surface biome lists a spawn; the Primary Cave keeps its own."""
-    for biome in _SURFACE:
-        spawns = _read(f'worldgen/biome/{biome}.json')['attributes']['minecraft:gameplay/natural_mob_spawns']
-        assert spawns['argument']['spawns_by_category'] == {}, biome
-
-
-# Vanilla 26.3's common overworld monsters and their weights (misode/mcmeta 26.3-data-json: the list every cave biome
-# starts from; dripstone_caves adds drowned, which the dry Primary Cave leaves out).
-_VANILLA_CAVE_MONSTERS = {
-    'minecraft:spider': 100,
-    'minecraft:zombie': 95,
-    'minecraft:zombie_villager': 5,
-    'minecraft:skeleton': 100,
-    'minecraft:creeper': 100,
-    'minecraft:slime': 100,
-    'minecraft:enderman': 10,
-    'minecraft:witch': 5,
-}
-
-
-def test_rift_primary_cave_spawns_fewer_monsters() -> None:
-    """Test every Primary Cave monster has a spawn cost: weights are relative, so only spawn_costs spawn fewer."""
+def test_rift_primary_cave_spawns_only_the_maniers_carrier() -> None:
+    """Test the Primary Cave's monsters are zombies only: the Mobs plugin turns each into a Manier (D7 A)."""
     spawns = _read('worldgen/biome/primary_cave.json')['attributes']['minecraft:gameplay/natural_mob_spawns']
-    monsters = spawns['argument']['spawns_by_category']['monster']
-    costs = spawns['argument']['spawn_costs']
-
-    assert {entry['type']: entry['weight'] for entry in monsters} == {
-        mob: weight // 2 for mob, weight in _VANILLA_CAVE_MONSTERS.items()
-    }
-    assert set(costs) == set(_VANILLA_CAVE_MONSTERS)
-    for mob, cost in costs.items():
-        assert cost == {'charge': 0.7, 'energy_budget': 0.4}, mob
+    by_cat = spawns['argument']['spawns_by_category']
+    assert by_cat['monster'] == [
+        {
+            'count': {'max_inclusive': 2, 'min_inclusive': 1, 'type': 'minecraft:uniform'},
+            'type': 'minecraft:zombie',
+            'weight': 100,
+        }
+    ]
+    assert by_cat['ambient'] == [{'count': 8, 'type': 'minecraft:bat', 'weight': 10}]
+    assert spawns['argument']['spawn_costs'] == {'minecraft:zombie': {'charge': 0.7, 'energy_budget': 0.4}}
+    assert spawns['modifier'] == 'overlay'

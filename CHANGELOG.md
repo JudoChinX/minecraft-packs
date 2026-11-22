@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- `rift` pack: the Primary Cave spawns only zombies (count 1 to 2, weight 100, one `spawn_costs` entry), which the Mobs plugin turns into Maniers. Bats are unchanged.
+
 ## [0.36.0] - 2026-11-20
 
 minecraft-ref: 96ad724051dfe0314d9822569b5432e356e91cdf

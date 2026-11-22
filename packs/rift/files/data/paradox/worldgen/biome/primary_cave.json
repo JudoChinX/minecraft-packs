@@ -3,35 +3,7 @@
     "minecraft:gameplay/natural_mob_spawns": {
       "argument": {
         "spawn_costs": {
-          "minecraft:creeper": {
-            "charge": 0.7,
-            "energy_budget": 0.4
-          },
-          "minecraft:enderman": {
-            "charge": 0.7,
-            "energy_budget": 0.4
-          },
-          "minecraft:skeleton": {
-            "charge": 0.7,
-            "energy_budget": 0.4
-          },
-          "minecraft:slime": {
-            "charge": 0.7,
-            "energy_budget": 0.4
-          },
-          "minecraft:spider": {
-            "charge": 0.7,
-            "energy_budget": 0.4
-          },
-          "minecraft:witch": {
-            "charge": 0.7,
-            "energy_budget": 0.4
-          },
           "minecraft:zombie": {
-            "charge": 0.7,
-            "energy_budget": 0.4
-          },
-          "minecraft:zombie_villager": {
             "charge": 0.7,
             "energy_budget": 0.4
           }
@@ -46,48 +18,13 @@
           ],
           "monster": [
             {
-              "count": 4,
-              "type": "minecraft:spider",
-              "weight": 50
-            },
-            {
-              "count": 4,
-              "type": "minecraft:zombie",
-              "weight": 47
-            },
-            {
-              "count": 1,
-              "type": "minecraft:zombie_villager",
-              "weight": 2
-            },
-            {
-              "count": 4,
-              "type": "minecraft:skeleton",
-              "weight": 50
-            },
-            {
-              "count": 4,
-              "type": "minecraft:creeper",
-              "weight": 50
-            },
-            {
-              "count": 4,
-              "type": "minecraft:slime",
-              "weight": 50
-            },
-            {
               "count": {
-                "max_inclusive": 4,
+                "max_inclusive": 2,
                 "min_inclusive": 1,
                 "type": "minecraft:uniform"
               },
-              "type": "minecraft:enderman",
-              "weight": 5
-            },
-            {
-              "count": 1,
-              "type": "minecraft:witch",
-              "weight": 2
+              "type": "minecraft:zombie",
+              "weight": 100
             }
           ]
         }

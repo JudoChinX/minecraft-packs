@@ -51,13 +51,12 @@ from vanilla blocks.
 - **`paradox:chests/ancient_ruin`** is the loot table of the chests in the Rift's ancient ruins (placed
   by the Mobs plugin). It draws vanilla's ancient-city chest table once; the plugin adds the Rift's own
   items to it as the chest is opened.
-- **Mob spawns:** the surface spawns nothing new (both surface biomes list no spawns; the Primary Cave's are unchanged). The Primary Cave has vanilla's cave monsters
-  and bats, but fewer monsters: each has a `spawn_costs` entry (charge 0.7, energy budget 0.4), so a
-  monster does not spawn where the monsters already near it would push the spot's charge over that
-  budget. On a copy of the server that keeps about 13 monsters round a player on a hollow's floor,
-  against vanilla's 77 (the soul sand valley's budget, 0.15, kept 1; a budget of 1.0 kept all of
-  them). Their weights are vanilla's halved, which keeps the mix: weights are relative, so halving
-  them alone would not spawn one monster fewer.
+- **Mob spawns:** the surface spawns nothing new (both surface biomes list no spawns). The Primary Cave lists only
+  zombies (count 1 to 2, weight 100, one `spawn_costs` entry: charge 0.7, energy budget 0.4) and vanilla's bats. The Mobs
+  plugin turns each zombie into a Manier (at most 4 within 64 blocks of a player); without Mobs, plain zombies spawn.
+- **The surface blocks:** the surface rule, `paradox:fire_mud` and `paradox:warped_clump` still name `grass_block`, `mud`
+  and `warped_wart_block`: the Mobs console repaint (`mobs rift surface apply`) replaced them in every generated chunk,
+  and a chunk generated later would show the vanilla blocks.
 
 ## Installing
 
