@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.36.1] - 2026-11-24
+
+minecraft-ref: 81f57ecb1fb494b764de653d32bf8ddb3e78cc60
+
+### Changed
+
+- New structure Camp, built by Daxton.
+
 ## [0.36.0] - 2026-11-20
 
 minecraft-ref: 96ad724051dfe0314d9822569b5432e356e91cdf
