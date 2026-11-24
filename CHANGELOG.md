@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.36.2] - 2026-11-24
+
+minecraft-ref: b71900bab14567d5dd02894b1a15674348dc38a8
+
+### Changed
+
+- New structure Sulfur Ruin, built by Daxton.
+
 ## [0.36.1] - 2026-11-24
 
 minecraft-ref: 81f57ecb1fb494b764de653d32bf8ddb3e78cc60
