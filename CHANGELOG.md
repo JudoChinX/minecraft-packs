@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.36.3] - 2026-11-24
+
+minecraft-ref: 24625be23c1509b59683a396da850006f9e535ed
+
+### Changed
+
+- New structure Mud Ruin, built by Daxton.
+
 ## [0.36.2] - 2026-11-24
 
 minecraft-ref: b71900bab14567d5dd02894b1a15674348dc38a8
