@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.36.4] - 2026-11-26
+
+minecraft-ref: 035026f49ce3f6d73e42cab016c4253f8a434044
+
+### Changed
+
+- New mob sarmoo, built by Daxton.
+
 ## [0.36.3] - 2026-11-24
 
 minecraft-ref: 24625be23c1509b59683a396da850006f9e535ed
