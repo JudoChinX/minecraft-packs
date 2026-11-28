@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.36.5] - 2026-11-28
+
+minecraft-ref: 3e666366f1399dc0bba0d3ba62f5c8060aa57abb
+
+### Changed
+
+- New structure Sculk Ruin, built by Daxton.
+
 ## [0.36.4] - 2026-11-26
 
 minecraft-ref: 035026f49ce3f6d73e42cab016c4253f8a434044
